@@ -1,0 +1,560 @@
+// ------------------------------------
+// BaseKit Standard Theme: LESS > Theme
+// ------------------------------------
+
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+
+// 1. #TYPOGRAPHY
+// 2. #CUSTOM PAGE
+// 3. #HEADER
+// 4. #FOOTER
+
+
+
+// -----------------------------
+// 1. #TYPOGRAPHY
+// -----------------------------
+
+
+// Colour Swatches
+// ---------------
+
+// @color-swatch1: Background
+// @color-swatch2: Contrast
+// @color-swatch3: Buttons
+// @color-swatch4: Headings
+// @color-swatch5: Paragraph
+// @color-swatch6: Navigation Links
+// @color-swatch7: Spare
+
+
+// Colour Variables
+// ----------------
+
+@bg-color: @color-swatch1;          // Background
+@contrast-color: @color-swatch2;    // Contrast Colour
+@button-color: @color-swatch3;      // Button BG Colour
+@heading-color: @color-swatch4;     // Heading Text Colour (H1 - H4)
+@paragraph-color: @color-swatch5;   // Paragraph Text Colour
+@nav-color: @color-swatch6;         // Nav Link Colour
+@spare-color: @color-swatch7;       // Spare Colour
+
+
+// Font Swatches
+// -------------
+
+// font1:  Heading 1
+// font2:  Heading 2
+// font3:  Heading 3
+// font4:  Heading 4
+// font5:  Paragraph
+// font6:  Navigation Link
+// font7:  Buttons
+// font8:  Feature Headline
+// font9:  Feature Strapline
+// font10: Company Name (Logo)
+
+
+body {
+	font-smooth: always;
+	font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: geometricPrecision;
+	letter-spacing: .04em;
+}
+
+
+h1, h2, h3, h4, h5 {
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	padding-bottom: .5em;
+}
+
+
+h5 {
+	font-family: @font-swatch4-font-family;
+	font-size: @font-swatch5-font-size;
+	font-weight: @font-swatch5-font-weight;
+	line-height: @font-swatch5-line-height;
+	color: @font-swatch4-color;
+	letter-spacing: @font-swatch4-letter-spacing;
+}
+
+blockquote {
+	border: 1px solid @contrast-color;
+	padding: 30px;
+	font-style: italic;
+	&:before {
+		display: none;
+	}
+}
+
+.content .bk-content-text ol {
+	list-style-position: inherit;
+}
+
+
+
+// -----------------------------
+// 2. #CUSTOM PAGE
+// -----------------------------
+
+
+body.edit .widget.navigation, body.edit .widget.extendednavigation {
+	overflow: visible;
+}
+
+// Default Page Style
+// ------------------
+
+.bk-pt-default .bk-header {
+	border-bottom: 1px solid @contrast-color;
+}
+
+
+
+// -----------------------------
+// 3. #HEADER & #BK-NAV
+// -----------------------------
+
+
+.bk-nav {
+	background-color: @spare-color;
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	top: 0;
+	z-index: 1;
+}
+
+
+.bk-header {
+	padding: 40px 0;
+	margin-top: 60px !important;
+}
+
+
+
+// -----------------------------
+// 4. #FOOTER
+// -----------------------------
+
+.bk-footer {
+	background-color: @color-swatch7;
+	padding: 2em 0;
+	margin-top: 3em;
+	color: @color-swatch6;
+	text-align: left;
+}
+
+.bk-footer h1,
+.bk-footer h2,
+.bk-footer h3,
+.bk-footer h4 {
+	color: @color-swatch6;
+	padding-bottom: 20px;
+}
+
+
+// -----------------------------
+// 5. #CONTENT
+// -----------------------------
+
+.widget.content {
+	padding: 0;
+	overflow: hidden;
+}
+
+.widget.content span.expand {
+	font-family: @font-swatch7-font-family;
+	margin: 10px 0;
+	cursor: pointer;
+	display: inline-block;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
+.expand .more, .expand .less {
+	&:hover {
+		color: @heading-color;
+	}
+}
+
+
+
+// -----------------------------
+// 6. #GENERAL FORMS
+// -----------------------------
+
+input,
+textarea,
+select,
+.widget.profile form fieldset input {
+	background: @bg-color;
+	text-indent: 10px;
+	padding: 8px;
+	border: 1px solid @contrast-color;
+	margin-bottom: 1em;
+	.transition (all, 0.5s, ease);
+	&:focus,
+	&:hover {
+		.transition (all, 0.5s, ease);
+		border: 1px solid darken(@contrast-color, 20%);
+	}
+}
+
+input, select {
+	height: 52px;
+}
+
+textarea {
+	height: 104px;
+}
+
+label {
+	display: inline-block;
+	padding-bottom: .4em;
+}
+
+select {
+	cursor: pointer;
+	position: relative;
+	padding-right: 33px;
+}
+
+
+/* ===============================
+   PROFILE WIDGET
+   =============================== */
+
+.widget.profile {
+
+}
+
+
+.widget.profile span,
+.widget.profile a {
+	display: block;
+	font-size: bkscale(@font-swatch5-font-size,1.1);
+	font-family: @font-swatch5-font-family;
+	color: @font-swatch5-color;
+	line-height: @font-swatch5-line-height;
+	font-weight: @font-swatch5-font-weight;
+}
+
+.widget.profile a:hover {
+	color: @color-swatch3;
+	text-decoration: none;
+}
+
+/* FOOTER PROFILE - twitter in profile widget*/
+/*  LATEST TWEET IN FOOTER */
+
+.widget.profile .twitter a {
+   display: inline;
+   color: @color-swatch4;
+   font-size:@font-swatch5-font-size;
+   text-decoration: none;
+}
+
+.widget.profile .twitter a:hover {
+	color: @color-swatch6;
+	text-decoration: underline;
+}
+
+.widget.profile .twitter {
+	padding: 0;
+	margin: 0;
+}
+
+.widget.profile .twitter li {
+	border-bottom: none;
+	list-style: none;
+	font-family: @font-swatch5-font-family;
+	font-size: @font-swatch5-font-size;
+	color: @font-swatch5-color;
+	padding: 0;
+	border-bottom: none;
+}
+
+.widget.profile .twitter .twitter-profile-pic {
+	margin: 5px 20px 0;
+	background-image: image('/images/twitter-img.png');
+	background-position: right center;
+	background-repeat: no-repeat;
+	text-indent: -20000px;
+	width: 45px;
+	height: 37px;
+	float: left;
+	margin-right: 15px;
+}
+
+.widget.profile .twitter a img {
+  border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius:  30px;
+	border-radius: 30px;
+}
+
+.widget.profile .twitter .twitter-content span.bk-full-name {
+	font-family: @font-swatch4-font-family;
+	color: @color-swatch6;
+	font-size: @font-swatch5-font-size;
+}
+
+.widget.profile .twitter .twitter-content a:hover {
+  text-decoration: underline;
+  color: @color-swatch6;
+}
+
+.widget.profile .twitter time, .widget.profile .twitter span, .widget.profile .twitter span a {
+color: @color-swatch5;
+}
+
+.bk-footer .widget.profile .twitter span {
+  display: inline;
+}
+
+
+/* ===============================
+   LINKED IN
+   =============================== */
+
+.container-outer .li-profile-container {
+  padding: 0;
+  margin: 0;
+
+}
+
+.no-profile {
+  font-family:@font-swatch5-font-family;
+  font-size:@font-swatch5-font-size;
+  font-weight: @font-swatch5-font-weight;
+  line-height:@font-swatch5-line-height;
+  color:@font-swatch5-color;
+  letter-spacing: @font-swatch5-letter-spacing;
+
+}
+
+/* ===============================
+   MAP WIDGET
+   =============================== */
+
+.widget.map {
+  border: 1px solid #dddddd;
+}
+
+
+/* ===============================
+   ECOM
+   =============================== */
+
+
+
+.widget.ecombasket .ecombasket-list-container ul li {
+	border-bottom: 1px solid darken(@color-swatch1, 20%);
+}
+
+.widget.ecombasket {
+	margin-bottom: 20px;
+}
+
+.widget.ecombasket .ecombasket-list-container ul li .ecombasket-item-image {
+	width: 95px;
+	height: 95px;
+}
+
+.widget.ecomcheckout .checkout-order-button {
+  padding: 5px 14px 7px;
+}
+
+.widget.ecombasket .ecombasket-pull p:before,
+.widget.ecomproduct .ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
+	background-image: image('/images/basket.png');
+	background-size: 100% auto;
+	top: 1px;
+}
+
+.svg .widget.ecombasket .ecombasket-pull p:before,
+.widget.ecomproduct .ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
+	background-image: image('/images/basket.svg');
+}
+
+// Basket Summary
+.basket-summary-items-table {
+	border-collapse: collapse;
+	width: 100%;
+	.image-wrap {
+		background-position: 10000px;
+		line-height: 0;
+		text-align: center;
+		padding: 30px;
+		img {
+			max-width: 100%;
+			max-height: 200px;
+		}
+	}
+	td {
+		padding: 10px 0;
+	}
+	tr {
+		border-bottom: solid 1px darken(@color-swatch1, 10%);
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+	.basket-summary-subtotal {
+		padding: 20px;
+	}
+}
+
+.basket-summary-amount,
+.basket-summary-subtotal {
+	text-align: center;
+}
+
+.basket-summary-quantitybtn {
+	button.btn {
+		padding: 7px 18px;
+	}
+}
+
+.basket-summary-items-column {
+	width: 30%;
+}
+
+.quantity-number {
+	display: inline-block;
+	min-width: 40px;
+	text-align: center;
+}
+
+
+
+/* ===============================
+   IPAD WIDTH
+   =============================== */
+
+@media only screen and (max-width: 768px) {
+
+	.widget .extendednavigation ul li:first-child {
+	  margin-top:40px;
+	}
+
+	.widget .extendednavigation ul li.folder ul li {
+	  margin-top:0;
+	}
+
+	.widget .extendednavigation ul.align-right li.folder:after {
+	  left: 5px;
+	  right: inherit;
+  }
+
+}
+
+/* ===============================
+   IPHONE WIDTH
+   =============================== */
+
+@media only screen and (max-width: 480px) {
+
+	
+	// FORMS
+	
+	form {
+		input[type=search] {
+			margin-bottom: 10px;
+		}
+		button {
+			margin: 0;
+		}
+	}
+	.bk-footer {
+		padding: 2.5em 0 0;
+	}
+
+	.bk-footer h1, .bk-footer h2, .bk-footer h3, .bk-footer h4 {
+		padding-bottom: 20px;
+	}
+
+	.bk-footer .footer2 {
+		padding: 2em 0;
+		margin-top: 3em;
+	}
+
+	.bk-footer .footer2 .columns-two-right {
+		text-align: left;
+	}
+
+
+	.widget.companyname a {
+	  font-size: bkscale(@font-swatch10-font-size,0.8);
+	}
+
+	.widget.twitter ul li,
+	.widget.twitter ul li:last-child {
+		padding: 5px 16px;
+	}
+	.widget.twitter .twitter-profile-pic {
+		display: none;
+	}
+	
+	// Ecommerce
+	
+	.basket-summary-items-table {
+		td, .basket-summary-subtotal {
+			padding: 10px;
+		}
+		.image-wrap {
+			padding: 0;
+		}
+	}
+	.basket-summary-items-table {
+		td, th {
+			float: left;
+			width: 100%;
+			padding: 0 0 5px;
+		}
+	}
+	.basket-summary-items-table .image-wrap {
+		padding-top: 5px;
+	}
+	.basket-summary-amount-column,
+	.basket-summary-details-column {
+		display: none;
+	}
+	.basket-summary-items-column {
+		text-align: left;
+	}
+	.basket-summary-amount {
+		text-align: right;
+	}
+	.basket-summary-subtotal {
+		padding: 0 0 10px;
+		text-align: left;
+	}
+}
+
+
+// Clearfix
+// --------
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}

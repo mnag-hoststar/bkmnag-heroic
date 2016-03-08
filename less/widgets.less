@@ -1,0 +1,974 @@
+// --------------------------------------
+// BaseKit Standard Theme: LESS > Widgets
+// --------------------------------------
+
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+
+//  1.   #LOGO
+//  2.   #COMPANY NAME
+//  3.   #NAVIGATION
+//  4.   #FEATURE
+
+//  5.   #IMAGES
+//  6.   #GALLERY
+//  7.   #SLIDESHOW
+
+//  8.   #BUTTONS
+//  8.1  -- #STANDARD
+//  8.2  -- #TWEET
+//  8.3  -- #DROPBOX
+//  8.4  -- #CLICK TO CALL
+//  8.5  -- #PAYPAL
+
+//  9.   #CONTACT FORM
+// 10.   #SIGNUP FORM
+
+// 11.   #SOCIAL ICONS
+// 12.   #TWITTER FEED
+
+// 13.   #DIVIDER (KEYLINE)
+// 14.   #PROFILE
+// 15.   #MAP
+// 16.   #YELP
+
+
+// -----------------------------
+// 1.-2.  #LOGO & #COMPANY NAME
+// -----------------------------
+
+
+// Company Name
+// ------------
+
+.widget.companyname {
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 10px;
+	letter-spacing: .1em;
+}
+
+.companyname a:hover {
+	text-decoration: none;
+}
+
+// Logo
+// ----
+
+.widget.logo {
+	width: 100%;
+	text-align: center;
+}
+
+
+
+// -----------------------------
+// 3.  #NAVIGATION
+// -----------------------------
+
+
+// Widget Extended Navigation
+// --------------------------
+
+
+.widget.extendednavigation {
+	position: absolute;
+	left: 30px;
+	top: 50%;
+	transform: translate(0, -50%);
+	background-color: @spare-color;
+	ul {
+		margin: 0 auto;
+		padding: 0;
+		display: block;
+		li {
+			a {
+				padding: 0;
+				margin-right: 40px;
+				text-transform: uppercase;
+				letter-spacing: .1em;
+				.transition (all, 0.5s, ease);
+			}
+			.text {
+			}
+			ul {
+				display: none;
+			}
+			&:hover {
+				ul {
+					display: block;
+					position: absolute;
+					width: auto;
+					background-color: darken(@color-swatch7, 20%);
+					z-index: 500;
+					padding: 0;
+					margin: 0;
+					li {
+						display: block;
+						width: 100%;
+						-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+						-moz-box-sizing: border-box; /* Firefox, other Gecko */
+						box-sizing: border-box; /* Opera/IE 8+ */
+						.transition (all, 0.5s, ease);
+						a {
+							display: block;
+							color: @color-swatch3;
+							padding: 10px 20px;
+							margin-right: 0;
+							letter-spacing: .1em;
+							.transition (all, 0.5s, ease);
+						}
+					}
+				}
+			}
+			&.folder {
+				.text {
+					.transition (all, 0.5s, ease);
+					display: block;
+					padding: 0;
+					margin-right: 40px;
+					text-transform: uppercase;
+				}
+				&:after {
+					right: 20px;
+					top: 47%;
+				}
+			}
+		}
+	}
+}
+
+
+
+// Hover Effect
+// ------------
+
+.widget.extendednavigation ul li a:hover,
+.widget.extendednavigation ul li.folder .text:hover {
+	color: @button-color;
+	.transition (all, 0.5s, ease);
+}
+
+
+// Responsive - Extended Navigation
+// --------------------------------
+
+@media @tablet {
+
+	.widget.extendednavigation {
+		width: 100%;
+		display: inline-block;
+		top: 0;
+		left: 0;
+		transform: none;
+	}
+
+	.widget .extendednavigation a.pull {
+		top: 10px;
+		left: 30px;
+		&:after {
+			top: 10px;
+			left: 0;
+			height: 2px;
+			width: 30px;
+			background-color: @font-swatch6-color;
+			box-shadow: 0 9px 0 @font-swatch6-color, 0 18px 0 @font-swatch6-color;
+		}
+	}
+
+	.widget .extendednavigation ul {
+		width: 100%;
+		display: none;
+		margin: 0;
+		padding: 40px 40px 60px;
+	}
+
+	.widget.extendednavigation ul li {
+		border-bottom: 1px solid fade(@nav-color, 10%);
+		width: 100%;
+		padding: 10px 0;
+	}
+
+	.widget .extendednavigation ul li.folder ul li {
+		margin: 0;
+		padding: 0;
+	}
+
+	.widget.extendednavigation ul li > ul {
+		display: none!important;
+	}
+
+	.widget.extendednavigation ul li:hover > ul {
+		display: block !important;
+		width: 100%;
+		position: absolute;
+		z-index: 500;
+		margin-top: 0;
+		background-color: darken(@color-swatch7, 20%);
+	}
+
+}
+
+
+
+
+// -----------------------------
+// 4.  #FEATURE
+// -----------------------------
+
+
+.widget.feature {
+	.feature-bgimg {
+		.content {
+			text-align: center;
+			.spare {
+				margin: 0 40px;
+				letter-spacing: .1em;
+				h2 {
+					text-transform: uppercase;
+				}
+				h3 {
+					color: fade(@font-swatch9-color, 75%);
+					text-transform: uppercase;
+				}
+				.feature-btn {
+					display: block;
+					button {
+						padding: 12px 30px;
+						border: 2px solid @bg-color;
+						background-color: transparent;
+						color: @bg-color;
+						text-decoration: none;
+						text-transform: uppercase;
+						letter-spacing: .1em;
+						.transition (all, 0.5s, ease);
+						&:hover {
+							background-color: @spare-color;
+							.transition (all, 0.5s, ease);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// Feature Button Alignments
+// -------------------------
+
+
+.widget.feature button.btn.justifyleft {
+	text-align: left;
+}
+
+.widget.feature button.btn.justifycenter {
+	text-align: center;
+}
+
+.widget.feature button.btn.justifyright {
+	text-align: right;
+}
+
+.widget.feature button.btn.justifyfull {
+	text-align: justify;
+}
+
+.widget.feature button.btn.italic {
+	font-style: italic;
+}
+
+.widget.feature button.btn.bold {
+	font-weight: bold;
+}
+
+.widget.feature button i {
+	margin-right: 5px;
+}
+
+// Feature Layouts
+// ---------------
+
+
+/* LEFT ALIGN */
+
+.widget.feature.align-left .content {
+	width: 100%;
+	text-align: left;
+}
+
+/* CENTER ALIGN */
+
+.widget.feature.align-center .content {
+	width: 100%;
+	text-align: center;
+}
+
+/* RIGHT ALIGN */
+
+.widget.feature.align-right .content {
+	width: 100%;
+	text-align: right;
+}
+
+// Responsive Feature
+// ------------------
+
+
+@media @tablet {
+
+	.widget.feature {
+		.feature-bgimg {
+			height: 300px;
+			.content {
+				height: 300px;
+			}
+		}
+		h2 {
+			font-size: bkscale(@font-swatch8-font-size,0.8);
+			line-height: bkscale(@font-swatch8-line-height,0.8);
+			letter-spacing: .1em;
+		}
+		h3 {
+			font-size: bkscale(@font-swatch9-font-size,0.9);
+			line-height: bkscale(@font-swatch9-line-height,0.9);
+		}
+		.feature-btn button {
+		}
+	}
+}
+
+@media @mobile {
+
+	.widget.feature {
+		.feature-bgimg {
+			height: 220px;
+			.content {
+				height: 220px;
+			}
+		}
+		h2 {
+			font-size: bkscale(@font-swatch8-font-size,0.6);
+			line-height: bkscale(@font-swatch8-line-height,0.6);
+			padding-bottom: .1em;
+		}
+		h3 {
+			font-size: bkscale(@font-swatch9-font-size,0.8);
+			line-height: bkscale(@font-swatch9-line-height,0.8);
+			padding-bottom: .8em;
+		}
+		.feature-btn {
+			button {
+				width: 100%;
+				font-size: bkscale(@font-swatch7-font-size,0.8);
+				line-height: bkscale(@font-swatch7-line-height,0.8);
+			}
+		}
+	}
+}
+
+
+
+
+// -----------------------------
+// 5. #IMAGE WIDGET
+// -----------------------------
+
+
+.widget.image span.image-title {
+	margin: 10px 0 0;
+	color: @heading-color;
+	&:hover {
+		color: lighten(@heading-color, 20%);
+	}
+}
+
+
+.widget.image span.image-description {
+	margin: 0 0 10px;
+	color: @paragraph-color;
+	&:hover {
+		color: lighten(@paragraph-color, 20%);
+	}
+}
+
+.widget.image a:hover {
+	text-decoration: none;
+}
+
+
+
+
+// -----------------------------
+// 6.  #GALLERY
+// -----------------------------
+
+
+.widget.gallery {
+	margin-bottom: 2em;
+	ul {
+		position: relative;
+		width: 100%;
+		padding: 0;
+		li {
+			width: 25%;
+			padding-bottom: 25%;
+			@media only screen and (max-width: 1020px) {
+				width: 33.3%;
+				padding-bottom: 33.3%;
+			}
+			@media @tablet {
+				width: 50%;
+				padding-bottom: 50%;
+			}
+			@media @mobile {
+				width: 100% !important;
+				padding-bottom: 100% !important;
+			}
+			.inner {
+				left: 10px;
+				right: 10px;
+				top: 10px;
+				bottom: 10px;
+			}
+		}
+	}
+}
+
+
+
+
+// -----------------------------
+// 7.  #SLIDESHOW
+// -----------------------------
+
+
+.widget.responsiveslideshow {
+	.slideshow-widget {
+		.slideshow-image-list {
+		}
+		.btn-prev,
+		.btn-next {
+			width: 32px;
+			height: 32px;
+			text-indent: -99999px;
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+		.btn-prev {
+			left: 10px;
+			background: image('/images/slideshow-arrow-left.svg') no-repeat center left;
+			background-size: contain;
+		}
+		.btn-next {
+			right: 10px;
+			background: image('/images/slideshow-arrow-right.svg') no-repeat center left;
+			background-size: contain;
+		}
+		.btn-play {
+			width: 64px;
+			height: 64px;
+			background: image('/images/slideshow-play.svg') no-repeat center;
+			background-size: cover;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			text-indent: -99999px;
+			&:after {
+				display: none;
+			}
+		}
+		&:hover .pause {
+			background: image('/images/slideshow-pause.svg') no-repeat center;
+			background-size: cover;
+		}
+	}
+	.content-wrapper {
+		padding: 10px;
+		background-color: @contrast-color;
+	}
+	.title, .description {
+		padding: 6px;
+	}
+	.title {
+		color: @font-swatch4-color;
+		font-family: @font-swatch4-font-family;
+		text-transform: uppercase;
+	}
+	.description {
+		color: @font-swatch5-color;
+	}
+	.slideshow-widget-controls {
+		margin: 10px 0;
+		.dot {
+			background-color: transparent;
+			border: 1px solid @contrast-color;
+			border-radius: 50%;
+			width: 8px;
+			height: 8px;
+			margin: 0 4px;
+			cursor: pointer;
+		}
+		.dot.selected {
+			background-color: @button-color;
+			border: none;
+		}
+	}
+}
+
+
+
+
+
+// -----------------------------
+// 8. #BUTTONS
+// -----------------------------
+
+
+// 8.1 Standard
+// ------------
+
+
+.widget.button button, .btn,
+button.btn,
+.contactform button.btn,
+.widget.profile fieldset button.btn,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.tweet a, .widget.dropbox button,
+.widget.signupform fieldset button.btn,
+.blog-search-submit-button,
+.ecom-product-go-to-checkout-btn, .ecom-product .btn,
+.productlist-search button,
+.widget.ecomproduct .ecom-product .btn,
+.widget.ecombasket .ecombasket-pull,
+.widget.ecombasket .ecombasket-list-container ul li .ecombasket-item-info .ecombasket-remove-button,
+.ecombasket-summary-link {
+	font-family: @font-swatch7-font-family;
+	font-size: @font-swatch7-font-size;
+	font-weight: @font-swatch7-font-weight;
+	line-height: @font-swatch7-line-height;
+	background-color: @font-swatch7-background-color;
+	color: @font-swatch7-color;
+	padding: 12px 30px;
+	border: 2px solid @spare-color;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	.transition (all, 0.5s, ease);
+	&:hover {
+		background-color: @font-swatch7-background-color-hover;
+		cursor: pointer;
+		.transition (all, 0.5s, ease);
+	}
+}
+
+
+// 8.2 Tweet
+// ---------
+
+
+.widget.tweet a {
+	padding-left: 58px;
+	background-image: image('/images/social/socialicons-twitter-hover.svg');
+	background-size: 36px;
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	display: inline-block;
+	&:hover {
+		background-image: image('/images/social/socialicons-twitter-hover.svg');
+	}
+}
+
+
+// 8.3 Dropbox
+// -----------
+
+
+.widget.dropbox button {
+	margin: 0;
+	padding-left: 58px;
+	background-image: image('/images/dropbox-icon.svg');
+	background-size: 30px;
+	background-repeat: no-repeat;
+	background-position: 20px center;
+	&:hover {
+		background-image: image('/images/dropbox-icon.svg');
+	}
+}
+
+// 8.4 Click to call
+// -----------------
+
+
+.widget.clicktocall {
+	padding: 8px 0;
+}
+
+.widget.clicktocall a {
+	padding: 10px 0;
+	font-family: @font-swatch5-font-family;
+	font-size: @font-swatch5-font-size;
+	font-weight: @font-swatch5-font-weight;
+	line-height: @font-swatch5-line-height;
+	color: @font-swatch5-color;
+	letter-spacing: @font-swatch5-letter-spacing;
+	text-decoration: none;
+	&:hover {
+		cursor: pointer;
+	}
+	@media @mobile {
+		display: inline-block;
+		background-image: image('/images/call-icon.svg');
+		background-size: 30px;
+		background-repeat: no-repeat;
+		background-position: 20px center;
+		padding: 12px 30px 12px 58px;
+		border: 2px solid @spare-color;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		font-family: @font-swatch7-font-family;
+		font-size: @font-swatch7-font-size;
+		font-weight: @font-swatch7-font-weight;
+		background-color: @font-swatch7-background-color;
+		color: @font-swatch7-color;
+		.transition (all, 0.5s, ease);
+		&:hover {
+			background-color: @font-swatch7-background-color-hover;
+			padding: 12px 30px 12px 58px;
+			background-size: 30px;
+			background-position: 20px center;
+			.transition (all, 0.5s, ease);
+		}
+	}
+}
+
+
+
+// 8.5 Paypal
+// ----------
+
+
+.widget.paypalbuynow .widget.button.paypal {
+	padding-left: 48px;
+	background-image: image('/images/paypal-icon.svg');
+	background-size: 28px;
+	background-repeat: no-repeat;
+	background-position: 24px center;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+
+.ecom-product-go-to-checkout-btn,
+.ecom-product .btn {
+	padding: 10px 22px 10px 22px;
+}
+
+
+
+
+// -----------------------------
+// 9.  #CONTACT FORM
+// -----------------------------
+
+
+.widget.contactform {
+	form {
+		fieldset {
+			label {
+				font-family: @font-swatch5-font-family;
+				font-size: @font-swatch5-font-size;
+				font-weight: @font-swatch5-font-weight;
+				line-height: @font-swatch5-line-height;
+				color: @font-swatch5-color;
+				letter-spacing: @font-swatch5-letter-spacing;
+				margin-bottom: .4em;
+				padding: 0;
+			}
+			button {
+				float: right;
+			}
+		}
+	}
+}
+
+
+// -------------------------------
+// 10.  #SIGNUP FORM
+// -------------------------------
+
+
+
+
+.widget.signupform {
+	margin-bottom: 20px;
+	fieldset {
+		label {
+			font-family:@font-swatch5-font-family;
+			font-size:@font-swatch5-font-size;
+			font-weight:@font-swatch5-font-weight;
+			line-height:@font-swatch5-line-height;
+			color: @font-swatch5-color;
+			letter-spacing: @font-swatch5-letter-spacing;
+		}
+		input {
+			height: 52px;
+			width: 100%;
+			margin-bottom: 0;
+		}
+		button {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+}
+
+
+
+
+// -----------------------------
+// 11.  #SOCIAL ICONS
+// -----------------------------
+
+
+.widget.socialicons,
+.widget.profile .bk-profile-socialicons {
+	span {
+		display: inline-block;
+		a {
+			background-size: 32px;
+			background-color: transparent;
+			border: 2px solid @spare-color;
+			margin: 0 5px;
+			width: 36px;
+			height: 36px;
+			.border-radius(50%);
+			.transition (all, 0.5s, ease);
+			&:hover {
+				background-color: @button-color;
+				.transition (all, 0.5s, ease);
+			}
+			@media @mobile {
+				margin: 0 2px;
+			}
+		}
+	}
+}
+
+// Nav Bar Icons
+// -------------
+
+.bk-nav {
+	.widget.profile {
+		position: absolute;
+		right: 30px;
+		top: 50%;
+		transform: translate(0, -50%);
+		.bk-profile-socialicons {
+			span {
+				a {
+					background-color: transparent;
+					border: none;
+					&:hover {
+						background-color: fade(@button-color, 20%);
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// SVG Icons
+// ---------
+
+.svg .widget.socialicons span.bk-socialicons-twitter a,
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
+	background-image: image('/images/social/socialicons-twitter-hover.svg');
+}
+
+.svg .widget.socialicons span.bk-socialicons-linkedin a,
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
+	background-image: image('/images/social/socialicons-linkedin-hover.svg')
+}
+
+.svg .widget.socialicons span.bk-socialicons-facebook a,
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
+	background-image: image('/images/social/socialicons-facebook-hover.svg')
+}
+
+.svg .widget.socialicons span.bk-socialicons-rss a,
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
+	background-image: image('/images/social/socialicons-rss-hover.svg')
+}
+
+.svg .widget.socialicons span.bk-socialicons-googleplus a,
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
+	background-image: image('/images/social/socialicons-googleplus-hover.svg')
+}
+
+.svg .widget.socialicons span.bk-socialicons-youtube a,
+.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
+	background-image: image('/images/social/socialicons-youtube-hover.svg')
+}
+
+// PNG Icons
+// ---------
+
+.widget.socialicons span.bk-socialicons-twitter a,
+.widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
+	background-image: image('/images/social/socialicons-twitter.png');
+}
+
+.widget.socialicons span.bk-socialicons-linkedin a,
+.widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
+	background-image: image('/images/social/socialicons-linkedin.png')
+}
+
+.widget.socialicons span.bk-socialicons-facebook a,
+.widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
+	background-image: image('/images/social/socialicons-facebook.png')
+}
+
+.widget.socialicons span.bk-socialicons-rss a,
+.widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
+	background-image: image('/images/social/socialicons-rss.png')
+}
+
+.widget.socialicons span.bk-socialicons-googleplus a,
+.widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
+	background-image: image('/images/social/socialicons-googleplus.png')
+}
+
+.widget.socialicons span.bk-socialicons-youtube a,
+.widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
+	background-image: image('/images/social/socialicons-youtube.png')
+}
+
+
+
+// BK-NAV SVG Icons
+// ----------------
+
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
+	background-image: image('/images/social/socialicons-twitter.svg');
+}
+
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
+	background-image: image('/images/social/socialicons-linkedin.svg')
+}
+
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
+	background-image: image('/images/social/socialicons-facebook.svg')
+}
+
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
+	background-image: image('/images/social/socialicons-rss.svg')
+}
+
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
+	background-image: image('/images/social/socialicons-googleplus.svg')
+}
+
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
+	background-image: image('/images/social/socialicons-youtube.svg')
+}
+
+
+
+
+// -----------------------------
+// 12. #TWITER FEED
+// -----------------------------
+
+
+
+.widget.twitter ul li {
+	padding: 30px;
+	margin-bottom: 10px;
+	border: 1px solid @contrast-color;
+}
+
+.widget.twitter .twitter-profile-pic {
+	max-width: 80px;
+}
+
+.widget.twitter .twitter-content p {
+	padding: 0;
+}
+
+.widget.twitter .twitter-content time, .widget.twitter .twitter-content span, .widget.twitter .twitter-content span a {
+	font-family: @font-swatch5-font-family;
+	font-size: bkscale(@font-swatch5-font-size,0.9);
+}
+
+.widget.twitter .twitter-content span.bk-full-name {
+	font-family: @font-swatch4-font-family;
+	color: @font-swatch4-color;
+	font-size: @font-swatch4-font-size;
+}
+
+.widget.twitter .twitter-content span a {
+	color: @color-swatch3;
+	text-decoration: none;
+}
+
+
+
+// -----------------------------
+// 13. #DIVIDER - LINE WIDGET
+// -----------------------------
+
+
+.widget.line {
+	padding: 20px 0;
+}
+
+hr.line {
+	background-color: @contrast-color;
+	margin: 1em 0;
+}
+
+
+
+// -----------------------------
+// 14. #PROFILE
+// -----------------------------
+
+
+
+.widget.profile {
+	form {
+		fieldset {
+			input {
+				width: 100%;
+				height: 52px;
+			}
+			button {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

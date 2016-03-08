@@ -1,0 +1,46 @@
+@import "@{templateCommon}/basekit-bootstrap.less";
+@import "@{templateLocal}/less/theme.less";
+@import "@{templateLocal}/less/widgets.less";
+@import "@{templateLocal}/less/plugins.less";
+
+
+
+// -----------------------------
+// 1. #Page Settings
+// -----------------------------
+
+
+// Page Container
+// --------------
+
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+.main {
+	padding: 40px 0;
+}
+
+
+
+// -----------------------------
+// 3. #Mixins
+// -----------------------------
+
+
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.transition (@prop: all, @time: 0.5s, @ease: ease) {
+	-webkit-transition: @prop @time @ease;
+	-moz-transition:    @prop @time @ease;
+	-ms-transition:     @prop @time @ease;
+	-o-transition:      @prop @time @ease;
+	transition:         @prop @time @ease;
+}

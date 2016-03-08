@@ -1,0 +1,50 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+
+<nav class="bk-nav">
+	<div class="clearfix">
+		{{widget('extendednavigation', 'navigationheader', {"align":"left"})|raw}}
+		{{widget('profile', 'navigationicons', { 'profileType' : 'socialicons' })|raw}}
+	</div>
+</nav>
+
+
+
+<header class="bk-header container">
+	<div class="clearfix">
+		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+		{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+	</div>
+</header>
+
+
+<section class="bk-section container">
+	{{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"Nullam Posuer","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
+</section>
+
+
+<div class="main container clearfix">
+	{{zone('main')|raw}}
+</div>
+
+
+<footer class="bk-footer">
+	<div class="container clearfix">
+		<div class="responsivecolumns columns-two-50-50">
+		   <div class="column columns-two-left">
+				{{widget('content', 'footercolumn1content1', {"content":"<h3>Lorem Ipsum Dolor</h3>"})|raw}}
+				{{widget('profile', 'footercolumn2profileaddress', { 'profileType':'address', 'address':'profile'})|raw}}
+		   </div>
+		   <div class="column columns-two-right">
+				{{widget('content', 'footercolumn2content1', {"content":"<h3>Pulvinar Vitae</h3>"})|raw}}
+				{{widget('profile', 'footercolumn2profileemail', { 'profileType':'email', 'email':'profile'})|raw}}
+				{{widget('profile', 'footercolumn2profilephone', { 'profileType':'phone', 'phone':'profile'})|raw}}
+		   </div>
+		</div>
+	</div>
+</footer>
+
+
+{% endblock %}

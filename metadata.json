@@ -1,0 +1,146 @@
+{
+	"name":"Heroic",
+	"thumbnail":"thumbnail.png",
+	"screenshot":"screenshot.png",
+	"templateType":"standard",
+	"pageTypes":["home"],
+	"tags": {
+	"en": ["minimal", "clean", "blog", "photography", "modern", "unique", "flexible", "open", "simple", "news", "sans-serif"]
+	},
+	"colorSwatches":
+	{
+		"Swatch 1": {
+			"color1":"#ffffff",
+			"color2":"#e6dace",
+			"color3":"#a67b52",
+			"color4":"#191a1c",
+			"color5":"#56565a",
+			"color6":"#ffffff",
+			"color7":"#191a1c"
+		},
+		"Swatch 2": {
+			"color1":"#ffffff",
+			"color2":"#efefee",
+			"color3":"#C9B6A9",
+			"color4":"#777470",
+			"color5":"#313131",
+			"color6":"#313131",
+			"color7":"#d1cdc7"
+		},
+		"Swatch 3": {
+			"color1":"#ffffff",
+			"color2":"#efefee",
+			"color3":"#B6D8D4",
+			"color4":"#777470",
+			"color5":"#313131",
+			"color6":"#313131",
+			"color7":"#d1cdc7"
+		},
+		"Swatch 4": {
+			"color1":"#ffffff",
+			"color2":"#efefee",
+			"color3":"#E0C3C3",
+			"color4":"#777470",
+			"color5":"#313131",
+			"color6":"#313131",
+			"color7":"#d1cdc7"
+		},
+		"Swatch 5": {
+			"color1":"#ffffff",
+			"color2":"#efefee",
+			"color3":"#CBC1CE",
+			"color4":"#777470",
+			"color5":"#313131",
+			"color6":"#313131",
+			"color7":"#d1cdc7"
+		}
+	},
+	"fontSwatch": {
+	   "title": "Montserrat",
+		"font1": {
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-size": "30px",
+			"font-weight": "400",
+			"line-height": "40px",
+			"color": "@color-swatch4",
+			"letter-spacing": "inherit"
+		},
+		"font2": {
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-size": "24px",
+			"font-weight": "inherit",
+			"line-height": "36px",
+			"color": "@color-swatch4",
+			"letter-spacing": "inherit"
+		},
+		"font3": {
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-size": "20px",
+			"font-weight": "inherit",
+			"line-height": "32px",
+			"color": "@color-swatch4",
+			"letter-spacing": "inherit"
+		},
+		"font4": {
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-size": "17px",
+			"font-weight": "inherit",
+			"line-height": "28px",
+			"color": "@color-swatch4",
+			"letter-spacing": "inherit"
+		},
+		"font5": {
+			"font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+			"font-size": "14px",
+			"font-weight": "400",
+			"line-height": "24px",
+			"color": "@color-swatch5",
+			"letter-spacing": "inherit"
+		},
+		"font6": {
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-size": "13px",
+			"font-weight": "400",
+			"line-height": "28px",
+			"color": "@color-swatch6",
+			"color-hover": "@color-swatch3",
+			"letter-spacing": "inherit",
+			"background-color": "@color-swatch7",
+			"background-color-hover": "@color-swatch7"
+		},
+		"font7": {
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-size": "14px",
+			"font-weight": "400",
+			"line-height": "24px",
+			"color": "@color-swatch7",
+			"letter-spacing": "inherit",
+			"background-color": "transparent",
+			"background-color-hover": "@color-swatch3"
+		},
+		"font8": {
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-size": "36px",
+			"font-weight": "400",
+			"line-height": "40px",
+			"color": "@color-swatch1",
+			"letter-spacing": "inherit"
+		},
+		"font9": {
+			"font-family": "\"Lato\", Geneva, Tahoma, sans-serif",
+			"font-size": "14px",
+			"font-weight": "400",
+			"line-height": "34px",
+			"color": "@color-swatch1",
+			"letter-spacing": "inherit"
+		},
+		"font10": {
+			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+			"font-size": "16px",
+			"font-weight": "700",
+			"line-height": "40px",
+			"color": "@color-swatch4",
+			"letter-spacing": "inherit"
+		}
+	}
+}
