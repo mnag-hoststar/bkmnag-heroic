@@ -32,16 +32,11 @@
 
 <footer class="bk-footer">
 	<div class="container clearfix">
-		<div class="responsivecolumns columns-two-50-50">
-		   <div class="column columns-two-left">
-				{{widget('content', 'footercolumn1content1', {"content":"<h3>Lorem Ipsum Dolor</h3>"})|raw}}
-				{{widget('profile', 'footercolumn2profileaddress', { 'profileType':'address', 'address':'profile'})|raw}}
-		   </div>
-		   <div class="column columns-two-right">
-				{{widget('content', 'footercolumn2content1', {"content":"<h3>Pulvinar Vitae</h3>"})|raw}}
-				{{widget('profile', 'footercolumn2profileemail', { 'profileType':'email', 'email':'profile'})|raw}}
-				{{widget('profile', 'footercolumn2profilephone', { 'profileType':'phone', 'phone':'profile'})|raw}}
-		   </div>
+		<div class="footerleft">
+		{{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+		</div>
+		<div class="footerright">
+		{{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
 		</div>
 	</div>
 </footer>

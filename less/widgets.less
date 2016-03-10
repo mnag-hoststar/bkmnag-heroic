@@ -184,13 +184,16 @@
 		width: 100%;
 		display: none;
 		margin: 0;
-		padding: 40px 40px 60px;
+		padding: 40px 40px 50px;
 	}
 
 	.widget.extendednavigation ul li {
 		border-bottom: 1px solid fade(@nav-color, 10%);
 		width: 100%;
 		padding: 10px 0;
+		&:first-child {
+			margin-top: 30px;
+		}
 	}
 
 	.widget .extendednavigation ul li.folder ul li {
@@ -738,11 +741,11 @@ button.btn,
 }
 
 
+
+
 // -------------------------------
 // 10.  #SIGNUP FORM
 // -------------------------------
-
-
 
 
 .widget.signupform {
@@ -835,27 +838,27 @@ button.btn,
 
 .svg .widget.socialicons span.bk-socialicons-linkedin a,
 .svg .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
-	background-image: image('/images/social/socialicons-linkedin-hover.svg')
+	background-image: image('/images/social/socialicons-linkedin-hover.svg');
 }
 
 .svg .widget.socialicons span.bk-socialicons-facebook a,
 .svg .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
-	background-image: image('/images/social/socialicons-facebook-hover.svg')
+	background-image: image('/images/social/socialicons-facebook-hover.svg');
 }
 
 .svg .widget.socialicons span.bk-socialicons-rss a,
 .svg .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
-	background-image: image('/images/social/socialicons-rss-hover.svg')
+	background-image: image('/images/social/socialicons-rss-hover.svg');
 }
 
 .svg .widget.socialicons span.bk-socialicons-googleplus a,
 .svg .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
-	background-image: image('/images/social/socialicons-googleplus-hover.svg')
+	background-image: image('/images/social/socialicons-googleplus-hover.svg');
 }
 
 .svg .widget.socialicons span.bk-socialicons-youtube a,
 .svg .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
-	background-image: image('/images/social/socialicons-youtube-hover.svg')
+	background-image: image('/images/social/socialicons-youtube-hover.svg');
 }
 
 // PNG Icons
@@ -868,56 +871,62 @@ button.btn,
 
 .widget.socialicons span.bk-socialicons-linkedin a,
 .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
-	background-image: image('/images/social/socialicons-linkedin.png')
+	background-image: image('/images/social/socialicons-linkedin.png');
 }
 
 .widget.socialicons span.bk-socialicons-facebook a,
 .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
-	background-image: image('/images/social/socialicons-facebook.png')
+	background-image: image('/images/social/socialicons-facebook.png');
 }
 
 .widget.socialicons span.bk-socialicons-rss a,
 .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
-	background-image: image('/images/social/socialicons-rss.png')
+	background-image: image('/images/social/socialicons-rss.png');
 }
 
 .widget.socialicons span.bk-socialicons-googleplus a,
 .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
-	background-image: image('/images/social/socialicons-googleplus.png')
+	background-image: image('/images/social/socialicons-googleplus.png');
 }
 
 .widget.socialicons span.bk-socialicons-youtube a,
 .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
-	background-image: image('/images/social/socialicons-youtube.png')
+	background-image: image('/images/social/socialicons-youtube.png');
 }
 
 
 
-// BK-NAV SVG Icons
-// ----------------
+// BK-NAV & FOOTER SVG Icons
+// -------------------------
 
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a,
+.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
 	background-image: image('/images/social/socialicons-twitter.svg');
 }
 
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
-	background-image: image('/images/social/socialicons-linkedin.svg')
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a,
+.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
+	background-image: image('/images/social/socialicons-linkedin.svg');
 }
 
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
-	background-image: image('/images/social/socialicons-facebook.svg')
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a,
+.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
+	background-image: image('/images/social/socialicons-facebook.svg');
 }
 
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
-	background-image: image('/images/social/socialicons-rss.svg')
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a,
+.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
+	background-image: image('/images/social/socialicons-rss.svg');
 }
 
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
-	background-image: image('/images/social/socialicons-googleplus.svg')
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a,
+.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
+	background-image: image('/images/social/socialicons-googleplus.svg');
 }
 
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
-	background-image: image('/images/social/socialicons-youtube.svg')
+.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a,
+.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
+	background-image: image('/images/social/socialicons-youtube.svg');
 }
 
 
@@ -928,35 +937,40 @@ button.btn,
 // -----------------------------
 
 
-
-.widget.twitter ul li {
-	padding: 30px;
-	margin-bottom: 10px;
-	border: 1px solid @contrast-color;
-}
-
-.widget.twitter .twitter-profile-pic {
-	max-width: 80px;
-}
-
-.widget.twitter .twitter-content p {
-	padding: 0;
-}
-
-.widget.twitter .twitter-content time, .widget.twitter .twitter-content span, .widget.twitter .twitter-content span a {
-	font-family: @font-swatch5-font-family;
-	font-size: bkscale(@font-swatch5-font-size,0.9);
-}
-
-.widget.twitter .twitter-content span.bk-full-name {
-	font-family: @font-swatch4-font-family;
-	color: @font-swatch4-color;
-	font-size: @font-swatch4-font-size;
-}
-
-.widget.twitter .twitter-content span a {
-	color: @color-swatch3;
-	text-decoration: none;
+.widget.twitter {
+	margin-bottom: 2em;
+	ul {
+		li {
+			padding: 30px;
+			margin-bottom: 1em;
+			border: 1px solid @contrast-color;
+		}
+	}
+	.twitter-profile-pic {
+		max-width: 80px;
+		@media @mobile {
+			display: none;
+		}
+	}
+	.twitter-content {
+		p {
+			padding: 0;
+		}
+		time, span, span a {
+			font-family: @font-swatch5-font-family;
+			font-size: bkscale(@font-swatch5-font-size,0.9);
+		}
+		span.bk-full-name {
+			font-family: @font-swatch4-font-family;
+			color: @font-swatch4-color;
+			font-size: @font-swatch5-font-size;
+			text-transform: uppercase;
+		}
+		span a {
+			color: @color-swatch3;
+			text-decoration: none;
+		}
+	}
 }
 
 
@@ -985,6 +999,7 @@ hr.line {
 
 .widget.profile {
 	form {
+		margin: 0;
 		fieldset {
 			input {
 				width: 100%;
@@ -1002,10 +1017,15 @@ hr.line {
 
 
 
+// -----------------------------
+// 15. #MAP
+// -----------------------------
 
 
-
-
+.widget.map {
+	border: 1px solid @contrast-color;
+	margin-bottom: 2em;
+}
 
 
 

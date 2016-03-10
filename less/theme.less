@@ -146,19 +146,32 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 // -----------------------------
 
 .bk-footer {
-	background-color: @color-swatch7;
+	background-color: @spare-color;
+	color: lighten(@paragraph-color, 10%);
 	padding: 2em 0;
-	margin-top: 3em;
-	color: @color-swatch6;
-	text-align: left;
+	.widget.profile {
+		.bk-profile-socialicons {
+			margin: 0;
+		}
+	}
+}
+
+.footerright, .footerleft {
+	display: inline-block;
+	vertical-align: middle;
+	width: 49.5%;
+}
+
+.footerright {
+	text-align: right;
 }
 
 .bk-footer h1,
 .bk-footer h2,
 .bk-footer h3,
 .bk-footer h4 {
-	color: @color-swatch6;
-	padding-bottom: 20px;
+	color: @nav-color;
+	padding-bottom: 1em;
 }
 
 
@@ -228,127 +241,6 @@ select {
 	padding-right: 33px;
 }
 
-
-/* ===============================
-   PROFILE WIDGET
-   =============================== */
-
-.widget.profile {
-
-}
-
-
-.widget.profile span,
-.widget.profile a {
-	display: block;
-	font-size: bkscale(@font-swatch5-font-size,1.1);
-	font-family: @font-swatch5-font-family;
-	color: @font-swatch5-color;
-	line-height: @font-swatch5-line-height;
-	font-weight: @font-swatch5-font-weight;
-}
-
-.widget.profile a:hover {
-	color: @color-swatch3;
-	text-decoration: none;
-}
-
-/* FOOTER PROFILE - twitter in profile widget*/
-/*  LATEST TWEET IN FOOTER */
-
-.widget.profile .twitter a {
-   display: inline;
-   color: @color-swatch4;
-   font-size:@font-swatch5-font-size;
-   text-decoration: none;
-}
-
-.widget.profile .twitter a:hover {
-	color: @color-swatch6;
-	text-decoration: underline;
-}
-
-.widget.profile .twitter {
-	padding: 0;
-	margin: 0;
-}
-
-.widget.profile .twitter li {
-	border-bottom: none;
-	list-style: none;
-	font-family: @font-swatch5-font-family;
-	font-size: @font-swatch5-font-size;
-	color: @font-swatch5-color;
-	padding: 0;
-	border-bottom: none;
-}
-
-.widget.profile .twitter .twitter-profile-pic {
-	margin: 5px 20px 0;
-	background-image: image('/images/twitter-img.png');
-	background-position: right center;
-	background-repeat: no-repeat;
-	text-indent: -20000px;
-	width: 45px;
-	height: 37px;
-	float: left;
-	margin-right: 15px;
-}
-
-.widget.profile .twitter a img {
-  border-radius: 30px;
-	-webkit-border-radius: 30px;
-	-moz-border-radius:  30px;
-	border-radius: 30px;
-}
-
-.widget.profile .twitter .twitter-content span.bk-full-name {
-	font-family: @font-swatch4-font-family;
-	color: @color-swatch6;
-	font-size: @font-swatch5-font-size;
-}
-
-.widget.profile .twitter .twitter-content a:hover {
-  text-decoration: underline;
-  color: @color-swatch6;
-}
-
-.widget.profile .twitter time, .widget.profile .twitter span, .widget.profile .twitter span a {
-color: @color-swatch5;
-}
-
-.bk-footer .widget.profile .twitter span {
-  display: inline;
-}
-
-
-/* ===============================
-   LINKED IN
-   =============================== */
-
-.container-outer .li-profile-container {
-  padding: 0;
-  margin: 0;
-
-}
-
-.no-profile {
-  font-family:@font-swatch5-font-family;
-  font-size:@font-swatch5-font-size;
-  font-weight: @font-swatch5-font-weight;
-  line-height:@font-swatch5-line-height;
-  color:@font-swatch5-color;
-  letter-spacing: @font-swatch5-letter-spacing;
-
-}
-
-/* ===============================
-   MAP WIDGET
-   =============================== */
-
-.widget.map {
-  border: 1px solid #dddddd;
-}
 
 
 /* ===============================
@@ -437,109 +329,6 @@ color: @color-swatch5;
 
 
 
-/* ===============================
-   IPAD WIDTH
-   =============================== */
-
-@media only screen and (max-width: 768px) {
-
-	.widget .extendednavigation ul li:first-child {
-	  margin-top:40px;
-	}
-
-	.widget .extendednavigation ul li.folder ul li {
-	  margin-top:0;
-	}
-
-	.widget .extendednavigation ul.align-right li.folder:after {
-	  left: 5px;
-	  right: inherit;
-  }
-
-}
-
-/* ===============================
-   IPHONE WIDTH
-   =============================== */
-
-@media only screen and (max-width: 480px) {
-
-	
-	// FORMS
-	
-	form {
-		input[type=search] {
-			margin-bottom: 10px;
-		}
-		button {
-			margin: 0;
-		}
-	}
-	.bk-footer {
-		padding: 2.5em 0 0;
-	}
-
-	.bk-footer h1, .bk-footer h2, .bk-footer h3, .bk-footer h4 {
-		padding-bottom: 20px;
-	}
-
-	.bk-footer .footer2 {
-		padding: 2em 0;
-		margin-top: 3em;
-	}
-
-	.bk-footer .footer2 .columns-two-right {
-		text-align: left;
-	}
-
-
-	.widget.companyname a {
-	  font-size: bkscale(@font-swatch10-font-size,0.8);
-	}
-
-	.widget.twitter ul li,
-	.widget.twitter ul li:last-child {
-		padding: 5px 16px;
-	}
-	.widget.twitter .twitter-profile-pic {
-		display: none;
-	}
-	
-	// Ecommerce
-	
-	.basket-summary-items-table {
-		td, .basket-summary-subtotal {
-			padding: 10px;
-		}
-		.image-wrap {
-			padding: 0;
-		}
-	}
-	.basket-summary-items-table {
-		td, th {
-			float: left;
-			width: 100%;
-			padding: 0 0 5px;
-		}
-	}
-	.basket-summary-items-table .image-wrap {
-		padding-top: 5px;
-	}
-	.basket-summary-amount-column,
-	.basket-summary-details-column {
-		display: none;
-	}
-	.basket-summary-items-column {
-		text-align: left;
-	}
-	.basket-summary-amount {
-		text-align: right;
-	}
-	.basket-summary-subtotal {
-		padding: 0 0 10px;
-		text-align: left;
-	}
-}
 
 
 // Clearfix
