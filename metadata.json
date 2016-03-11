@@ -7,6 +7,9 @@
 	"tags": {
 	"en": ["minimal", "clean", "blog", "photography", "modern", "unique", "flexible", "open", "simple", "news", "sans-serif"]
 	},
+	"images": [
+		"images/feature-bg.jpg",
+	],
 	"colorSwatches":
 	{
 		"Swatch 1": {
