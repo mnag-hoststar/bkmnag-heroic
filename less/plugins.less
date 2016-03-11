@@ -368,6 +368,10 @@
 				padding-right: 0;
 				margin-bottom: 1em;
 			}
+			.ecom-product-add-to-cart-btn span {
+				position: relative;
+				top: -2px;
+			}
 		}
 		.ecom-product-go-to-checkout-btn-wrapper {
 			width: 35%;
@@ -381,6 +385,7 @@
 			display: table-cell;
 			margin: 0;
 			width: 100%;
+			height: 52px;
 		}
 		.ecom-product-go-to-checkout-btn-wrapper a {
 			display: block;
@@ -430,15 +435,64 @@
 }
 
 
+
+// Basket 
+// ------
+
+.widget.ecombasket {
+	margin-bottom: 2em;
+	.ecombasket-pull {
+		width: auto;
+		max-width: 200px;
+		height: 52px;
+		p {
+			font-family: @font-swatch7-font-family;
+			font-size: @font-swatch7-font-size;
+			text-transform: uppercase;
+			position: relative;
+			top: -2px;
+		}
+	}
+	.ecombasket-list-container {
+		ul {
+			li {
+				border-bottom: 1px solid @contrast-color;
+				.ecombasket-item-image {
+					width: 85px;
+				}
+				.ecombasket-item-info {
+					.ecombasket-item-title {
+						font-family: @font-swatch4-font-family;
+						font-size: @font-swatch4-font-size;
+						text-transform: uppercase;
+						letter-spacing: .1em;
+					}
+					.ecombasket-remove-button {
+						line-height: 10px;
+						padding: 10px 20px;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.svg .widget.ecombasket .ecombasket-pull p:before,
+.widget.ecomproduct .ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
+	background-image: image('/images/basket.svg');
+	background-size: 100%;
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 4px;
+}
+
 .basket-summary-empty-cta,
 .ecombasket-summary-link {
 	display: inline-block;
 }
 
-.widget.ecombasket .ecombasket-pull {
-	width: auto;
-	max-width: 200px;
-}
 
 
 
