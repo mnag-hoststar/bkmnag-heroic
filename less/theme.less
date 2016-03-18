@@ -219,6 +219,9 @@ select,
 	border: 1px solid @contrast-color;
 	margin-bottom: 1em;
 	.transition (all, 0.5s, ease);
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
 	&:focus,
 	&:hover {
 		.transition (all, 0.5s, ease);
@@ -242,9 +245,6 @@ label {
 select {
 	cursor: pointer;
 	position: relative;
-	appearance: none;
-	-moz-appearance: none;
-	-webkit-appearance: none;
 	border-radius: 0;
 	background: image('/images/arrow-small-down.svg') no-repeat 98% center;
 	background-size: 24px;

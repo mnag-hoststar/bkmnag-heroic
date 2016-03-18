@@ -77,18 +77,19 @@
 
 .widget.extendednavigation {
 	position: absolute;
-	left: 30px;
+	left: 50%;
 	top: 50%;
-	transform: translate(0, -50%);
+	transform: translate(-50%, -50%);
 	background-color: @spare-color;
+	width: 100%;
 	ul {
 		margin: 0 auto;
 		padding: 0;
 		display: block;
 		li {
 			a {
-				padding: 0;
-				margin-right: 40px;
+				padding: 10px 30px;
+				margin: 0;
 				text-transform: uppercase;
 				letter-spacing: .1em;
 				.transition (all, 0.5s, ease);
@@ -99,14 +100,16 @@
 				display: none;
 			}
 			&:hover {
+				.transition (all, 0.5s, ease);
 				ul {
 					display: block;
 					position: absolute;
 					width: auto;
 					background-color: darken(@color-swatch7, 20%);
 					z-index: 500;
-					padding: 0;
+					padding: 20px;
 					margin: 0;
+					.transition (all, 0.5s, ease);
 					li {
 						display: block;
 						width: 100%;
@@ -117,10 +120,13 @@
 						a {
 							display: block;
 							color: @color-swatch3;
-							padding: 10px 20px;
-							margin-right: 0;
+							padding: 0;
+							margin: 0;
 							letter-spacing: .1em;
 							.transition (all, 0.5s, ease);
+							span {
+								padding: 0;
+							}
 						}
 					}
 				}
@@ -129,13 +135,13 @@
 				.text {
 					.transition (all, 0.5s, ease);
 					display: block;
-					padding: 0;
-					margin-right: 40px;
+					padding: 10px 30px;
+					margin: 0;
 					text-transform: uppercase;
 				}
 				&:after {
-					right: 20px;
-					top: 47%;
+					right: 10px;
+					top: 22px;
 				}
 			}
 		}
@@ -169,7 +175,9 @@
 
 	.widget .extendednavigation a.pull {
 		top: 10px;
-		left: 30px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 30px;
 		&:after {
 			top: 10px;
 			left: 0;
@@ -190,7 +198,7 @@
 	.widget.extendednavigation ul li {
 		border-bottom: 1px solid fade(@color-swatch6, 10%);
 		width: 100%;
-		padding: 10px 0;
+		padding: 0;
 		&:first-child {
 			margin-top: 30px;
 		}
@@ -208,9 +216,9 @@
 	.widget.extendednavigation ul li:hover > ul {
 		display: block !important;
 		width: 100%;
-		position: absolute;
+		position: relative;
 		z-index: 500;
-		margin-top: 0;
+		padding: 0;
 		background-color: darken(@color-swatch7, 20%);
 	}
 
