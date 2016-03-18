@@ -70,10 +70,10 @@ body {
 }
 
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
 	text-transform: uppercase;
 	letter-spacing: .1em;
-	padding-bottom: .5em;
+	padding-bottom: .75em;
 }
 
 
@@ -86,9 +86,28 @@ h5 {
 	letter-spacing: @font-swatch4-letter-spacing;
 }
 
+h6 {
+	font-family: @font-swatch4-font-family;
+	font-size: bkscale(@font-swatch5-font-size, 0.75);
+	font-weight: @font-swatch5-font-weight;
+	line-height: bkscale(@font-swatch5-line-height, 0.75);
+	color: @font-swatch4-color;
+	letter-spacing: @font-swatch4-letter-spacing;
+	font-style: normal;
+}
+
+p {
+	padding-bottom: .75em;
+}
+
+ul, ol {
+	padding: 0 0 .5em 2em;
+}
+
 blockquote {
 	border: 1px solid @contrast-color;
 	padding: 30px;
+	margin: 0;
 	font-style: italic;
 	&:before {
 		display: none;
@@ -150,6 +169,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	color: lighten(@paragraph-color, 10%);
 	padding: 2em 0;
 	.widget.profile {
+		margin: 0;
 		.bk-profile-socialicons {
 			margin: 0;
 		}
@@ -186,6 +206,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 .widget.content {
 	padding: 0;
 	overflow: hidden;
+	margin-bottom: 40px;
 }
 
 .widget.content span.expand {
@@ -249,65 +270,6 @@ select {
 	background: image('/images/arrow-small-down.svg') no-repeat 98% center;
 	background-size: 24px;
 }
-
-
-
-/* ===============================
-   ECOM
-   =============================== */
-
-
-
-
-// Basket Summary
-.basket-summary-items-table {
-	border-collapse: collapse;
-	width: 100%;
-	.image-wrap {
-		background-position: 10000px;
-		line-height: 0;
-		text-align: center;
-		padding: 30px;
-		img {
-			max-width: 100%;
-			max-height: 200px;
-		}
-	}
-	td {
-		padding: 10px 0;
-	}
-	tr {
-		border-bottom: solid 1px darken(@color-swatch1, 10%);
-		&:last-of-type {
-			border-bottom: none;
-		}
-	}
-	.basket-summary-subtotal {
-		padding: 20px;
-	}
-}
-
-.basket-summary-amount,
-.basket-summary-subtotal {
-	text-align: center;
-}
-
-.basket-summary-quantitybtn {
-	button.btn {
-		padding: 7px 18px;
-	}
-}
-
-.basket-summary-items-column {
-	width: 30%;
-}
-
-.quantity-number {
-	display: inline-block;
-	min-width: 40px;
-	text-align: center;
-}
-
 
 
 

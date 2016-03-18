@@ -33,7 +33,8 @@
 // 13.   #DIVIDER (KEYLINE)
 // 14.   #PROFILE
 // 15.   #MAP
-// 16.   #YELP
+// 16.   #YOUTUBE
+// 17.   #YELP, SOUNDCLOUD ...
 
 
 // -----------------------------
@@ -394,6 +395,9 @@
 // 5. #IMAGE WIDGET
 // -----------------------------
 
+.widget.image {
+	margin-bottom: 40px;
+}
 
 .widget.image span.image-title {
 	margin: 10px 0 0;
@@ -425,7 +429,7 @@
 
 
 .widget.gallery {
-	margin-bottom: 2em;
+	margin-bottom: 40px;
 	.gallery-widget {
 		position: relative;
 		width: 100%;
@@ -504,6 +508,7 @@
 
 
 .widget.responsiveslideshow {
+	margin-bottom: 40px;
 	.slideshow-widget {
 		.slideshow-image-list {
 		}
@@ -627,15 +632,19 @@ button.btn,
 // ---------
 
 
-.widget.tweet a {
-	padding-left: 58px;
-	background-image: image('/images/social/socialicons-twitter-hover.svg');
-	background-size: 36px;
-	background-repeat: no-repeat;
-	background-position: 20px center;
-	display: inline-block;
-	&:hover {
+.widget.tweet {
+	padding: 0;
+	a {
+		padding-left: 58px;
 		background-image: image('/images/social/socialicons-twitter-hover.svg');
+		background-size: 36px;
+		background-repeat: no-repeat;
+		background-position: 20px center;
+		display: inline-block;
+		margin: 0;
+		&:hover {
+			background-image: image('/images/social/socialicons-twitter-hover.svg');
+		}
 	}
 }
 
@@ -661,7 +670,7 @@ button.btn,
 
 
 .widget.clicktocall {
-	padding: 8px 0;
+	padding: 0;
 }
 
 .widget.clicktocall a {
@@ -716,6 +725,7 @@ button.btn,
 	background-position: 24px center;
 	text-decoration: none;
 	cursor: pointer;
+	margin: 0;
 }
 
 
@@ -726,6 +736,9 @@ button.btn,
 }
 
 
+.widget.button, .widget.paypalbuynow, .widget.tweet, .widget.dropbox, .widget.clicktocall {
+	margin: 0 0 40px;
+}
 
 
 // -----------------------------
@@ -734,8 +747,10 @@ button.btn,
 
 
 .widget.contactform {
+	margin-bottom: 40px;
 	form {
 		fieldset {
+			margin: 0;
 			label {
 				font-family: @font-swatch5-font-family;
 				font-size: @font-swatch5-font-size;
@@ -762,7 +777,7 @@ button.btn,
 
 
 .widget.signupform {
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	fieldset {
 		label {
 			font-family:@font-swatch5-font-family;
@@ -795,6 +810,7 @@ button.btn,
 
 .widget.socialicons,
 .widget.profile .bk-profile-socialicons {
+	margin: 0 0 40px;
 	span {
 		display: inline-block;
 		a {
@@ -951,7 +967,7 @@ button.btn,
 
 
 .widget.twitter {
-	margin-bottom: 2em;
+	margin-bottom: 40px;
 	ul {
 		li {
 			padding: 30px;
@@ -994,12 +1010,13 @@ button.btn,
 
 
 .widget.line {
-	padding: 20px 0;
+	padding: 0;
+	margin-bottom: 40px;
 }
 
 hr.line {
 	background-color: @contrast-color;
-	margin: 1em 0;
+	margin: 0;
 }
 
 
@@ -1011,12 +1028,14 @@ hr.line {
 
 
 .widget.profile {
+	margin-bottom: 40px;
 	form {
 		margin: 0;
 		fieldset {
 			input {
 				width: 100%;
 				height: 52px;
+				margin: 0;
 			}
 			button {
 				position: absolute;
@@ -1028,6 +1047,10 @@ hr.line {
 }
 
 
+.bk-profile-address p:after {
+	margin-left: 0;
+}
+
 
 
 // -----------------------------
@@ -1037,11 +1060,30 @@ hr.line {
 
 .widget.map {
 	border: 1px solid @contrast-color;
-	margin-bottom: 2em;
+	margin-bottom: 40px;
 }
 
 
 
 
+// -----------------------------
+// 16. #YOUTUBE
+// -----------------------------
 
+
+.widget.youtube {
+	margin-bottom: 40px;
+}
+
+
+
+// -----------------------------
+// 17. #YELP, SOUNDCLOUD ...
+// -----------------------------
+
+
+
+.widget.soundcloud, .widget.facebookcomments, .widget.donation, .widget.yelpreview {
+	margin-bottom: 40px;
+}
 

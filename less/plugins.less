@@ -20,6 +20,11 @@
 // -----------------------------
 
 
+
+.widget.blogpostlist, .widget.blogpost {
+	margin-bottom: 40px;
+}
+
 .blog-post-list {
 	width: 105%;
 	@media @tablet {
@@ -110,6 +115,7 @@
 
 
 .widget.blogsearch {
+	margin-bottom: 40px;
 	input {
 		height: 52px;
 		width: 100%;
@@ -136,8 +142,8 @@
 
 .widget.menusections {
 	text-align: center;
+	margin: 0 0 40px;
 	ul {
-		padding: 2em 0;
 		li {
 			a {
 				border: 1px solid @contrast-color;
@@ -154,6 +160,7 @@
 }
 
 .menu {
+	margin-bottom: 40px;
 	.menu-header {
 		text-align: center;
 		margin-bottom: 2em;
@@ -220,9 +227,11 @@
 	width: 103.333%;
 	max-width: none;
 	margin-left: 0;
+	margin-bottom: 40px;
 	.productlist-filter {
 	    margin-right: 3.333%;
 	    margin-left: 0;
+		margin-bottom: 40px;
 		.productlist-display-form {
 			text-align: right;
 			.form-group {
@@ -306,12 +315,12 @@
 
 
 .widget.ecomproduct {
-	margin-bottom: 3em;
+	margin-bottom: 40px;
 	.ecom-product {
 		.ecom-product-images-container {
 			width: 100%;
 			float: none;
-			margin-bottom: 3em;
+			margin-bottom: 40px;
 			margin-right: 0;
 		}
 		.ecom-product-preview-image-wrap,
@@ -448,7 +457,7 @@
 // ------
 
 .widget.ecombasket {
-	margin-bottom: 2em;
+	margin-bottom: 40px;
 	.ecombasket-pull {
 		width: auto;
 		max-width: 200px;
@@ -486,6 +495,66 @@
 	}
 }
 
+
+
+// Basket Summary
+// --------------
+
+
+.widget.ecombasketsummary {
+	margin-bottom: 40px;
+}
+
+.basket-summary-items-table {
+	border-collapse: collapse;
+	width: 100%;
+	.image-wrap {
+		background-position: 10000px;
+		line-height: 0;
+		text-align: center;
+		padding: 30px;
+		img {
+			max-width: 100%;
+			max-height: 200px;
+		}
+	}
+	td {
+		padding: 10px 0;
+	}
+	tr {
+		border-bottom: solid 1px darken(@color-swatch1, 10%);
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+	.basket-summary-subtotal {
+		padding: 20px;
+	}
+}
+
+.basket-summary-amount,
+.basket-summary-subtotal {
+	text-align: center;
+}
+
+.basket-summary-quantitybtn {
+	button.btn {
+		padding: 7px 18px;
+	}
+}
+
+.basket-summary-items-column {
+	width: 30%;
+}
+
+.quantity-number {
+	display: inline-block;
+	min-width: 40px;
+	text-align: center;
+}
+
+
+
 .svg .widget.ecombasket .ecombasket-pull p:before,
 .widget.ecomproduct .ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
 	background-image: image('/images/basket.svg');
@@ -500,6 +569,32 @@
 .ecombasket-summary-link {
 	display: inline-block;
 }
+
+
+
+// Categories List
+// ---------------
+
+
+.widget.ecomcategorieslist {
+	margin-bottom: 40px;
+}
+
+
+
+// Featured Products List
+// ----------------------
+
+
+.widget.ecomfeaturedproducts {
+	margin-bottom: 40px;
+}
+
+
+
+
+
+
 
 
 
