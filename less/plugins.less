@@ -79,6 +79,15 @@
 	}
 }
 
+.widget.blogpost {
+	h1.blog-post-title {
+		margin-bottom: 20px;
+	}
+	.blog-post-category {
+		margin-top: 10px;
+	}
+}
+
 .blog-post-tags li a, .blog-post-category a {
 	border: 1px solid @contrast-color;
 	border-radius: 20px;
@@ -96,14 +105,14 @@
 
 .blog-post-title-content-wrap, 
 .blog-post-metadata {
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 
 .blog-post-feature-image-wrap {
 	height: 200px;
 	background-size: cover;
 	background-position: center;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 	img {
 		display: none;
 	}
@@ -166,6 +175,11 @@
 		margin-bottom: 2em;
 	}
 	.menu-items {
+		h3.menu-item-name,
+		.menu-item-price,
+		.menu-item-description {
+			margin-bottom: 20px;
+		}
 		li {
 			padding: 2em 0;
 		}
@@ -178,14 +192,17 @@
 			font-family: @font-swatch4-font-family;
 			font-size: @font-swatch4-font-size;
 		}
-		h4.menu-item-nutritional-title {
+		h4.menu-item-nutritional-title,
+		.menu-item-nutritional-prop {
 			font-size: @font-swatch5-font-size;
+			margin-bottom: 10px;
 		}
 		.menu-section-item-dietary-props {
 			margin-top: 10px;
 		}
 		.dietary-icon {
 			padding: 2px 10px;
+			margin: 0 5px 0 0;
 			color: @button-color;
 			border: 1px solid @contrast-color;
 			font-size: bkscale(@font-swatch5-font-size,0.8);
@@ -285,6 +302,9 @@
 			margin-right: 0;
 		}
 	}
+	.ecom-productslist-title {
+		margin-bottom: 20px;
+	}
 	span.ecom-productlist-price {
 		border: 1px solid @contrast-color;
 		border-radius: 20px;
@@ -354,6 +374,9 @@
 			position: relative;
 			padding-right: 4%;
 			border-right: 1px solid @contrast-color;
+			.ecom-product-title, .ecom-product-price {
+				margin-bottom: 20px;
+			}
 		}
 		.ecom-product-long-description {
 			padding-left: 4%;
@@ -363,11 +386,12 @@
 			font-size: @font-swatch4-font-size;
 		}
 		.ecom-product-variation {
-			margin-bottom: 1em;
+			margin-bottom: 40px;
 			select {
 				appearance: none !important;
 				-moz-appearance: none !important;
 				-webkit-appearance: none !important;
+				margin: 0;
 			}
 		}
 		.ecom-product-add-to-cart-btn-wrapper,
@@ -409,7 +433,7 @@
 			padding: 12px;
 		}
 		.ecom-product-cattag {
-			margin: 1.5em 0 0;
+			margin: 40px 0 0;
 			line-height: 36px;
 		}
 		a.ecom-product-tag-link,
@@ -588,14 +612,13 @@
 
 .widget.ecomfeaturedproducts {
 	margin-bottom: 40px;
+	.ecom-featuredproducts-header {	
+		margin-bottom: 40px;
+	}
+	.ecom-featuredproducts-image-wrap {
+		margin-bottom: 20px;
+	}
 }
-
-
-
-
-
-
-
 
 
 
