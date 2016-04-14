@@ -165,13 +165,22 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 // -----------------------------
 
 .bk-footer {
-	background-color: @spare-color;
-	color: lighten(@paragraph-color, 10%);
-	padding: 2em 0;
+	color: @paragraph-color;
+	border-top: 1px solid lighten(@paragraph-color, 40%);
+	padding: 3em 0;
+	opacity: .25;
 	.widget.profile {
 		margin: 0;
 		.bk-profile-socialicons {
 			margin: 0;
+			span a {
+				background-color: transparent;
+				border-color: transparent;
+				&:hover {
+					background-color: transparent;
+					border-color: @spare-color;
+				}
+			}
 		}
 	}
 }
