@@ -40,6 +40,9 @@
 			width: 100%;
 			margin-right: 0;
 		}
+		.blog-post-feature-image-wrap {
+			height: 200px;
+		}
 		.blog-post-summary,
 		.blog-post-more-link,
 		.blog-post-date {
@@ -119,7 +122,7 @@
 }
 
 .blog-post-feature-image-wrap {
-	height: 200px;
+	height: 400px;
 	background-size: cover;
 	background-position: center;
 	margin-bottom: 40px;
@@ -357,15 +360,25 @@
 		.ecom-product-image-list {
 			display: table-cell;
 			vertical-align: middle;
+			@media @mobile {
+				display: block;
+			}
 		}
 		.ecom-product-preview-image-wrap {
-			width: 100%;
+			width: 85%;
+			@media @mobile {
+				width: 100%;
+			}
 		}
 		.ecom-product-image-list {
 			padding-left: 40px;
-			height: 400px;
 			li {
-				margin: 5px 0;
+				margin: 5px;
+				float: none;
+				display: inline-block;
+			}
+			@media @mobile {
+				padding-left: 0;
 			}
 		}
 		.ecom-product-info,
