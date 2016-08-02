@@ -77,10 +77,6 @@
 
 
 .widget.extendednavigation {
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
 	background-color: @spare-color;
 	width: 100%;
 	ul {
@@ -89,7 +85,7 @@
 		display: block;
 		li {
 			a {
-				padding: 10px 30px;
+				padding: 16px 30px;
 				margin: 0;
 				text-transform: uppercase;
 				letter-spacing: .1em;
@@ -170,12 +166,12 @@
 
 @media @tablet {
 
-	.widget.extendednavigation {
+	.widget.extendednavigation { /*
 		width: 100%;
 		display: inline-block;
 		top: 0;
 		left: 0;
-		transform: none;
+		transform: none; */
 	}
 
 	.widget .extendednavigation a.pull {
