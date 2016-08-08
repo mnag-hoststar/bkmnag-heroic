@@ -1,7 +1,7 @@
 {
 	"name":"Heroic",
 	"thumbnail":"thumbnail.png",
-	"screenshot":"screenshot.png",
+	"screenshot":"heroic-screenshot.png",
 	"templateType":"standard",
 	"pageTypes":["home"],
 	"tags": {
