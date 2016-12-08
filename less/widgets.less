@@ -738,9 +738,12 @@ button.btn,
 
 
 // -----------------------------
-// 9.  #CONTACT FORM
+// 9.  #CONTACT FORMS
 // -----------------------------
 
+
+// 9.1  CONTACT FORM
+// -----------------
 
 .contactform, .advancedcontactform {
 	margin-bottom: 40px;
@@ -758,6 +761,143 @@ button.btn,
 		float: right;
 	}
 }
+
+
+
+// 9.2  ADVANCED FORM
+// ------------------
+
+
+
+.advancedcontactform__form-group, .contactform .form-group {
+	margin-bottom: 1em;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.advancedcontactform {
+	.option-item--checkbox {
+		width: 100%;
+		position: relative;
+		label {
+			cursor: pointer;
+			margin-left: 40px;
+			margin-bottom: 1em;
+			padding: 0;
+			display: inline-block!important;
+			line-height: 25px;
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: @bg-color;
+				border: 1px solid @contrast-color;
+				left: -40px;
+				top: 0;
+				.transition(all, 0.3s, ease);
+			}
+			&:hover::before {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: @bg-color;
+				border: 1px solid darken(@contrast-color, 15%);
+				left: -40px;
+				top: 0;
+				.transition(all, 0.3s, ease);
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 23px;
+				height: 23px;
+				opacity: 0;
+				border: 2px solid @button-color;
+				background: image('/images/hs-icon_check-l.svg') no-repeat center; 
+				background-color: white;
+				background-size: 25px;
+				left: -40px;
+				top: 0px;
+				.transition(all, 0.3s, ease);
+			}
+		}
+		input[type="checkbox"] {
+			visibility: hidden;
+			position: absolute;
+		}
+		input[type="checkbox"]:checked + label:after {
+			opacity: 1;
+		}
+	}
+	.option-item--radio {
+		width: 100%;
+		position: relative;
+		label {
+			cursor: pointer;
+			margin-left: 40px;
+			margin-bottom: 1em;
+			padding: 0;
+			display: inline-block!important;
+			line-height: 25px;
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: @bg-color;
+				border: 1px solid @contrast-color;
+				left: -40px;
+				top: 0;
+				.border-radius(20px);
+				.transition(all, 0.3s, ease);
+			}
+			&:hover::before {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: @bg-color;
+				border: 1px solid darken(@contrast-color, 15%);
+				left: -40px;
+				top: 0;
+				.border-radius(20px);
+				.transition(all, 0.3s, ease);
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 23px;
+				height: 23px;
+				opacity: 0;
+				border: 2px solid @button-color;
+				background: image('/images/radio.svg') no-repeat center; 
+				background-color: white;
+				background-size: 17px;
+				left: -40px;
+				top: 0px;
+				.border-radius(20px);
+				.transition(all, 0.3s, ease);
+			}
+		}
+		input[type="radio"] {
+			visibility: hidden;
+			position: absolute;
+		}
+		input[type="radio"]:checked + label:after {
+			opacity: 1;
+		}
+	}
+}
+
+
+
+
+
 
 
 
