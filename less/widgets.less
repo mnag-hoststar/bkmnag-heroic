@@ -593,6 +593,7 @@
 .widget.button button, .btn,
 button.btn,
 .contactform button.btn,
+.advancedcontactform button,
 .widget.profile fieldset button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.tweet a, .widget.dropbox button,
@@ -741,25 +742,20 @@ button.btn,
 // -----------------------------
 
 
-.widget.contactform {
+.contactform, .advancedcontactform {
 	margin-bottom: 40px;
-	form {
-		fieldset {
-			margin: 0;
-			label {
-				font-family: @font-swatch5-font-family;
-				font-size: @font-swatch5-font-size;
-				font-weight: @font-swatch5-font-weight;
-				line-height: @font-swatch5-line-height;
-				color: @font-swatch5-color;
-				letter-spacing: @font-swatch5-letter-spacing;
-				margin-bottom: .4em;
-				padding: 0;
-			}
-			button {
-				float: right;
-			}
-		}
+	label {
+		font-family: @font-swatch5-font-family;
+		font-size: @font-swatch5-font-size;
+		font-weight: @font-swatch5-font-weight;
+		line-height: @font-swatch5-line-height;
+		color: @font-swatch5-color;
+		letter-spacing: @font-swatch5-letter-spacing;
+		margin-bottom: .4em;
+		padding: 0;
+	}
+	button {
+		float: right;
 	}
 }
 
