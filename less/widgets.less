@@ -2,45 +2,39 @@
 // BaseKit Standard Theme: LESS > Widgets
 // --------------------------------------
 
-
 // -----------------------------
 // #Table of Contents
 // -----------------------------
 
-
 //  1.   #LOGO
 //  2.   #COMPANY NAME
-//  3.   #NAVIGATION
-//  4.   #FEATURE
-
-//  5.   #IMAGES
-//  6.   #GALLERY
-//  7.   #SLIDESHOW
-
-//  8.   #BUTTONS
-//  8.1  -- #STANDARD
-//  8.2  -- #TWEET
-//  8.3  -- #DROPBOX
-//  8.4  -- #CLICK TO CALL
-//  8.5  -- #PAYPAL
-
-//  9.   #CONTACT FORM
-// 10.   #SIGNUP FORM
-
-// 11.   #SOCIAL ICONS
-// 12.   #TWITTER FEED
-
-// 13.   #DIVIDER (KEYLINE)
-// 14.   #PROFILE
-// 15.   #MAP
-// 16.   #YOUTUBE
-// 17.   #YELP, SOUNDCLOUD ...
-
+//	3.   #LANGUAGE SELECTOR
+//  4.   #NAVIGATION
+//  5.   #FEATURE
+//  6.   #IMAGES
+//  7.   #GALLERY
+//  8.   #SLIDESHOW
+//  9.   #BUTTONS
+//  9.1  -- #STANDARD
+//  9.2  -- #TWEET
+//  9.3  -- #DROPBOX
+//  9.4  -- #CLICK TO CALL
+//  9.5  -- #PAYPAL
+// 10.   #CONTACT FORM
+// 10.1  -- CONTACT FORM
+// 10.2  -- ADVANCED FORM
+// 11.   #SIGNUP FORM
+// 12.   #SOCIAL ICONS
+// 13.   #TWITTER FEED
+// 14.   #DIVIDER (KEYLINE)
+// 15.   #PROFILE
+// 16.   #MAP
+// 17.   #YOUTUBE
+// 18.   #YELP, SOUNDCLOUD ...
 
 // -----------------------------
 // 1.-2.  #LOGO & #COMPANY NAME
 // -----------------------------
-
 
 // Company Name
 // ------------
@@ -65,20 +59,305 @@
 	text-align: center;
 }
 
-
-
 // -----------------------------
-// 3.  #NAVIGATION
+//	3.   #LANGUAGE SELECTOR
 // -----------------------------
 
+@language-padding: 0.5em;
+@language-line-height: @font-swatch6-line-height;
+
+// General styles
+
+.language-selector {
+	&.language-selector--horizontal,
+	&.language-selector--dropdown {
+		z-index: 200;
+	    position: fixed;
+		box-sizing: content-box;
+		width: 100%;
+	}
+
+	&.language-selector--light {
+        background-color: lighten(@spare-color, 20%);
+	}
+	&.language-selector--dark {
+        background-color: @spare-color;
+	}
+	
+	&.language-selector--dropdown {
+		height: auto;
+		text-align: left;
+	}
+
+    .language-selector__inner,
+    .language-selector__list,
+    .language-selector__item,
+    .language-selector__link,
+    .language-selector__name,
+    .language-selector__localised-name {
+    	font-family: @font-swatch6-font-family;
+    	font-size: @font-swatch6-font-size;
+    	font-weight: @font-swatch6-font-weight;
+    	color: @font-swatch6-color;
+    	line-height: @font-swatch6-line-height;
+    	letter-spacing: @font-swatch6-letter-spacing;
+        color: @font-swatch6-color;
+        text-transform: uppercase;
+        letter-spacing: .1em;
+        -webkit-font-smoothing: auto;
+        -moz-osx-font-smoothing: auto;
+        font-smooth: auto;
+    }
+}
+	
+// Inner
+
+.language-selector__inner {
+    .language-selector.language-selector--horizontal &,
+    .language-selector.language-selector--dropdown & {
+	    box-sizing: content-box;
+    	padding: @language-padding;
+    }
+    
+    .language-selector.language-selector--horizontal & {
+		padding: @language-padding 0 0;
+    }
+
+	.language-selector.language-selector--dropdown & {
+    	&:before {
+    	    content: "";
+            display: block;
+    	    height: @language-line-height+4;
+    	}
+    	&:after {
+    	    content: "";
+            display: block;
+    	    height: @language-padding*2;
+    	}
+	}
+}
+	
+// List
+
+.language-selector__list {
+    .language-selector & {
+	    min-width: auto;
+    }
+	
+	.language-selector.language-selector--dropdown & {
+		box-sizing: border-box;
+		margin: @language-padding;
+		min-width: auto;
+        max-width: ~"calc(100% - 1em)";
+        
+        @media @tablet {
+		    margin: 0;
+    	    padding: @language-padding;
+            max-width: 100%;
+        }
+		
+		@media @mobile {
+			width: 100%;
+		}
+	}
+}
+	
+// Item
+
+.language-selector__item {
+	.language-selector.language-selector--light &,
+	.language-selector.language-selector--dark & {
+		cursor: pointer;
+	    position: relative;
+		border: none;
+		background-color: transparent;
+		width: auto;
+		max-width: 100%;
+		
+		
+		.language-selector--horizontal& {
+		    margin: 0 0 @language-padding @language-padding;
+		}
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal & {
+        border: 2px solid transparent;
+        
+		.language-selector--light&,
+		.language-selector--dark& {
+			&:hover {
+                color: @bg-color
+			}
+			
+			&--current {
+				&, &:hover {
+	                color: @bg-color;
+				}
+			}
+			
+		}
+	}
+	.language-selector.language-selector--dropdown & {
+		.language-selector--light&,
+		.language-selector--dark& {
+            .transition (all, 0.5s, ease);
+            border: 2px solid transparent;
+            background-color: darken(@bg-color, 5%);
+				
+			&:hover {
+                background-color: @button-color;
+			}
+    		
+			&--current {
+                background-color: @bg-color;
+				
+				&:hover {
+	                background-color: @button-color;
+				}
+			}
+		}
+		.language-selector--light& {
+			&--current {
+                border: 2px solid @spare-color;
+			}
+		}
+	}
+	
+	// Current Item
+	
+	&--current {
+	    &:after {
+    		.language-selector.language-selector--dropdown & {
+				position: absolute;
+        		content: "\25be";
+        		top: 50%;
+        		right: 0;
+        		margin-top: -(@language-line-height/4);
+        		width: @language-padding*4;
+    		    background-color: transparent;
+        		line-height: @language-line-height/2;
+        	    font-size: @font-swatch6-font-size;
+        		color: @spare-color;
+        		text-align: center;
+    		}
+	    }
+	}
+}
+
+// Link
+
+.language-selector__link {
+	.language-selector & {
+		box-sizing: border-box;
+		padding: 0 30px;
+		border: none;
+		hyphens: auto;
+	}
+	
+	// Horizontal - Item
+	
+	.language-selector.language-selector--horizontal & {
+		text-align: right;
+		display: inline-block;
+	}
+	
+	// Dropdown - Item
+	
+	.language-selector.language-selector--dropdown & {
+		padding-right: @language-padding*4;
+		padding-left: @language-padding*2;
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal &,
+	.language-selector.language-selector--horizontal .language-selector__item--current &,
+	.language-selector.language-selector--dropdown &,
+	.language-selector.language-selector--dropdown .language-selector__item--current & {
+		.language-selector--light&,
+		.language-selector--dark& {
+			&, &:hover {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+// Icon
+
+.language-selector__icon {
+	.language-selector & {
+		margin-right: 0;
+		padding: @language-padding 0;
+		min-height: @language-line-height;
+		box-sizing: content-box;
+		line-height: @language-line-height;
+	}
+	.language-selector.language-selector--flag-text & {
+		margin: 0;
+	}
+	.language-selector.language-selector--dropdown.language-selector--flag-text & {
+		float: left;
+		box-sizing: border-box;
+		line-height: @language-line-height;
+	}
+}
+
+// Name
+
+.language-selector__name,
+.language-selector__localised-name {
+	.language-selector & {
+        text-rendering: auto;
+	}
+	.language-selector.language-selector--flag-text & {
+		display: inline-block;
+		padding: @language-padding 0 @language-padding @language-padding;
+	}
+	.language-selector.language-selector--text &,
+	.language-selector.language-selector--flag & {
+		padding: @language-padding 0;
+	}
+	.language-selector.language-selector--text & {
+		display: block;
+	}
+	.language-selector.language-selector--horizontal .language-selector__item--current & {
+	    color: @font-swatch6-color-hover;
+	}
+	.language-selector.language-selector--dropdown & {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+    	color: @spare-color;
+		
+		.language-selector--flag-text& {
+			@media only screen and (max-width: 380px) {
+				display: none;
+			}
+		}
+	}
+}
+
+// -----------------------------
+// 4.  #NAVIGATION
+// -----------------------------
 
 // Widget Extended Navigation
 // --------------------------
 
-
-.widget.extendednavigation {
+.widget .extendednavigation {
 	background-color: @spare-color;
 	width: 100%;
+	
+	&:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+	
 	ul {
 		margin: 0 auto;
 		padding: 0;
@@ -95,41 +374,24 @@
 			}
 			ul {
 				display: block;
-				visibility: hidden; /* hides sub-menu */
+				visibility: hidden;
 				opacity: 0;
 				position: absolute;
 				top: 100%;
 				left: -12px;
 				transform: translateZ(0);
 				transform: translateY(10%);
-				transition: all 0.5s ease 0s, visibility 0s linear 0.5s; /* the last value is the transition-delay for visibility */
+				transition: all 0.5s ease 0s, visibility 0s linear 0.5s;
 			}
-			&:hover {
+			&:hover, &.selected {
+				background-color: darken(@color-swatch7, 10%);
 				ul {
 					background-color: darken(@color-swatch7, 10%);
 					visibility: visible; /* shows sub-menu */
 					opacity: 1;
 					transform: translateX(0%);
-					transition-delay: 0s; /* this removes the transition delay so the menu will be visible while the other styles transition */
-				}	
-					/*li {
-						display: block;
-						width: 100%;
-						-webkit-box-sizing: border-box;
-						-moz-box-sizing: border-box;
-						box-sizing: border-box;
-						.transition (all, 0.5s, ease);
-						a {
-							display: block;
-							color: @color-swatch3;
-							padding: 0;
-							margin: 0;
-							letter-spacing: .1em;
-							.transition (all, 0.5s, ease);
-							span {
-								padding: 0;
-							}
-						} */
+					transition-delay: 0s;
+				}
 			}
 			&.folder {
 				.text {
@@ -149,8 +411,6 @@
 	}
 }
 
-
-
 // Hover Effect
 // ------------
 
@@ -160,19 +420,10 @@
 	.transition (all, 0.5s, ease);
 }
 
-
 // Responsive - Extended Navigation
 // --------------------------------
 
 @media @tablet {
-
-	.widget.extendednavigation { /*
-		width: 100%;
-		display: inline-block;
-		top: 0;
-		left: 0;
-		transform: none; */
-	}
 
 	.widget .extendednavigation a.pull {
 		top: 10px;
@@ -211,7 +462,7 @@
 	}
 
 	.widget.extendednavigation ul li > ul {
-		display: none!important;
+		display: none !important;
 		left: 0;
 	}
 
@@ -223,16 +474,22 @@
 		padding: 0;
 		background-color: darken(@color-swatch7, 20%);
 	}
-
 }
 
+// Influence of the Language Selector on the Header and Navigation
 
+.language-selector + .bk-nav {
+    top: @language-line-height+2;
+    margin-top: @language-padding*4;
+}
 
+.language-selector ~ .bk-header {
+    margin-top: @language-line-height+2+@font-swatch6-line-height+16px*2;
+}
 
 // -----------------------------
-// 4.  #FEATURE
+// 5.  #FEATURE
 // -----------------------------
-
 
 .widget.feature {
 	.feature-bgimg {
@@ -270,10 +527,8 @@
 	}
 }
 
-
 // Feature Button Alignments
 // -------------------------
-
 
 .widget.feature button.btn.justifyleft {
 	text-align: left;
@@ -306,7 +561,6 @@
 // Feature Layouts
 // ---------------
 
-
 /* LEFT ALIGN */
 
 .widget.feature.align-left .content {
@@ -330,7 +584,6 @@
 
 // Responsive Feature
 // ------------------
-
 
 @media @tablet {
 
@@ -384,11 +637,8 @@
 	}
 }
 
-
-
-
 // -----------------------------
-// 5. #IMAGE WIDGET
+// 6. #IMAGE WIDGET
 // -----------------------------
 
 .widget.image {
@@ -416,13 +666,9 @@
 	text-decoration: none;
 }
 
-
-
-
 // -----------------------------
-// 6.  #GALLERY
+// 7.  #GALLERY
 // -----------------------------
-
 
 .widget.gallery {
 	margin-bottom: 40px;
@@ -495,13 +741,9 @@
 	}
 }
 
-
-
-
 // -----------------------------
-// 7.  #SLIDESHOW
+// 8.  #SLIDESHOW
 // -----------------------------
-
 
 .widget.responsiveslideshow {
 	margin-bottom: 40px;
@@ -577,18 +819,12 @@
 	}
 }
 
-
-
-
-
 // -----------------------------
-// 8. #BUTTONS
+// 9. #BUTTONS
 // -----------------------------
 
-
-// 8.1 Standard
+// 9.1 Standard
 // ------------
-
 
 .widget.button button, .btn,
 button.btn,
@@ -623,10 +859,8 @@ button.btn,
 	}
 }
 
-
-// 8.2 Tweet
+// 9.2 Tweet
 // ---------
-
 
 .widget.tweet {
 	padding: 0;
@@ -644,10 +878,8 @@ button.btn,
 	}
 }
 
-
-// 8.3 Dropbox
+// 9.3 Dropbox
 // -----------
-
 
 .widget.dropbox button {
 	margin: 0;
@@ -661,9 +893,8 @@ button.btn,
 	}
 }
 
-// 8.4 Click to call
+// 9.4 Click to call
 // -----------------
-
 
 .widget.clicktocall {
 	padding: 0;
@@ -707,11 +938,8 @@ button.btn,
 	}
 }
 
-
-
-// 8.5 Paypal
+// 9.5 Paypal
 // ----------
-
 
 .widget.paypalbuynow .widget.button.paypal {
 	padding-left: 48px;
@@ -724,25 +952,20 @@ button.btn,
 	margin: 0;
 }
 
-
-
 .ecom-product-go-to-checkout-btn,
 .ecom-product .btn {
 	padding: 10px 22px 10px 22px;
 }
 
-
 .widget.button, .widget.paypalbuynow, .widget.tweet, .widget.dropbox, .widget.clicktocall {
 	margin: 0 0 40px;
 }
 
-
 // -----------------------------
-// 9.  #CONTACT FORMS
+// 10.  #CONTACT FORMS
 // -----------------------------
 
-
-// 9.1  CONTACT FORM
+// 10.1  CONTACT FORM
 // -----------------
 
 .contactform, .advancedcontactform {
@@ -762,12 +985,8 @@ button.btn,
 	}
 }
 
-
-
-// 9.2  ADVANCED FORM
+// 10.2  ADVANCED FORM
 // ------------------
-
-
 
 .advancedcontactform__form-group, .contactform .form-group {
 	margin-bottom: 1em;
@@ -894,13 +1113,9 @@ button.btn,
 	}
 }
 
-
-
-
 // -------------------------------
-// 10.  #SIGNUP FORM
+// 11.  #SIGNUP FORM
 // -------------------------------
-
 
 .widget.signupform {
 	margin-bottom: 40px;
@@ -926,13 +1141,9 @@ button.btn,
 	}
 }
 
-
-
-
 // -----------------------------
-// 11.  #SOCIAL ICONS
+// 12.  #SOCIAL ICONS
 // -----------------------------
-
 
 .widget.socialicons,
 .widget.profile .bk-profile-socialicons {
@@ -981,7 +1192,6 @@ button.btn,
 		}
 	}
 }
-
 
 // SVG Icons
 // ---------
@@ -1069,58 +1279,9 @@ button.btn,
 	background-image: image('/images/social/socialicons-pinterest.png');
 }
 
-/*
-
-// BK-NAV & FOOTER SVG Icons
-// -------------------------
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
-	background-image: image('/images/social/socialicons-twitter.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
-	background-image: image('/images/social/socialicons-linkedin.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
-	background-image: image('/images/social/socialicons-facebook.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
-	background-image: image('/images/social/socialicons-rss.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
-	background-image: image('/images/social/socialicons-googleplus.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
-	background-image: image('/images/social/socialicons-youtube.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-instagram a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-instagram a {
-	background-image: image('/images/social/socialicons-instagram.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-pinterest a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-pinterest a {
-	background-image: image('/images/social/socialicons-pinterest.svg');
-}
-
-*/
-
-
 // -----------------------------
-// 12. #TWITER FEED
+// 13. #TWITER FEED
 // -----------------------------
-
 
 .widget.twitter {
 	margin-bottom: 40px;
@@ -1158,12 +1319,9 @@ button.btn,
 	}
 }
 
-
-
 // -----------------------------
-// 13. #DIVIDER - LINE WIDGET
+// 14. #DIVIDER - LINE WIDGET
 // -----------------------------
-
 
 .widget.line {
 	padding: 0;
@@ -1175,13 +1333,9 @@ hr.line {
 	margin: 0;
 }
 
-
-
 // -----------------------------
-// 14. #PROFILE
+// 15. #PROFILE
 // -----------------------------
-
-
 
 .widget.profile {
 	margin-bottom: 40px;
@@ -1207,10 +1361,8 @@ hr.line {
 	margin-left: 0;
 }
 
-
-
 // -----------------------------
-// 15. #MAP
+// 16. #MAP
 // -----------------------------
 
 
@@ -1219,11 +1371,8 @@ hr.line {
 	margin-bottom: 40px;
 }
 
-
-
-
 // -----------------------------
-// 16. #YOUTUBE
+// 17. #YOUTUBE
 // -----------------------------
 
 
@@ -1231,15 +1380,10 @@ hr.line {
 	margin-bottom: 40px;
 }
 
-
-
 // -----------------------------
-// 17. #YELP, SOUNDCLOUD ...
+// 18. #YELP, SOUNDCLOUD ...
 // -----------------------------
-
-
 
 .widget.soundcloud, .widget.facebookcomments, .widget.donation, .widget.yelpreview {
 	margin-bottom: 40px;
 }
-

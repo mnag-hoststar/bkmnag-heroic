@@ -3,39 +3,33 @@
 {% block content %}
 
 <div class="bk-pt-default">
-
-
-<nav class="bk-nav">
-	<div class="clearfix">
-		{{widget('extendednavigation', 'navigationheader', {"align":"center"})|raw}}
-	</div>
-</nav>
-
-
- <header class="bk-header container">
-	<div class="clearfix">
-		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
-		{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-	</div>
-</header>
-
-
-<div class="main container clearfix">
-	{{zone('main')|raw}}
-</div>
-
-
-<footer class="bk-footer">
-	<div class="container clearfix">
-		<div class="footerleft">
-		{{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+	<nav class="bk-nav">
+		<div class="clearfix">
+			{{widget('extendednavigation', 'navigationheader', {"align":"center"})|raw}}
 		</div>
-		<div class="footerright">
-		{{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
-		</div>
-	</div>
-</footer>
+	</nav>
 
+	 <header class="bk-header container">
+		<div class="clearfix">
+			{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+			{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+		</div>
+	</header>
+
+	<div class="main container clearfix">
+		{{zone('main')|raw}}
+	</div>
+
+	<footer class="bk-footer">
+		<div class="container clearfix">
+			<div class="footerleft">
+			{{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+			</div>
+			<div class="footerright">
+			{{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+			</div>
+		</div>
+	</footer>
 </div>
 
 {% endblock %}
