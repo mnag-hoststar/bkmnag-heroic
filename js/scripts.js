@@ -9,15 +9,17 @@ $(document).ready(function() {
 	// ------------------------------
 	
 	function languageSelector() {
-    	if ($('.language-selector')) {
     	    var languageSelectorHeight = $('.language-selector').outerHeight();
     	    var navigationHeight = $('.bk-nav').outerHeight();
-    	    var languageAndNavigationHeight = languageSelectorHeight+navigationHeight;
+    	    if (languageSelectorHeight==undefined) {
+    	        var languageAndNavigationHeight = navigationHeight;
+    	    } else {
+    	        var languageAndNavigationHeight = languageSelectorHeight+navigationHeight;
+    	    }
     	    
 			$('.bk-nav').css('top', languageSelectorHeight+'px');
 			$('.bk-nav').css('margin-top', '0');
-			$('.bk-header').css('margin-top', languageAndNavigationHeight+'px');
-    	}
+	    	$('.bk-header').css('margin-top', languageAndNavigationHeight+'px');
 	}
 	
 	languageSelector();
