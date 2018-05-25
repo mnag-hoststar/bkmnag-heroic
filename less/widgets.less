@@ -362,6 +362,7 @@
 		margin: 0 auto;
 		padding: 0;
 		display: block;
+		font-size: 0;
 		li {
 			a {
 				padding: 16px 30px;
@@ -383,28 +384,32 @@
 				transform: translateY(10%);
 				transition: all 0.5s ease 0s, visibility 0s linear 0.5s;
 			}
-			&:hover, &.selected {
+			&:hover {
 				background-color: darken(@color-swatch7, 10%);
 				ul {
 					background-color: darken(@color-swatch7, 10%);
-					visibility: visible; /* shows sub-menu */
+					visibility: visible;
 					opacity: 1;
 					transform: translateX(0%);
 					transition-delay: 0s;
+					min-width: auto;
 				}
 			}
 			&.folder {
+			    margin-right: 0;
+			    
 				.text {
 					letter-spacing: .1em;
 					.transition (all, 0.5s, ease);
 					display: block;
-					padding: 10px 30px;
+					padding: 16px 30px;
 					margin: 0;
 					text-transform: uppercase;
 				}
 				&:after {
 					right: 10px;
-					top: 22px;
+					top: 50%;
+					margin-top: -2px;
 				}
 			}
 		}
