@@ -377,8 +377,6 @@
 				letter-spacing: .1em;
 				.transition (all, 0.5s, ease);
 			}
-			.text {
-			}
 			ul {
 				display: block;
 				visibility: hidden;
@@ -389,6 +387,13 @@
 				transform: translateZ(0);
 				transform: translateY(10%);
 				transition: all 0.5s ease 0s, visibility 0s linear 0.5s;
+				overflow-y: auto;
+				max-height: calc(~"100vh - 200%");
+					
+				li a {
+				    display: inline;
+				    padding: 0;
+				}
 			}
 			&:hover {
 				background-color: darken(@color-swatch7, 10%);
@@ -398,7 +403,14 @@
 					opacity: 1;
 					transform: translateX(0%);
 					transition-delay: 0s;
-					min-width: auto;
+				    max-width: none;
+					
+					li .text {
+					    overflow: unset;
+                        text-overflow: unset;
+                        word-wrap: break-word;
+                        max-width: 300px;
+					}
 				}
 			}
 			&.folder {
@@ -620,7 +632,6 @@
 }
 
 @media @mobile {
-
 	.widget.feature {
 		.feature-bgimg {
 			height: 220px;
