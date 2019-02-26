@@ -1020,6 +1020,7 @@ button.btn,
 	.option-item--checkbox {
 		width: 100%;
 		position: relative;
+		
 		label {
 			cursor: pointer;
 			margin-left: 40px;
@@ -1028,6 +1029,7 @@ button.btn,
 			display: inline-block!important;
 			line-height: 25px;
 			position: relative;
+			
 			&:before {
 				content: '';
 				position: absolute;
@@ -1039,6 +1041,7 @@ button.btn,
 				top: 0;
 				.transition(all, 0.3s, ease);
 			}
+			
 			&:hover::before {
 				content: '';
 				position: absolute;
@@ -1050,6 +1053,7 @@ button.btn,
 				top: 0;
 				.transition(all, 0.3s, ease);
 			}
+			
 			&:after {
 				content: '';
 				position: absolute;
@@ -1065,14 +1069,17 @@ button.btn,
 				.transition(all, 0.3s, ease);
 			}
 		}
-		input[type="checkbox"] {
-			visibility: hidden;
-			position: absolute;
-		}
-		input[type="checkbox"]:checked + label:after {
-			opacity: 1;
-		}
 	}
+	
+	input[type="checkbox"] {
+		visibility: hidden;
+		position: absolute;
+	}
+		
+	input[type="checkbox"]:checked + label:after {
+		opacity: 1;
+	}
+	
 	.option-item--radio {
 		width: 100%;
 		position: relative;
@@ -1178,6 +1185,7 @@ button.btn,
 			top: 0;
 			.transition(all, 0.3s, ease);
 		}
+		
 		&:hover::before {
 			content: '';
 			position: absolute;
@@ -1189,6 +1197,7 @@ button.btn,
 			top: 0;
 			.transition(all, 0.3s, ease);
 		}
+		
 		&:after {
 			content: '';
 			position: absolute;
@@ -1204,13 +1213,6 @@ button.btn,
 			.transition(all, 0.3s, ease);
 			transform: none;
 		}
-		input[type="checkbox"] {
-			visibility: hidden;
-			position: absolute;
-		}
-		input[type="checkbox"]:checked + label:after {
-			opacity: 1;
-		}
 		
 		.form__link {
 			font-family:@font-swatch5-font-family;
@@ -1218,6 +1220,15 @@ button.btn,
 			font-weight:@font-swatch5-font-weight;
 			letter-spacing: @font-swatch5-letter-spacing;
 		}
+	}
+		
+	input[type="checkbox"] {
+		visibility: hidden;
+		position: absolute;
+	}
+		
+	input[type="checkbox"]:checked + label:after {
+		opacity: 1;
 	}
 }
 
