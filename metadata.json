@@ -4,6 +4,7 @@
 	"screenshot":"heroic-screenshot.jpg",
 	"templateType":"standard",
 	"pageTypes":["home"],
+	"versionTenCompatible": 1,
 	"tags": {
 	"en": ["minimal", "clean", "blog", "photography", "modern", "unique", "flexible", "open", "simple", "news", "sans-serif"]
 	},

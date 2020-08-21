@@ -70,10 +70,22 @@ body {
 }
 
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, blockquote {
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	padding-bottom: 0;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
 }
 
 
@@ -96,6 +108,35 @@ h6 {
 	font-style: normal;
 }
 
+p, .paragraph, ul, ol, li, .contentgroup__body, label {
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
+}
+
+a {
+	.style--light & {
+	    color: @color--accent;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @color--accent;
+	}
+}
+
 p {
 	padding-bottom: 0;
 }
@@ -106,7 +147,7 @@ ul, ol {
 
 blockquote {
 	border: 1px solid @contrast-color;
-	padding: 30px;
+	padding: 30px!important;
 	font-style: italic;
 	&:before {
 		display: none;
@@ -148,7 +189,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	width: 100%;
 	min-height: 60px;
 	top: 0;
-	z-index: 1;
+	z-index: 2;
 	@media @tablet {
 		position: absolute;
 	}
@@ -235,6 +276,10 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	margin-bottom: 40px;
 }
 
+.column .widget.content {
+	margin-bottom: 20px;
+}
+
 .widget.content span.expand {
 	font-family: @font-swatch7-font-family;
 	margin: 10px 0;
@@ -244,9 +289,35 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	text-transform: uppercase;
 }
 
+.widget.contentgroup {
+
+	.contentgroup__image + .contentgroup__heading,
+	.contentgroup__heading + .contentgroup__body,
+	.contentgroup__body + .contentgroup__link {
+		margin-top: 12px;
+	}
+
+
+	+ .widget {
+		margin-top: 40px;
+	}
+}
+
 .expand .more, .expand .less {
 	&:hover {
 		color: @heading-color;
+
+		.style--light & {
+		    color: @contrast--light;
+		}
+
+		.style--accent & {
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    color: @contrast--dark;
+		}
 	}
 }
 
@@ -269,10 +340,41 @@ select,
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
+
+	.style--light & {
+		background-color: @color--light;
+		border-color: @color--accent;
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+		background-color: @color--accent;
+		border-color: @contrast--accent;
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+		background-color: @color--dark;
+		border-color: @contrast--dark;
+	    color: fade(@contrast--dark, 80%);
+	}
+
 	&:focus,
 	&:hover {
 		.transition (all, 0.5s, ease);
 		border: 1px solid darken(@contrast-color, 20%);
+
+		.style--light & {
+			border-color: darken(@color--accent, 20%);
+		}
+
+		.style--accent & {
+			border-color: darken(@contrast--accent, 20%);
+		}
+
+		.style--dark & {
+			border-color: lighten(@contrast--dark, 20%);
+		}
 	}
 }
 
