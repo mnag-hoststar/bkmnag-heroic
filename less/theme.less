@@ -137,6 +137,10 @@ a {
 	}
 }
 
+.contentgroup__link:hover {
+	text-decoration: none;
+}
+
 p {
 	padding-bottom: 0;
 }
@@ -272,8 +276,11 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 .widget.content {
 	padding: 0;
-	overflow: hidden;
 	margin-bottom: 40px;
+
+	body:not(.edit) {
+		overflow: hidden;
+	}
 }
 
 .column .widget.content {
