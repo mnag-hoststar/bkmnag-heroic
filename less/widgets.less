@@ -760,7 +760,7 @@
 			}
 			@media @mobile {
 				width: 100% !important;
-				padding-bottom: 100% !important;
+				padding-bottom: 100%;
 			}
 			.inner {
 				left: 10px;
@@ -1310,6 +1310,62 @@ button.btn,
 	}
 }
 
+input::-webkit-input-placeholder {
+   .style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+   .style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+   .style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+}
+
+input:-ms-input-placeholder {
+   .style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+}
+
 // 10.3  PRIVACY CHECKBOXES
 // ------------------
 
@@ -1388,6 +1444,18 @@ button.btn,
             font-size: @font-swatch5-font-size;
 			font-weight:@font-swatch5-font-weight;
 			letter-spacing: @font-swatch5-letter-spacing;
+
+			.style--light & {
+			    color: @contrast--light;
+			}
+
+			.style--accent & {
+			    color: @contrast--accent;
+			}
+
+			.style--dark & {
+			    color: @contrast--dark;
+			}
 		}
 	}
 		
