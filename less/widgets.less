@@ -669,8 +669,33 @@
 .widget.image span.image-title {
 	margin: 10px 0 0;
 	color: @heading-color;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+
 	&:hover {
 		color: lighten(@color-swatch4, 20%);
+
+		.style--light & {
+		    color: @contrast--light;
+		}
+
+		.style--accent & {
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    color: @contrast--dark;
+		}
 	}
 }
 
@@ -678,8 +703,33 @@
 .widget.image span.image-description {
 	margin: 0 0 10px;
 	color: @paragraph-color;
+
+	.style--light & {
+	    color: fade(@contrast--light, 80%);
+	}
+
+	.style--accent & {
+	    color: fade(@contrast--accent, 80%);
+	}
+
+	.style--dark & {
+	    color: fade(@contrast--dark, 80%);
+	}
+
 	&:hover {
 		color: lighten(@color-swatch5, 20%);
+
+		.style--light & {
+		    color: fade(@contrast--light, 80%);
+		}
+
+		.style--accent & {
+		    color: fade(@contrast--accent, 80%);
+		}
+
+		.style--dark & {
+		    color: fade(@contrast--dark, 80%);
+		}
 	}
 }
 
@@ -710,7 +760,7 @@
 			}
 			@media @mobile {
 				width: 100% !important;
-				padding-bottom: 100% !important;
+				padding-bottom: 100%;
 			}
 			.inner {
 				left: 10px;
@@ -832,10 +882,34 @@
 			height: 8px;
 			margin: 0 4px;
 			cursor: pointer;
+
+			.style--light & {
+			    border-color: @color--accent;
+			}
+
+			.style--accent & {
+			    border-color: @contrast--accent;
+			}
+
+			.style--dark & {
+			    border-color: @color--accent;
+			}
 		}
 		.dot.selected {
 			background-color: @button-color;
 			border: none;
+
+			.style--light & {
+			    background-color: @color--accent;
+			}
+
+			.style--accent & {
+			    background-color: @contrast--accent;
+			}
+
+			.style--dark & {
+			    background-color: @color--accent;
+			}
 		}
 	}
 }
@@ -861,7 +935,8 @@ button.btn,
 .widget.ecomproduct .ecom-product .btn,
 .widget.ecombasket .ecombasket-pull,
 .widget.ecombasket .ecombasket-list-container ul li .ecombasket-item-info .ecombasket-remove-button,
-.ecombasket-summary-link {
+.ecombasket-summary-link,
+.contentgroup__link {
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
 	font-weight: @font-swatch7-font-weight;
@@ -870,13 +945,48 @@ button.btn,
 	color: @font-swatch7-color;
 	padding: 12px 30px;
 	border: 2px solid @spare-color;
+	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	.transition (all, 0.5s, ease);
+
+	.style--light & {
+	    background-color: @color--light;
+	    border-color: @color--accent;
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    background-color: @color--accent;
+	    border-color: @contrast--accent;
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    background-color: @color--dark;
+	    border-color: @color--accent;
+	    color: @contrast--dark;
+	}
+
 	&:hover {
 		background-color: @font-swatch7-background-color-hover;
 		cursor: pointer;
 		.transition (all, 0.5s, ease);
+
+		.style--light & {
+		    background-color: @color--accent;
+		    color: @contrast--accent;
+		}
+
+		.style--accent & {
+		    background-color: @color--light;
+		    color: @contrast--light;
+		}
+
+		.style--dark & {
+		    background-color: @color--accent;
+		    color: @contrast--accent;
+		}
 	}
 }
 
@@ -930,6 +1040,19 @@ button.btn,
 	color: @font-swatch5-color;
 	letter-spacing: @font-swatch5-letter-spacing;
 	text-decoration: none;
+
+	.style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+
 	&:hover {
 		cursor: pointer;
 	}
@@ -949,12 +1072,46 @@ button.btn,
 		background-color: @font-swatch7-background-color;
 		color: @font-swatch7-color;
 		.transition (all, 0.5s, ease);
+
+		.style--light & {
+		    background-color: @color--light;
+		    border-color: @color--accent;
+		    color: @contrast--light;
+		}
+
+		.style--accent & {
+		    background-color: @color--accent;
+		    border-color: @contrast--accent;
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    background-color: @color--dark;
+		    border-color: @color--accent;
+		    color: @contrast--dark;
+		}
+
 		&:hover {
 			background-color: @font-swatch7-background-color-hover;
 			padding: 12px 30px 12px 58px;
 			background-size: 30px;
 			background-position: 20px center;
 			.transition (all, 0.5s, ease);
+
+			.style--light & {
+			    background-color: @color--accent;
+			    color: @contrast--accent;
+			}
+
+			.style--accent & {
+			    background-color: @color--light;
+			    color: @contrast--light;
+			}
+
+			.style--dark & {
+			    background-color: @color--accent;
+			    color: @contrast--accent;
+			}
 		}
 	}
 }
@@ -1000,6 +1157,18 @@ button.btn,
 		letter-spacing: @font-swatch5-letter-spacing;
 		margin-bottom: .4em;
 		padding: 0;
+
+		.style--light & {
+		    color: @contrast--light;
+		}
+
+		.style--accent & {
+		    color: @contrast--accent;
+		}
+
+		.style--dark & {
+		    color: @contrast--dark;
+		}
 	}
 	button {
 		float: right;
@@ -1148,6 +1317,62 @@ button.btn,
 	}
 }
 
+input::-webkit-input-placeholder {
+   .style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+   .style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+   .style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+}
+
+input:-ms-input-placeholder {
+   .style--light & {
+	    color: @contrast--light;
+	}
+
+	.style--accent & {
+	    color: @contrast--accent;
+	}
+
+	.style--dark & {
+	    color: @contrast--dark;
+	}
+}
+
 // 10.3  PRIVACY CHECKBOXES
 // ------------------
 
@@ -1226,6 +1451,18 @@ button.btn,
             font-size: @font-swatch5-font-size;
 			font-weight:@font-swatch5-font-weight;
 			letter-spacing: @font-swatch5-letter-spacing;
+
+			.style--light & {
+			    color: @contrast--light;
+			}
+
+			.style--accent & {
+			    color: @contrast--accent;
+			}
+
+			.style--dark & {
+			    color: @contrast--dark;
+			}
 		}
 	}
 		
@@ -1285,9 +1522,43 @@ button.btn,
 			height: 36px;
 			.border-radius(50%);
 			.transition (all, 0.5s, ease);
+
+			.style--light & {
+			    background-color: @color--light;
+			    border-color: @color--accent;
+			    color: @contrast--light;
+			}
+
+			.style--accent & {
+			    background-color: @color--accent;
+			    border-color: @contrast--accent;
+			    color: @contrast--accent;
+			}
+
+			.style--dark & {
+			    background-color: @color--dark;
+			    border-color: @color--accent;
+			    color: @contrast--dark;
+			}
+
 			&:hover {
 				background-color: @button-color;
 				.transition (all, 0.5s, ease);
+
+				.style--light & {
+				    background-color: @color--accent;
+				    color: @contrast--accent;
+				}
+
+				.style--accent & {
+				    background-color: @color--light;
+				    color: @contrast--light;
+				}
+
+				.style--dark & {
+				    background-color: @color--accent;
+				    color: @contrast--accent;
+				}
 			}
 			@media @mobile {
 				margin: 0 2px;
@@ -1416,6 +1687,18 @@ button.btn,
 			padding: 30px;
 			margin-bottom: 1em;
 			border: 1px solid @contrast-color;
+
+			.style--light & {
+			    border-color: fade(@color--accent, 80%);
+			}
+
+			.style--accent & {
+			    border-color: fade(@contrast--accent, 80%);
+			}
+
+			.style--dark & {
+			    border-color: fade(@color--accent, 80%);
+			}
 		}
 	}
 	.twitter-profile-pic {
@@ -1425,22 +1708,70 @@ button.btn,
 		}
 	}
 	.twitter-content {
-		p {
+		p, a {
 			padding: 0;
+
+			.style--light & {
+			    color: fade(@contrast--light, 80%);
+			}
+
+			.style--accent & {
+			    color: fade(@contrast--accent, 80%);
+			}
+
+			.style--dark & {
+			    color: fade(@contrast--dark, 80%);
+			}
 		}
 		time, span, span a {
 			font-family: @font-swatch5-font-family;
 			font-size: bkscale(@font-swatch5-font-size,0.9);
+
+			.style--light & {
+			    color: fade(@contrast--light, 80%);
+			}
+
+			.style--accent & {
+			    color: fade(@contrast--accent, 80%);
+			}
+
+			.style--dark & {
+			    color: fade(@contrast--dark, 80%);
+			}
 		}
 		span.bk-full-name {
 			font-family: @font-swatch4-font-family;
 			color: @font-swatch4-color;
 			font-size: @font-swatch5-font-size;
 			text-transform: uppercase;
+
+			.style--light & {
+			    color: @contrast--light;
+			}
+
+			.style--accent & {
+			    color: @contrast--accent;
+			}
+
+			.style--dark & {
+			    color: @contrast--dark;
+			}
 		}
 		span a {
 			color: @color-swatch3;
 			text-decoration: none;
+
+			.style--light & {
+			    color: @contrast--light;
+			}
+
+			.style--accent & {
+			    color: @contrast--accent;
+			}
+
+			.style--dark & {
+			    color: @contrast--dark;
+			}
 		}
 	}
 }
@@ -1457,6 +1788,18 @@ button.btn,
 hr.line {
 	background-color: @contrast-color;
 	margin: 0;
+
+	.style--light & {
+	    background-color: fade(@color--accent, 20%);
+	}
+
+	.style--accent & {
+	    background-color: fade(@contrast--accent, 20%);
+	}
+
+	.style--dark & {
+	    background-color: fade(@contrast--dark, 20%);
+	}
 }
 
 // -----------------------------
