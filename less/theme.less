@@ -2,23 +2,18 @@
 // BaseKit Standard Theme: LESS > Theme
 // ------------------------------------
 
-
 // -----------------------------
 // #Table of Contents
 // -----------------------------
-
 
 // 1. #TYPOGRAPHY
 // 2. #CUSTOM PAGE
 // 3. #HEADER
 // 4. #FOOTER
 
-
-
 // -----------------------------
 // 1. #TYPOGRAPHY
 // -----------------------------
-
 
 // Colour Swatches
 // ---------------
@@ -31,7 +26,6 @@
 // @color-swatch6: Navigation Links
 // @color-swatch7: Spare
 
-
 // Colour Variables
 // ----------------
 
@@ -42,7 +36,6 @@
 @paragraph-color: @color-swatch5;   // Paragraph Text Colour
 @nav-color: @color-swatch6;         // Nav Link Colour
 @spare-color: @color-swatch7;       // Spare Colour
-
 
 // Font Swatches
 // -------------
@@ -58,17 +51,14 @@
 // font9:  Feature Strapline
 // font10: Company Name (Logo)
 
-
 body {
 	font-smooth: always;
-	font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: geometricPrecision;
 	letter-spacing: .04em;
 }
-
 
 h1, h2, h3, h4, h5, h6, blockquote {
 	text-transform: uppercase;
@@ -88,7 +78,6 @@ h1, h2, h3, h4, h5, h6, blockquote {
 	    color: @contrast--dark;
 	}
 }
-
 
 h5 {
 	font-family: @font-swatch4-font-family;
@@ -110,7 +99,6 @@ h6 {
 }
 
 p, .paragraph, ul, ol, li, .contentgroup__body, label {
-
 	.style--light & {
 	    color: fade(@contrast--light, 80%);
 	}
@@ -154,6 +142,7 @@ blockquote {
 	border: 1px solid @contrast-color;
 	padding: 30px!important;
 	font-style: italic;
+	
 	&:before {
 		display: none;
 	}
@@ -163,12 +152,9 @@ blockquote {
 	list-style-position: inherit;
 }
 
-
-
 // -----------------------------
 // 2. #CUSTOM PAGE
 // -----------------------------
-
 
 body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	overflow: visible;
@@ -181,12 +167,9 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	border-bottom: 1px solid @contrast-color;
 }
 
-
-
 // -----------------------------
 // 3. #HEADER & #BK-NAV
 // -----------------------------
-
 
 .bk-nav {
 	background-color: @spare-color;
@@ -195,23 +178,22 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	min-height: 60px;
 	top: 0;
 	z-index: 2;
+
 	@media @tablet {
 		position: absolute;
 	}
 }
 
-
 .bk-header {
     position: relative;
 	padding: 40px 0;
+
 	.companyheader {
 		@media @tablet {
 			float: left;
 		}
 	}
 }
-
-
 
 // -----------------------------
 // 4. #FOOTER
@@ -222,13 +204,17 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	border-top: 1px solid fade(@paragraph-color, 20%);
 	padding: 3em 0;
 	opacity: 0.8;
+
 	.widget.profile {
 		margin: 0;
+
 		.bk-profile-socialicons {
 			margin: 0;
+
 			span a {
 				background-color: transparent;
 				border-color: transparent;
+
 				&:hover {
 					background-color: transparent;
 					border-color: @spare-color;
@@ -270,7 +256,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
     }
 }
 
-
 // -----------------------------
 // 5. #CONTENT
 // -----------------------------
@@ -304,13 +289,11 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 }
 
 .widget.contentgroup {
-
 	.contentgroup__image + .contentgroup__heading,
 	.contentgroup__heading + .contentgroup__body,
 	.contentgroup__body + .contentgroup__link {
 		margin-top: 12px;
 	}
-
 
 	+ .widget {
 		margin-top: 40px;
@@ -334,8 +317,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		}
 	}
 }
-
-
 
 // -----------------------------
 // 6. #GENERAL FORMS
