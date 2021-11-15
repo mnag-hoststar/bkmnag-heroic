@@ -1,19 +1,8 @@
-
-// -------------------------------------------
-//  Migration Styles -
-//
-//  These changes allow rows to work with
-//  existing templates in BK10
-// -------------------------------------------
-
-
+//  Migration Styles
 
 // Template styling resets
-// ------------------------------------
-
 
 #migrated {
-
     &.edit .bk-nav {
         @media only screen and (min-width: 900px) {
             width: ~"calc(100% - 200px)";
@@ -21,11 +10,13 @@
     }
 
     // Remove spacing for the default page
+
     .bk-pt-default .main.container {
         padding-top: 0;
     }
 
     // Remove the site container
+
     .main.container {
         max-width: 100%;
         padding-bottom: 0;
@@ -33,44 +24,32 @@
     }
 }
 
-
-
-
-
 // Re-add the reset styles
-// ------------------------------------
-
 
 #migrated {
-
-    // Applies the container value to widgets
     .empty-zone,
     #page-zones__main:empty,
     #page-zones__main > .widget:not([data-name="row"]),
     [data-name="row"] .row:not(.row--width-no-padding) .row__container {
         margin-left: auto;
-        margin-right: auto;         // Centers the contained widgets
+        margin-right: auto;
         max-width: 1200px;
-        width: 90%;                 // Container padding
+        width: 90%;
     }
 
-    // Replaces main padding by moving this to the first widget in the zone
     &.edit .bk-pt-default #page-zones__main-overlay + .widget:not([data-name="row"]),
     .bk-pt-default #page-zones__main > .widget:not([data-name="row"]):first-child {
-        margin-top: 40px;           // Main padding top
+        margin-top: 40px;
     }
 
-    // Replaces main padding by moving this to the last widget in the zone
     #page-zones__main > .widget:not([data-name="row"]):last-child {
-        margin-bottom: 40px;        // Main padding bottom
+        margin-bottom: 40px;
     }
 
-    // Add spacing to the top of a widget when it follows a row
     #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]) {
-        margin-top: 40px;           // Widget margin bottom
+        margin-top: 40px;
     }
 
-    // Re-add widget spacing inside of rows
     [data-name="row"] .column .widget + .widget {
         margin-top: 12px;
     }

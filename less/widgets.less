@@ -1,43 +1,8 @@
-// --------------------------------------
 // BaseKit Standard Theme: LESS > Widgets
-// --------------------------------------
 
-// -----------------------------
-// #Table of Contents
-// -----------------------------
-
-//  1.   #LOGO
-//  2.   #COMPANY NAME
-//	3.   #LANGUAGE SELECTOR
-//  4.   #NAVIGATION
-//  5.   #FEATURE
-//  6.   #IMAGES
-//  7.   #GALLERY
-//  8.   #SLIDESHOW
-//  9.   #BUTTONS
-//  9.1  -- #STANDARD
-//  9.2  -- #TWEET
-//  9.3  -- #DROPBOX
-//  9.4  -- #CLICK TO CALL
-//  9.5  -- #PAYPAL
-// 10.   #CONTACT FORM
-// 10.1  -- CONTACT FORM
-// 10.2  -- ADVANCED FORM
-// 11.   #SIGNUP FORM
-// 12.   #SOCIAL ICONS
-// 13.   #TWITTER FEED
-// 14.   #DIVIDER (KEYLINE)
-// 15.   #PROFILE
-// 16.   #MAP
-// 17.   #YOUTUBE
-// 18.   #YELP, SOUNDCLOUD ...
-
-// -----------------------------
-// 1.-2.  #LOGO & #COMPANY NAME
-// -----------------------------
+// LOGO & #COMPANY NAME
 
 // Company Name
-// ------------
 
 .widget.companyname {
 	width: 100%;
@@ -52,16 +17,13 @@
 }
 
 // Logo
-// ----
 
 .widget.logo {
 	width: 100%;
 	text-align: center;
 }
 
-// -----------------------------
-//	3.   #LANGUAGE SELECTOR
-// -----------------------------
+// LANGUAGE SELECTOR
 
 @language-padding: 0.5em;
 @language-line-height: @font-swatch6-line-height;
@@ -205,6 +167,7 @@
 			
 		}
 	}
+
 	.language-selector.language-selector--dropdown & {
 		.language-selector--light&,
 		.language-selector--dark& {
@@ -347,12 +310,9 @@
 	}
 }
 
-// -----------------------------
-// 4.  #NAVIGATION
-// -----------------------------
+// NAVIGATION
 
 // Widget Extended Navigation
-// --------------------------
 
 .widget .extendednavigation {
 	background-color: @spare-color;
@@ -369,6 +329,7 @@
 		padding: 0;
 		display: block;
 		font-size: 0;
+
 		li {
 			a {
 				padding: 16px 30px;
@@ -377,6 +338,7 @@
 				letter-spacing: .1em;
 				.transition (all, 0.5s, ease);
 			}
+
 			ul {
 				display: block;
 				visibility: hidden;
@@ -395,8 +357,10 @@
 				    padding: 0;
 				}
 			}
+
 			&:hover {
 				background-color: darken(@color-swatch7, 10%);
+
 				ul {
 					background-color: darken(@color-swatch7, 10%);
 					visibility: visible;
@@ -435,7 +399,6 @@
 }
 
 // Hover Effect
-// ------------
 
 .widget.extendednavigation ul li a:hover,
 .widget.extendednavigation ul li.folder .text:hover {
@@ -444,7 +407,6 @@
 }
 
 // Responsive - Extended Navigation
-// --------------------------------
 
 @media @tablet {
 
@@ -453,6 +415,7 @@
 		left: 50%;
 		transform: translate(-50%, 0);
 		width: 30px;
+
 		&:after {
 			top: 10px;
 			left: 0;
@@ -510,26 +473,29 @@
     margin-top: @language-line-height+2+@font-swatch6-line-height+16px*2;
 }
 
-// -----------------------------
-// 5.  #FEATURE
-// -----------------------------
+// FEATURE
 
 .widget.feature {
 	.feature-bgimg {
 		.content {
 			text-align: center;
+
 			.spare {
 				margin: 0 40px;
 				letter-spacing: .1em;
+
 				h2 {
 					text-transform: uppercase;
 				}
+
 				h3 {
 					color: fade(@font-swatch9-color, 75%);
 					text-transform: uppercase;
 				}
+
 				.feature-btn {
 					display: block;
+
 					button {
 						padding: 12px 30px;
 						border: 2px solid @bg-color;
@@ -539,6 +505,7 @@
 						text-transform: uppercase;
 						letter-spacing: .1em;
 						.transition (all, 0.5s, ease);
+
 						&:hover {
 							background-color: @spare-color;
 							.transition (all, 0.5s, ease);
@@ -551,7 +518,6 @@
 }
 
 // Feature Button Alignments
-// -------------------------
 
 .widget.feature button.btn.justifyleft {
 	text-align: left;
@@ -582,7 +548,6 @@
 }
 
 // Feature Layouts
-// ---------------
 
 /* LEFT ALIGN */
 
@@ -606,7 +571,6 @@
 }
 
 // Responsive Feature
-// ------------------
 
 @media @tablet {
 	.widget.feature {
@@ -616,11 +580,13 @@
 				height: 300px;
 			}
 		}
+
 		h2 {
 			font-size: bkscale(@font-swatch8-font-size,0.8);
 			line-height: bkscale(@font-swatch8-line-height,0.8);
 			letter-spacing: .1em;
 		}
+
 		h3 {
 			font-size: bkscale(@font-swatch9-font-size,0.9);
 			line-height: bkscale(@font-swatch9-line-height,0.9);
@@ -632,20 +598,24 @@
 	.widget.feature {
 		.feature-bgimg {
 			height: 220px;
+
 			.content {
 				height: 220px;
 			}
 		}
+
 		h2 {
 			font-size: bkscale(@font-swatch8-font-size,0.6);
 			line-height: bkscale(@font-swatch8-line-height,0.6);
 			padding-bottom: .1em;
 		}
+
 		h3 {
 			font-size: bkscale(@font-swatch9-font-size,0.8);
 			line-height: bkscale(@font-swatch9-line-height,0.8);
 			padding-bottom: .8em;
 		}
+
 		.feature-btn {
 			button {
 				width: 100%;
@@ -656,9 +626,7 @@
 	}
 }
 
-// -----------------------------
-// 6. #IMAGE WIDGET
-// -----------------------------
+// IMAGE WIDGET
 
 .widget.image {
 	margin-bottom: 40px;
@@ -697,7 +665,6 @@
 	}
 }
 
-
 .widget.image span.image-description {
 	margin: 0 0 10px;
 	color: @paragraph-color;
@@ -735,48 +702,55 @@
 	text-decoration: none;
 }
 
-// -----------------------------
-// 7.  #GALLERY
-// -----------------------------
+// GALLERY
 
 .widget.gallery {
 	margin-bottom: 40px;
+
 	.gallery-widget {
 		position: relative;
 		width: 100%;
 		padding: 0;
+
 		li {
 			width: 25%;
 			padding-bottom: 25%;
+
 			@media only screen and (max-width: 1020px) {
 				width: 33.3%;
 				padding-bottom: 33.3%;
 			}
+
 			@media @tablet {
 				width: 50%;
 				padding-bottom: 50%;
 			}
+
 			@media @mobile {
 				width: 100% !important;
 				padding-bottom: 100%;
 			}
+
 			.inner {
 				left: 10px;
 				right: 10px;
 				top: 10px;
 				bottom: 10px;
+
 				.title {
 					margin-top: 30%;
 					color: @font-swatch4-color;
 					font-family: @font-swatch4-font-family;
 					text-transform: uppercase;
 				}
+
 				.description {
 					color: @font-swatch5-color;
 				}
 			}
 		}
 	}
+
 	.image-data {
 		background: fade(@color-swatch2, 90%);
 		display: block;
@@ -799,6 +773,7 @@
 		overflow: hidden;
 		text-align: center;
 	}
+
 	.inner:hover .image-data {
 		-webkit-transform: scale(1);
 		-moz-transform: scale(1);
@@ -810,32 +785,35 @@
 	}
 }
 
-// -----------------------------
-// 8.  #SLIDESHOW
-// -----------------------------
+// SLIDESHOW
 
 .widget.responsiveslideshow {
 	margin-bottom: 40px;
+
 	.slideshow-widget {
 		.btn-prev,
 		.btn-next {
 			width: 32px;
 			height: 32px;
 			text-indent: -99999px;
+
 			&:hover {
 				opacity: 0.7;
 			}
 		}
+
 		.btn-prev {
 			left: 10px;
 			background: image('/images/slideshow-arrow-left.svg') no-repeat center left;
 			background-size: contain;
 		}
+
 		.btn-next {
 			right: 10px;
 			background: image('/images/slideshow-arrow-right.svg') no-repeat center left;
 			background-size: contain;
 		}
+
 		.btn-play {
 			width: 64px;
 			height: 64px;
@@ -845,31 +823,40 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-indent: -99999px;
+
 			&:after {
 				display: none;
 			}
 		}
+
 		&:hover .pause {
 			background: image('/images/slideshow-pause.svg') no-repeat center;
 			background-size: cover;
 		}
 	}
+
 	.content-wrapper {
 		background-color: @contrast-color;
 	}
-	.title, .description {
+
+	.title,
+	.description {
 		padding: 14px;
 	}
+
 	.title {
 		color: @font-swatch4-color;
 		font-family: @font-swatch4-font-family;
 		text-transform: uppercase;
 	}
+
 	.description {
 		color: @font-swatch5-color;
 	}
+
 	.slideshow-widget-controls {
 		margin: 10px 0;
+
 		.dot {
 			background-color: transparent;
 			border: 1px solid @contrast-color;
@@ -891,6 +878,7 @@
 			    border-color: @color--accent;
 			}
 		}
+
 		.dot.selected {
 			background-color: @button-color;
 			border: none;
@@ -910,12 +898,7 @@
 	}
 }
 
-// -----------------------------
-// 9. #BUTTONS
-// -----------------------------
-
-// 9.1 Standard
-// ------------
+// BUTTONS
 
 .widget.button button, .btn,
 button.btn,
@@ -986,11 +969,9 @@ button.btn,
 	}
 }
 
-// 9.2 Tweet
-// ---------
-
 .widget.tweet {
 	padding: 0;
+
 	a {
 		padding-left: 58px;
 		background-image: image('/images/social/socialicons-twitter-hover.svg');
@@ -1006,9 +987,6 @@ button.btn,
 	}
 }
 
-// 9.3 Dropbox
-// -----------
-
 .widget.dropbox button {
 	margin: 0;
 	padding-left: 58px;
@@ -1021,9 +999,6 @@ button.btn,
 		background-image: image('/images/dropbox-icon.svg');
 	}
 }
-
-// 9.4 Click to call
-// -----------------
 
 .widget.clicktocall {
 	padding: 0;
@@ -1054,6 +1029,7 @@ button.btn,
 	&:hover {
 		cursor: pointer;
 	}
+
 	@media @mobile {
 		display: inline-block;
 		background-image: image('/images/call-icon.svg');
@@ -1114,9 +1090,6 @@ button.btn,
 	}
 }
 
-// 9.5 Paypal
-// ----------
-
 .widget.paypalbuynow .widget.button.paypal {
 	padding-left: 48px;
 	background-image: image('/images/paypal-icon.svg');
@@ -1137,12 +1110,7 @@ button.btn,
 	margin: 0 0 40px;
 }
 
-// -----------------------------
-// 10.  #CONTACT FORMS
-// -----------------------------
-
-// 10.1  CONTACT FORM
-// -----------------
+// CONTACT FORMS
 
 .contactform, .advancedcontactform {
 	margin-bottom: 40px;
@@ -1176,10 +1144,10 @@ button.btn,
 }
 
 // 10.2  ADVANCED FORM
-// ------------------
 
 .advancedcontactform__form-group, .contactform .form-group {
 	margin-bottom: 1em;
+
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -1334,7 +1302,7 @@ input::-webkit-input-placeholder {
 	}
 }
 
-input:-moz-placeholder { /* Firefox 18- */
+input:-moz-placeholder {
    .style--light & {
 	    color: @contrast--light;
 	}
@@ -1348,7 +1316,7 @@ input:-moz-placeholder { /* Firefox 18- */
 	}
 }
 
-input::-moz-placeholder {  /* Firefox 19+ */
+input::-moz-placeholder {
    .style--light & {
 	    color: @contrast--light;
 	}
@@ -1376,8 +1344,7 @@ input:-ms-input-placeholder {
 	}
 }
 
-// 10.3  PRIVACY CHECKBOXES
-// ------------------
+// PRIVACY CHECKBOXES
 
 .widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
 .widget.contactform .form-group.contactform__form-group--terms,
@@ -1479,12 +1446,11 @@ input:-ms-input-placeholder {
 	}
 }
 
-// -------------------------------
-// 11.  #SIGNUP FORM
-// -------------------------------
+// SIGNUP FORM
 
 .widget.signupform {
 	margin-bottom: 40px;
+
 	fieldset {
 		label {
 			font-family:@font-swatch5-font-family;
@@ -1494,11 +1460,13 @@ input:-ms-input-placeholder {
 			color: @font-swatch5-color;
 			letter-spacing: @font-swatch5-letter-spacing;
 		}
+
 		input {
 			height: 52px;
 			width: 100%;
 			margin-bottom: 0;
 		}
+
 		button {
 			position: absolute;
 			bottom: 0;
@@ -1507,15 +1475,15 @@ input:-ms-input-placeholder {
 	}
 }
 
-// -----------------------------
-// 12.  #SOCIAL ICONS
-// -----------------------------
+// SOCIAL ICONS
 
 .widget.socialicons,
 .widget.profile .bk-profile-socialicons {
 	margin: 0 0 40px;
+
 	span {
 		display: inline-block;
+
 		a {
 			background-size: 32px;
 			background-color: transparent;
@@ -1563,6 +1531,7 @@ input:-ms-input-placeholder {
 				    color: @contrast--accent;
 				}
 			}
+
 			@media @mobile {
 				margin: 0 2px;
 			}
@@ -1571,7 +1540,6 @@ input:-ms-input-placeholder {
 }
 
 // Nav Bar Icons
-// -------------
 
 .bk-nav {
 	.widget.profile {
@@ -1579,11 +1547,13 @@ input:-ms-input-placeholder {
 		right: 30px;
 		top: 50%;
 		transform: translate(0, -50%);
+
 		.bk-profile-socialicons {
 			span {
 				a {
 					background-color: transparent;
 					border: none;
+
 					&:hover {
 						background-color: fade(@color-swatch3, 20%);
 					}
@@ -1594,7 +1564,6 @@ input:-ms-input-placeholder {
 }
 
 // SVG Icons
-// ---------
 
 .svg .widget.socialicons span.bk-socialicons-twitter a,
 .svg .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
@@ -1637,7 +1606,6 @@ input:-ms-input-placeholder {
 }
 
 // PNG Icons
-// ---------
 
 .widget.socialicons span.bk-socialicons-twitter a,
 .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
@@ -1679,12 +1647,11 @@ input:-ms-input-placeholder {
 	background-image: image('/images/social/socialicons-pinterest.png');
 }
 
-// -----------------------------
-// 13. #TWITER FEED
-// -----------------------------
+// TWITTER FEED
 
 .widget.twitter {
 	margin-bottom: 40px;
+
 	ul {
 		li {
 			padding: 30px;
@@ -1704,12 +1671,15 @@ input:-ms-input-placeholder {
 			}
 		}
 	}
+
 	.twitter-profile-pic {
 		max-width: 80px;
+
 		@media @mobile {
 			display: none;
 		}
 	}
+
 	.twitter-content {
 		p, a {
 			padding: 0;
@@ -1726,6 +1696,7 @@ input:-ms-input-placeholder {
 			    color: fade(@contrast--dark, 80%);
 			}
 		}
+
 		time, span, span a {
 			font-family: @font-swatch5-font-family;
 			font-size: bkscale(@font-swatch5-font-size,0.9);
@@ -1742,6 +1713,7 @@ input:-ms-input-placeholder {
 			    color: fade(@contrast--dark, 80%);
 			}
 		}
+
 		span.bk-full-name {
 			font-family: @font-swatch4-font-family;
 			color: @font-swatch4-color;
@@ -1760,6 +1732,7 @@ input:-ms-input-placeholder {
 			    color: @contrast--dark;
 			}
 		}
+
 		span a {
 			color: @color-swatch3;
 			text-decoration: none;
@@ -1779,9 +1752,7 @@ input:-ms-input-placeholder {
 	}
 }
 
-// -----------------------------
-// 14. #DIVIDER - LINE WIDGET
-// -----------------------------
+// DIVIDER - LINE WIDGET
 
 .widget.line {
 	padding: 0;
@@ -1805,20 +1776,21 @@ hr.line {
 	}
 }
 
-// -----------------------------
-// 15. #PROFILE
-// -----------------------------
+// PROFILE
 
 .widget.profile {
 	margin-bottom: 40px;
+
 	form {
 		margin: 0;
+
 		fieldset {
 			input {
 				width: 100%;
 				height: 52px;
 				margin: 0;
 			}
+
 			button {
 				position: absolute;
 				top: 0;
@@ -1832,9 +1804,7 @@ hr.line {
 	margin-left: 0;
 }
 
-// -----------------------------
-// 16. #MAP
-// -----------------------------
+// MAP
 
 
 .widget.map {
@@ -1842,18 +1812,14 @@ hr.line {
 	margin-bottom: 40px;
 }
 
-// -----------------------------
-// 17. #YOUTUBE
-// -----------------------------
+// YOUTUBE
 
 
 .widget.youtube {
 	margin-bottom: 40px;
 }
 
-// -----------------------------
-// 18. #YELP, SOUNDCLOUD ...
-// -----------------------------
+// YELP, SOUNDCLOUD
 
 .widget.soundcloud, .widget.facebookcomments, .widget.donation, .widget.yelpreview {
 	margin-bottom: 40px;

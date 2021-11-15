@@ -1,33 +1,6 @@
-// ------------------------------------
 // BaseKit Standard Theme: LESS > Theme
-// ------------------------------------
-
-// -----------------------------
-// #Table of Contents
-// -----------------------------
-
-// 1. #TYPOGRAPHY
-// 2. #CUSTOM PAGE
-// 3. #HEADER
-// 4. #FOOTER
-
-// -----------------------------
-// 1. #TYPOGRAPHY
-// -----------------------------
-
-// Colour Swatches
-// ---------------
-
-// @color-swatch1: Background
-// @color-swatch2: Contrast
-// @color-swatch3: Buttons
-// @color-swatch4: Headings
-// @color-swatch5: Paragraph
-// @color-swatch6: Navigation Links
-// @color-swatch7: Spare
 
 // Colour Variables
-// ----------------
 
 @bg-color: @color-swatch1;          // Background
 @contrast-color: @color-swatch2;    // Contrast Colour
@@ -38,18 +11,6 @@
 @spare-color: @color-swatch7;       // Spare Colour
 
 // Font Swatches
-// -------------
-
-// font1:  Heading 1
-// font2:  Heading 2
-// font3:  Heading 3
-// font4:  Heading 4
-// font5:  Paragraph
-// font6:  Navigation Link
-// font7:  Buttons
-// font8:  Feature Headline
-// font9:  Feature Strapline
-// font10: Company Name (Logo)
 
 body {
 	font-smooth: always;
@@ -152,24 +113,19 @@ blockquote {
 	list-style-position: inherit;
 }
 
-// -----------------------------
-// 2. #CUSTOM PAGE
-// -----------------------------
+// CUSTOM PAGE
 
 body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	overflow: visible;
 }
 
 // Default Page Style
-// ------------------
 
 .bk-pt-default .bk-header {
 	border-bottom: 1px solid @contrast-color;
 }
 
-// -----------------------------
-// 3. #HEADER & #BK-NAV
-// -----------------------------
+// HEADER & #BK-NAV
 
 .bk-nav {
 	background-color: @spare-color;
@@ -195,9 +151,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	}
 }
 
-// -----------------------------
-// 4. #FOOTER
-// -----------------------------
+// FOOTER
 
 .bk-footer {
 	color: @paragraph-color;
@@ -221,6 +175,18 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 				}
 			}
 		}
+		
+        form fieldset input {
+            width: 100%;
+        }
+
+        form button {
+            word-break: break-word;
+            height: auto;
+            width: auto;
+            margin: 10px 0;
+            line-height: 1.25em;
+        }
 	}
 }
 
@@ -256,9 +222,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
     }
 }
 
-// -----------------------------
-// 5. #CONTENT
-// -----------------------------
+// CONTENT
 
 .widget.content {
 	padding: 0;
@@ -318,9 +282,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	}
 }
 
-// -----------------------------
-// 6. #GENERAL FORMS
-// -----------------------------
+// GENERAL FORMS
 
 input,
 textarea,
@@ -408,7 +370,6 @@ iframe {
 }
 
 // Clearfix
-// --------
 
 .clearfix:before,
 .clearfix:after {
