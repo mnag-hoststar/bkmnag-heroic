@@ -366,7 +366,7 @@
 					li .text {
 					    overflow: unset;
                         text-overflow: unset;
-                        word-wrap: break-word;
+                        word-break: break-word;
                         max-width: 300px;
 					}
 				}
@@ -562,6 +562,8 @@
 	.widget.feature {
 		.feature-bgimg {
 			height: 300px;
+			padding: 4em 0;
+			
 			.content {
 				height: 300px;
 			}
@@ -905,15 +907,17 @@ button.btn,
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
 	font-weight: @font-swatch7-font-weight;
-	line-height: @font-swatch7-line-height;
+	line-height: 1.5em;
 	background-color: @font-swatch7-background-color;
 	color: @font-swatch7-color;
-	padding: 12px 30px;
+	padding: 9px 30px;
 	border: 2px solid @spare-color;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: .1em;
 	.transition (all, 0.5s, ease);
+	word-break: break-word;
+	min-height: 52px;
 
 	.style--light & {
 	    background-color: @color--light;
@@ -931,6 +935,10 @@ button.btn,
 	    background-color: @color--dark;
 	    border-color: @color--accent;
 	    color: @contrast--dark;
+	}
+
+	@media @mobile {
+		width: 100%;
 	}
 
 	&:hover {
@@ -959,7 +967,7 @@ button.btn,
 	padding: 0;
 
 	a {
-		padding-left: 58px;
+		padding: 12px 30px 12px 58px;
 		background-image: image('/images/social/socialicons-twitter-hover.svg');
 		background-size: 36px;
 		background-repeat: no-repeat;

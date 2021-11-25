@@ -292,19 +292,30 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 // GENERAL FORMS
 
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+
+	@media @mobile {
+    	display: block;
+	}
+}
+
 input,
+.widget.profile form fieldset input,
 textarea,
-select,
-.widget.profile form fieldset input {
+select {
 	background: @bg-color;
 	text-indent: 10px;
 	padding: 8px;
 	border: 1px solid @contrast-color;
-	margin-bottom: 1em;
 	.transition (all, 0.5s, ease);
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
+	min-height: 52px;
+	flex-grow: 1;
 
 	.style--light & {
 		background-color: @color--light;
