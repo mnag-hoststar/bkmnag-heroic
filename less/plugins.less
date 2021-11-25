@@ -392,52 +392,64 @@
 // Products List
 
 .widget.ecomproductslist {
-    width: 103.333%;
+    width: auto;
     max-width: none;
     margin-left: 0;
     margin-bottom: 40px;
 
     .ecom-productslist-products {
-        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
         max-width: auto;
+        margin: 0 -1em;
     }
 
     .productlist-filter {
-        margin-right: 3.333%;
+        margin-right: 0;
         margin-left: 0;
         margin-bottom: 40px;
+        width: 100%;
+        padding: 0 1em;
 
         .productlist-display-form {
             text-align: right;
 
             .form-group {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                margin-bottom: 1em;
                 width: 100%;
-                margin: 0;
+            
+                @media @mobile {
+                    display: block;
+                }
             }
 
             label {
                 text-align: left;
-                width: 19%;
+                width: 20%;
+                padding-bottom: 0;
+
+                @media @mobile {
+                    width: 100%;
+                    padding-bottom: .4em;
+                }
+            
+                .responsivecolumns & {
+                    width: 100%;
+                    padding-bottom: .4em;
+                }
             }
 
-            select,
             input {
-                width: 80%;
-            }
-
-            input {
-                margin: 0;
-                padding-right: 130px;
+                @media @mobile {
+                    margin-bottom: 1em;
+                }
             }
 
             .productlist-search {
                 position: relative;
-
-                button {
-                    position: absolute;
-                    right: 0;
-                    bottom: 0;
-                }
             }
 
             label,
@@ -455,27 +467,26 @@
     }
 
     .ecom-productslist-product {
-        display: inline-block;
-        width: 30%;
-        margin-right: 3%;
+        display: block;
+        width: 100%/3;
+        margin-right: 0;
         margin-left: 0;
-        margin-bottom: 2em;
-        padding: 0;
-        vertical-align: top;
+        margin-bottom: 4em;
+        padding: 0 1em;
         overflow: visible;
 
         @media @tablet {
-            width: 45%;
-            margin-right: 4%;
+            width: 100%/2;
+            margin-right: 0;
         }
 
         @media @mobile {
-            width: 97%;
+            width: 100%;
             margin-right: 0;
         }
 
         .responsivecolumns & {
-            width: 97%;
+            width: 100%;
             margin-right: 0;
         }
     }
@@ -504,7 +515,14 @@
     }
 
     .ecom-productslist-image-wrap {
+        margin: 0 auto;
+        background-position: center;
         height: 350px;
+        width: 70%;
+
+        @media @tablet {
+            height: 250px;
+        }
     }
 
     .ecom-productlist-info {
