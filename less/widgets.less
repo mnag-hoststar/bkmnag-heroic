@@ -1,8 +1,6 @@
-// BaseKit Standard Theme: LESS > Widgets
+// Widgets
 
 // LOGO & #COMPANY NAME
-
-// Company Name
 
 .widget.companyname {
 	width: 100%;
@@ -15,8 +13,6 @@
 .companyname a:hover {
 	text-decoration: none;
 }
-
-// Logo
 
 .widget.logo {
 	width: 100%;
@@ -312,8 +308,6 @@
 
 // NAVIGATION
 
-// Widget Extended Navigation
-
 .widget .extendednavigation {
 	background-color: @spare-color;
 	width: 100%;
@@ -406,7 +400,7 @@
 	.transition (all, 0.5s, ease);
 }
 
-// Responsive - Extended Navigation
+// Extended Navigation
 
 @media @tablet {
 
@@ -461,8 +455,6 @@
 		background-color: darken(@color-swatch7, 20%);
 	}
 }
-
-// Influence of the Language Selector on the Header and Navigation
 
 .language-selector + .bk-nav {
     top: @language-line-height+2;
@@ -549,21 +541,15 @@
 
 // Feature Layouts
 
-/* LEFT ALIGN */
-
 .widget.feature.align-left .content {
 	width: 100%;
 	text-align: left;
 }
 
-/* CENTER ALIGN */
-
 .widget.feature.align-center .content {
 	width: 100%;
 	text-align: center;
 }
-
-/* RIGHT ALIGN */
 
 .widget.feature.align-right .content {
 	width: 100%;
@@ -1143,7 +1129,8 @@ button.btn,
 	}
 }
 
-// 10.2  ADVANCED FORM
+// SIGNUP FORM
+
 
 .advancedcontactform__form-group, .contactform .form-group {
 	margin-bottom: 1em;
@@ -1371,6 +1358,7 @@ input:-ms-input-placeholder {
 		display: inline-block!important;
 		line-height: 25px;
 		position: relative;
+
 		&:before {
 			content: '';
 			position: absolute;
@@ -1752,7 +1740,7 @@ input:-ms-input-placeholder {
 	}
 }
 
-// DIVIDER - LINE WIDGET
+// DIVIDER
 
 .widget.line {
 	padding: 0;
@@ -1806,14 +1794,12 @@ hr.line {
 
 // MAP
 
-
 .widget.map {
 	border: 1px solid @contrast-color;
 	margin-bottom: 40px;
 }
 
 // YOUTUBE
-
 
 .widget.youtube {
 	margin-bottom: 40px;
