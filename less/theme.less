@@ -175,18 +175,26 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 				}
 			}
 		}
-		
-        form fieldset input {
-            width: 100%;
-        }
 
-        form button {
-            word-break: break-word;
-            height: auto;
-            width: auto;
-            margin: 10px 0;
-            line-height: 1.25em;
-        }
+		form fieldset {
+			.form-group {
+				label {
+					display: block;
+					width: 100%;
+				}
+			
+				input {
+					width: 100%;
+				}
+	
+				button {
+					word-break: break-word;
+					height: auto;
+					width: auto;
+					margin: 10px 0;
+				}
+			}
+		}
 	}
 }
 
@@ -335,17 +343,13 @@ select,
 	}
 }
 
-input, select {
-	height: 52px;
-}
-
 textarea {
 	height: 104px;
 }
 
 label {
-	display: inline-block!important;
-	padding-bottom: .4em!important;
+	display: inline-block;
+	padding-bottom: .4em;
 }
 
 select {
