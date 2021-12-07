@@ -260,9 +260,11 @@
 		box-sizing: content-box;
 		line-height: @language-line-height;
 	}
+
 	.language-selector.language-selector--flag-text & {
 		margin: 0;
 	}
+
 	.language-selector.language-selector--dropdown.language-selector--flag-text & {
 		float: left;
 		box-sizing: border-box;
@@ -277,20 +279,25 @@
 	.language-selector & {
         text-rendering: auto;
 	}
+
 	.language-selector.language-selector--flag-text & {
 		display: inline-block;
 		padding: @language-padding 0 @language-padding @language-padding;
 	}
+
 	.language-selector.language-selector--text &,
 	.language-selector.language-selector--flag & {
 		padding: @language-padding 0;
 	}
+
 	.language-selector.language-selector--text & {
 		display: block;
 	}
+
 	.language-selector.language-selector--horizontal .language-selector__item--current & {
 	    color: @font-swatch6-color-hover;
 	}
+
 	.language-selector.language-selector--dropdown & {
 		display: block;
 		white-space: nowrap;
@@ -299,7 +306,7 @@
     	color: @spare-color;
 		
 		.language-selector--flag-text& {
-			@media only screen and (max-width: 380px) {
+			@media @mobile-small {
 				display: none;
 			}
 		}
@@ -704,7 +711,7 @@
 			width: 25%;
 			padding-bottom: 25%;
 
-			@media only screen and (max-width: 1020px) {
+			@media @desktop-small {
 				width: 33.3%;
 				padding-bottom: 33.3%;
 			}
@@ -1515,6 +1522,48 @@ input:-ms-input-placeholder {
 			}
 		}
 	}
+
+	// Icons
+	
+	span.bk-socialicons-twitter a {
+		background-image: image('/images/social/socialicons-twitter-hover.png');
+		background-image: image('/images/social/socialicons-twitter-hover.svg');
+	}
+	
+	span.bk-socialicons-linkedin a {
+		background-image: image('/images/social/socialicons-linkedin-hover.png');
+		background-image: image('/images/social/socialicons-linkedin-hover.svg');
+	}
+	
+	span.bk-socialicons-facebook a {
+		background-image: image('/images/social/socialicons-facebook-hover.png');
+		background-image: image('/images/social/socialicons-facebook-hover.svg');
+	}
+	
+	span.bk-socialicons-rss a {
+		background-image: image('/images/social/socialicons-rss-hover.png');
+		background-image: image('/images/social/socialicons-rss-hover.svg');
+	}
+	
+	span.bk-socialicons-googleplus a {
+		background-image: image('/images/social/socialicons-googleplus-hover.png');
+		background-image: image('/images/social/socialicons-googleplus-hover.svg');
+	}
+	
+	span.bk-socialicons-youtube a {
+		background-image: image('/images/social/socialicons-youtube-hover.png');
+		background-image: image('/images/social/socialicons-youtube-hover.svg');
+	}
+	
+	span.bk-socialicons-instagram a {
+		background-image: image('/images/social/socialicons-instagram-hover.png');
+		background-image: image('/images/social/socialicons-instagram-hover.svg');
+	}
+	
+	span.bk-socialicons-pinterest a {
+		background-image: image('/images/social/socialicons-pinterest-hover.png');
+		background-image: image('/images/social/socialicons-pinterest-hover.svg');
+	}
 }
 
 // Nav Bar Icons
@@ -1539,90 +1588,6 @@ input:-ms-input-placeholder {
 			}
 		}
 	}
-}
-
-// SVG Icons
-
-.svg .widget.socialicons span.bk-socialicons-twitter a,
-.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
-	background-image: image('/images/social/socialicons-twitter-hover.svg');
-}
-
-.svg .widget.socialicons span.bk-socialicons-linkedin a,
-.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
-	background-image: image('/images/social/socialicons-linkedin-hover.svg');
-}
-
-.svg .widget.socialicons span.bk-socialicons-facebook a,
-.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
-	background-image: image('/images/social/socialicons-facebook-hover.svg');
-}
-
-.svg .widget.socialicons span.bk-socialicons-rss a,
-.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
-	background-image: image('/images/social/socialicons-rss-hover.svg');
-}
-
-.svg .widget.socialicons span.bk-socialicons-googleplus a,
-.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
-	background-image: image('/images/social/socialicons-googleplus-hover.svg');
-}
-
-.svg .widget.socialicons span.bk-socialicons-youtube a,
-.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
-	background-image: image('/images/social/socialicons-youtube-hover.svg');
-}
-
-.svg .widget.socialicons span.bk-socialicons-instagram a,
-.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-instagram a {
-	background-image: image('/images/social/socialicons-instagram-hover.svg');
-}
-
-.svg .widget.socialicons span.bk-socialicons-pinterest a,
-.svg .widget.profile .bk-profile-socialicons span.bk-socialicons-pinterest a {
-	background-image: image('/images/social/socialicons-pinterest-hover.svg');
-}
-
-// PNG Icons
-
-.widget.socialicons span.bk-socialicons-twitter a,
-.widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
-	background-image: image('/images/social/socialicons-twitter.png');
-}
-
-.widget.socialicons span.bk-socialicons-linkedin a,
-.widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
-	background-image: image('/images/social/socialicons-linkedin.png');
-}
-
-.widget.socialicons span.bk-socialicons-facebook a,
-.widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
-	background-image: image('/images/social/socialicons-facebook.png');
-}
-
-.widget.socialicons span.bk-socialicons-rss a,
-.widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
-	background-image: image('/images/social/socialicons-rss.png');
-}
-
-.widget.socialicons span.bk-socialicons-googleplus a,
-.widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
-	background-image: image('/images/social/socialicons-googleplus.png');
-}
-
-.widget.socialicons span.bk-socialicons-youtube a,
-.widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
-	background-image: image('/images/social/socialicons-youtube.png');
-}
-
-.widget.socialicons span.bk-socialicons-instagram a,
-.widget.profile .bk-profile-socialicons span.bk-socialicons-instagram a {
-	background-image: image('/images/social/socialicons-instagram.png');
-}
-
-.widget.socialicons span.bk-socialicons-pinterest a,
-.widget.profile .bk-profile-socialicons span.bk-socialicons-pinterest a {
-	background-image: image('/images/social/socialicons-pinterest.png');
 }
 
 // TWITTER FEED

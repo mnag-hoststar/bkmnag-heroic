@@ -239,25 +239,25 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	body:not(.edit) {
 		overflow: hidden;
 	}
-}
 
-.column .widget.content {
-	margin-bottom: 20px;
+	.column & {
+		margin-bottom: 20px;
+	}
+
+	& span.expand {
+		font-family: @font-swatch7-font-family;
+		margin: 10px 0;
+		cursor: pointer;
+		display: inline-block;
+		letter-spacing: .1em;
+		text-transform: uppercase;
+	}
 }
 
 .column + .column {
 	@media @mobile {
 		margin-top: 12px;
 	}
-}
-
-.widget.content span.expand {
-	font-family: @font-swatch7-font-family;
-	margin: 10px 0;
-	cursor: pointer;
-	display: inline-block;
-	letter-spacing: .1em;
-	text-transform: uppercase;
 }
 
 .widget.contentgroup {
@@ -272,7 +272,8 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	}
 }
 
-.expand .more, .expand .less {
+.expand .more,
+.expand .less {
 	&:hover {
 		color: @heading-color;
 
