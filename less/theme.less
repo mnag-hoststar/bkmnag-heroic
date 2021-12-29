@@ -21,6 +21,8 @@ body {
 	letter-spacing: .04em;
 }
 
+// Typography
+
 h1, h2, h3, h4, h5, h6, blockquote {
 	text-transform: uppercase;
 	letter-spacing: .1em;
@@ -28,15 +30,15 @@ h1, h2, h3, h4, h5, h6, blockquote {
 	word-break: break-word;
 
 	.style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
@@ -61,29 +63,35 @@ h6 {
 
 p, .paragraph, ul, ol, li, .contentgroup__body, label {
 	.style--light & {
-	    color: fade(@contrast--light, 80%);
+		color: fade(@contrast--light, 80%);
 	}
 
 	.style--accent & {
-	    color: fade(@contrast--accent, 80%);
+		color: fade(@contrast--accent, 80%);
 	}
 
 	.style--dark & {
-	    color: fade(@contrast--dark, 80%);
+		color: fade(@contrast--dark, 80%);
 	}
 }
 
+p {
+	padding-bottom: 0;
+}
+
+// Links
+
 a {
 	.style--light & {
-	    color: @color--accent;
+		color: @color--accent;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @color--accent;
+		color: @color--accent;
 	}
 }
 
@@ -91,13 +99,17 @@ a {
 	text-decoration: none;
 }
 
-p {
-	padding-bottom: 0;
-}
+// Lists
 
 ul, ol {
 	padding: 0 0 .5em 2em;
 }
+
+.content .bk-content-text ol {
+	list-style-position: inherit;
+}
+
+// Blockquote
 
 blockquote {
 	border: 1px solid @contrast-color;
@@ -109,8 +121,6 @@ blockquote {
 	}
 }
 
-.content .bk-content-text ol {
-	list-style-position: inherit;
 }
 
 // CUSTOM PAGE
@@ -141,7 +151,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 }
 
 .bk-header {
-    position: relative;
+	position: relative;
 	padding: 40px 0;
 
 	.companyheader {
@@ -222,12 +232,12 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 .gdpr-footer {
 	padding: 10px;
-    
-    &__link {
+	
+	&__link {
 		color: @paragraph-color;
 		font-size: @font-swatch5-font-size;
 		padding: 5px 10px;
-    }
+	}
 }
 
 // CONTENT
@@ -278,15 +288,15 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		color: @heading-color;
 
 		.style--light & {
-		    color: @contrast--light;
+			color: @contrast--light;
 		}
 
 		.style--accent & {
-		    color: @contrast--accent;
+			color: @contrast--accent;
 		}
 
 		.style--dark & {
-		    color: @contrast--dark;
+			color: @contrast--dark;
 		}
 	}
 }
@@ -294,12 +304,12 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 // GENERAL FORMS
 
 .form-group {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 1em;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 1em;
 
 	@media @mobile {
-    	display: block;
+		display: block;
 	}
 }
 
@@ -321,19 +331,19 @@ select {
 	.style--light & {
 		background-color: @color--light;
 		border-color: @color--accent;
-	    color: fade(@contrast--light, 80%);
+		color: fade(@contrast--light, 80%);
 	}
 
 	.style--accent & {
 		background-color: @color--accent;
 		border-color: @contrast--accent;
-	    color: fade(@contrast--accent, 80%);
+		color: fade(@contrast--accent, 80%);
 	}
 
 	.style--dark & {
 		background-color: @color--dark;
 		border-color: @contrast--dark;
-	    color: fade(@contrast--dark, 80%);
+		color: fade(@contrast--dark, 80%);
 	}
 
 	&:focus,
@@ -370,9 +380,9 @@ select {
 	border-radius: 0;
 	background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNoZXZyb25fc21hbGxfZG93biIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4Ig0KCSB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZD0iTTEzLjQxOCw3Ljg1OWMwLjI3MS0wLjI2OCwwLjcwOS0wLjI2OCwwLjk3OCwwYzAuMjcsMC4yNjgsMC4yNzIsMC43MDEsMCwwLjk2OWwtMy45MDgsMy44Mw0KCWMtMC4yNywwLjI2OC0wLjcwNywwLjI2OC0wLjk3OSwwbC0zLjkwOC0zLjgzYy0wLjI3LTAuMjY3LTAuMjctMC43MDEsMC0wLjk2OWMwLjI3MS0wLjI2OCwwLjcwOS0wLjI2OCwwLjk3OCwwTDEwLDExTDEzLjQxOCw3Ljg1OXoNCgkiLz4NCjwvc3ZnPg0K");
 	background-size: 2em;
-    background-repeat: no-repeat;
-    background-position: right 0.5em center;
-    padding-right: 3em;
+	background-repeat: no-repeat;
+	background-position: right 0.5em center;
+	padding-right: 3em;
 }
 
 .contactform .option-list,

@@ -30,16 +30,16 @@
 	&.language-selector--horizontal,
 	&.language-selector--dropdown {
 		z-index: 200;
-	    position: fixed;
+		position: fixed;
 		box-sizing: content-box;
 		width: 100%;
 	}
 
 	&.language-selector--light {
-        background-color: lighten(@spare-color, 20%);
+		background-color: lighten(@spare-color, 20%);
 	}
 	&.language-selector--dark {
-        background-color: @spare-color;
+		background-color: @spare-color;
 	}
 	
 	&.language-selector--dropdown {
@@ -47,72 +47,72 @@
 		text-align: left;
 	}
 
-    .language-selector__inner,
-    .language-selector__list,
-    .language-selector__item,
-    .language-selector__link,
-    .language-selector__name,
-    .language-selector__localised-name {
-    	font-family: @font-swatch6-font-family;
-    	font-size: @font-swatch6-font-size;
-    	font-weight: @font-swatch6-font-weight;
-    	color: @font-swatch6-color;
-    	line-height: @font-swatch6-line-height;
-    	letter-spacing: @font-swatch6-letter-spacing;
-        color: @font-swatch6-color;
-        text-transform: uppercase;
-        letter-spacing: .1em;
-        -webkit-font-smoothing: auto;
-        -moz-osx-font-smoothing: auto;
-        font-smooth: auto;
-    }
+	.language-selector__inner,
+	.language-selector__list,
+	.language-selector__item,
+	.language-selector__link,
+	.language-selector__name,
+	.language-selector__localised-name {
+		font-family: @font-swatch6-font-family;
+		font-size: @font-swatch6-font-size;
+		font-weight: @font-swatch6-font-weight;
+		color: @font-swatch6-color;
+		line-height: @font-swatch6-line-height;
+		letter-spacing: @font-swatch6-letter-spacing;
+		color: @font-swatch6-color;
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		font-smooth: auto;
+	}
 }
 	
 // Inner
 
 .language-selector__inner {
-    .language-selector.language-selector--horizontal &,
-    .language-selector.language-selector--dropdown & {
-	    box-sizing: content-box;
-    	padding: @language-padding;
-    }
-    
-    .language-selector.language-selector--horizontal & {
+	.language-selector.language-selector--horizontal &,
+	.language-selector.language-selector--dropdown & {
+		box-sizing: content-box;
+		padding: @language-padding;
+	}
+	
+	.language-selector.language-selector--horizontal & {
 		padding: @language-padding 0 0;
-    }
+	}
 
 	.language-selector.language-selector--dropdown & {
-    	&:before {
-    	    content: "";
-            display: block;
-    	    height: @language-line-height+4;
-    	}
-    	&:after {
-    	    content: "";
-            display: block;
-    	    height: @language-padding*2;
-    	}
+		&:before {
+			content: "";
+			display: block;
+			height: @language-line-height+4;
+		}
+		&:after {
+			content: "";
+			display: block;
+			height: @language-padding*2;
+		}
 	}
 }
 	
 // List
 
 .language-selector__list {
-    .language-selector & {
-	    min-width: auto;
-    }
+	.language-selector & {
+		min-width: auto;
+	}
 	
 	.language-selector.language-selector--dropdown & {
 		box-sizing: border-box;
 		margin: @language-padding;
 		min-width: auto;
-        max-width: ~"calc(100% - 1em)";
-        
-        @media @tablet {
-		    margin: 0;
-    	    padding: @language-padding;
-            max-width: 100%;
-        }
+		max-width: ~"calc(100% - 1em)";
+		
+		@media @tablet {
+			margin: 0;
+			padding: @language-padding;
+			max-width: 100%;
+		}
 		
 		@media @mobile {
 			width: 100%;
@@ -132,7 +132,7 @@
 	.language-selector.language-selector--light &,
 	.language-selector.language-selector--dark & {
 		cursor: pointer;
-	    position: relative;
+		position: relative;
 		border: none;
 		background-color: transparent;
 		width: auto;
@@ -140,24 +140,24 @@
 		
 		
 		.language-selector--horizontal& {
-		    margin: 0 0 @language-padding @language-padding;
+			margin: 0 0 @language-padding @language-padding;
 		}
 	}
 	
 	// Link Color
 	
 	.language-selector.language-selector--horizontal & {
-        border: 2px solid transparent;
-        
+		border: 2px solid transparent;
+		
 		.language-selector--light&,
 		.language-selector--dark& {
 			&:hover {
-                color: @bg-color
+				color: @bg-color
 			}
 			
 			&--current {
 				&, &:hover {
-	                color: @bg-color;
+					color: @bg-color;
 				}
 			}
 			
@@ -167,26 +167,26 @@
 	.language-selector.language-selector--dropdown & {
 		.language-selector--light&,
 		.language-selector--dark& {
-            .transition (all, 0.5s, ease);
-            border: 2px solid transparent;
-            background-color: darken(@bg-color, 5%);
+			.transition (all, 0.5s, ease);
+			border: 2px solid transparent;
+			background-color: darken(@bg-color, 5%);
 				
 			&:hover {
-                background-color: @button-color;
+				background-color: @button-color;
 			}
-    		
+			
 			&--current {
-                background-color: @bg-color;
+				background-color: @bg-color;
 				
 				&:hover {
-	                background-color: @button-color;
+					background-color: @button-color;
 				}
 			}
 		}
 		
 		.language-selector--light& {
 			&--current {
-                border: 2px solid @spare-color;
+				border: 2px solid @spare-color;
 			}
 		}
 	}
@@ -194,21 +194,21 @@
 	// Current Item
 	
 	&--current {
-	    &:after {
-    		.language-selector.language-selector--dropdown & {
+		&:after {
+			.language-selector.language-selector--dropdown & {
 				position: absolute;
-        		content: "\25be";
-        		top: 50%;
-        		right: 0;
-        		margin-top: -(@language-line-height/4);
-        		width: @language-padding*4;
-    		    background-color: transparent;
-        		line-height: @language-line-height/2;
-        	    font-size: @font-swatch6-font-size;
-        		color: @spare-color;
-        		text-align: center;
-    		}
-	    }
+				content: "\25be";
+				top: 50%;
+				right: 0;
+				margin-top: -(@language-line-height/4);
+				width: @language-padding*4;
+				background-color: transparent;
+				line-height: @language-line-height/2;
+				font-size: @font-swatch6-font-size;
+				color: @spare-color;
+				text-align: center;
+			}
+		}
 	}
 }
 
@@ -278,7 +278,7 @@
 .language-selector__name,
 .language-selector__localised-name {
 	.language-selector & {
-        text-rendering: auto;
+		text-rendering: auto;
 	}
 
 	.language-selector.language-selector--flag-text & {
@@ -296,7 +296,7 @@
 	}
 
 	.language-selector.language-selector--horizontal .language-selector__item--current & {
-	    color: @font-swatch6-color-hover;
+		color: @font-swatch6-color-hover;
 	}
 
 	.language-selector.language-selector--dropdown & {
@@ -304,7 +304,7 @@
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-    	color: @spare-color;
+		color: @spare-color;
 		
 		.language-selector--flag-text& {
 			@media @mobile-small {
@@ -321,10 +321,10 @@
 	width: 100%;
 	
 	&:after {
-        content: '';
-        display: block;
-        clear: both;
-    }
+		content: '';
+		display: block;
+		clear: both;
+	}
 	
 	ul {
 		margin: 0 auto;
@@ -355,8 +355,8 @@
 				max-height: calc(~"100vh - 200%");
 					
 				li a {
-				    display: inline;
-				    padding: 0;
+					display: inline;
+					padding: 0;
 				}
 			}
 
@@ -369,19 +369,19 @@
 					opacity: 1;
 					transform: translateX(0%);
 					transition-delay: 0s;
-				    max-width: none;
+					max-width: none;
 					
 					li .text {
-					    overflow: unset;
-                        text-overflow: unset;
-                        word-break: break-word;
-                        max-width: 300px;
+						overflow: unset;
+						text-overflow: unset;
+						word-break: break-word;
+						max-width: 300px;
 					}
 				}
 			}
 			&.folder {
-			    margin-right: 0;
-			    
+				margin-right: 0;
+				
 				.text {
 					letter-spacing: .1em;
 					.transition (all, 0.5s, ease);
@@ -408,7 +408,7 @@
 	.transition (all, 0.5s, ease);
 }
 
-// Extended Navigation
+// Navigation
 
 @media @tablet {
 
@@ -465,12 +465,12 @@
 }
 
 .language-selector + .bk-nav {
-    top: @language-line-height+2;
-    margin-top: @language-padding*4;
+	top: @language-line-height+2;
+	margin-top: @language-padding*4;
 }
 
 .language-selector ~ .bk-header {
-    margin-top: @language-line-height+2+@font-swatch6-line-height+16px*2;
+	margin-top: @language-line-height+2+@font-swatch6-line-height+16px*2;
 }
 
 // FEATURE
@@ -633,30 +633,30 @@
 	color: @heading-color;
 
 	.style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 
 	&:hover {
 		color: lighten(@color-swatch4, 20%);
 
 		.style--light & {
-		    color: @contrast--light;
+			color: @contrast--light;
 		}
 
 		.style--accent & {
-		    color: @contrast--accent;
+			color: @contrast--accent;
 		}
 
 		.style--dark & {
-		    color: @contrast--dark;
+			color: @contrast--dark;
 		}
 	}
 }
@@ -666,30 +666,30 @@
 	color: @paragraph-color;
 
 	.style--light & {
-	    color: fade(@contrast--light, 80%);
+		color: fade(@contrast--light, 80%);
 	}
 
 	.style--accent & {
-	    color: fade(@contrast--accent, 80%);
+		color: fade(@contrast--accent, 80%);
 	}
 
 	.style--dark & {
-	    color: fade(@contrast--dark, 80%);
+		color: fade(@contrast--dark, 80%);
 	}
 
 	&:hover {
 		color: lighten(@color-swatch5, 20%);
 
 		.style--light & {
-		    color: fade(@contrast--light, 80%);
+			color: fade(@contrast--light, 80%);
 		}
 
 		.style--accent & {
-		    color: fade(@contrast--accent, 80%);
+			color: fade(@contrast--accent, 80%);
 		}
 
 		.style--dark & {
-		    color: fade(@contrast--dark, 80%);
+			color: fade(@contrast--dark, 80%);
 		}
 	}
 }
@@ -863,15 +863,15 @@
 			cursor: pointer;
 
 			.style--light & {
-			    border-color: @color--accent;
+				border-color: @color--accent;
 			}
 
 			.style--accent & {
-			    border-color: @contrast--accent;
+				border-color: @contrast--accent;
 			}
 
 			.style--dark & {
-			    border-color: @color--accent;
+				border-color: @color--accent;
 			}
 		}
 
@@ -880,15 +880,15 @@
 			border: none;
 
 			.style--light & {
-			    background-color: @color--accent;
+				background-color: @color--accent;
 			}
 
 			.style--accent & {
-			    background-color: @contrast--accent;
+				background-color: @contrast--accent;
 			}
 
 			.style--dark & {
-			    background-color: @color--accent;
+				background-color: @color--accent;
 			}
 		}
 	}
@@ -928,21 +928,21 @@ button.btn,
 	min-height: 52px;
 
 	.style--light & {
-	    background-color: @color--light;
-	    border-color: @color--accent;
-	    color: @contrast--light;
+		background-color: @color--light;
+		border-color: @color--accent;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    background-color: @color--accent;
-	    border-color: @contrast--accent;
-	    color: @contrast--accent;
+		background-color: @color--accent;
+		border-color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    background-color: @color--dark;
-	    border-color: @color--accent;
-	    color: @contrast--dark;
+		background-color: @color--dark;
+		border-color: @color--accent;
+		color: @contrast--dark;
 	}
 
 	@media @mobile {
@@ -955,18 +955,18 @@ button.btn,
 		.transition (all, 0.5s, ease);
 
 		.style--light & {
-		    background-color: @color--accent;
-		    color: @contrast--accent;
+			background-color: @color--accent;
+			color: @contrast--accent;
 		}
 
 		.style--accent & {
-		    background-color: @color--light;
-		    color: @contrast--light;
+			background-color: @color--light;
+			color: @contrast--light;
 		}
 
 		.style--dark & {
-		    background-color: @color--accent;
-		    color: @contrast--accent;
+			background-color: @color--accent;
+			color: @contrast--accent;
 		}
 	}
 }
@@ -1017,15 +1017,15 @@ button.btn,
 	text-decoration: none;
 
 	.style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 
 	&:hover {
@@ -1050,21 +1050,21 @@ button.btn,
 		.transition (all, 0.5s, ease);
 
 		.style--light & {
-		    background-color: @color--light;
-		    border-color: @color--accent;
-		    color: @contrast--light;
+			background-color: @color--light;
+			border-color: @color--accent;
+			color: @contrast--light;
 		}
 
 		.style--accent & {
-		    background-color: @color--accent;
-		    border-color: @contrast--accent;
-		    color: @contrast--accent;
+			background-color: @color--accent;
+			border-color: @contrast--accent;
+			color: @contrast--accent;
 		}
 
 		.style--dark & {
-		    background-color: @color--dark;
-		    border-color: @color--accent;
-		    color: @contrast--dark;
+			background-color: @color--dark;
+			border-color: @color--accent;
+			color: @contrast--dark;
 		}
 
 		&:hover {
@@ -1075,18 +1075,18 @@ button.btn,
 			.transition (all, 0.5s, ease);
 
 			.style--light & {
-			    background-color: @color--accent;
-			    color: @contrast--accent;
+				background-color: @color--accent;
+				color: @contrast--accent;
 			}
 
 			.style--accent & {
-			    background-color: @color--light;
-			    color: @contrast--light;
+				background-color: @color--light;
+				color: @contrast--light;
 			}
 
 			.style--dark & {
-			    background-color: @color--accent;
-			    color: @contrast--accent;
+				background-color: @color--accent;
+				color: @contrast--accent;
 			}
 		}
 	}
@@ -1128,15 +1128,15 @@ button.btn,
 		padding: 0;
 
 		.style--light & {
-		    color: @contrast--light;
+			color: @contrast--light;
 		}
 
 		.style--accent & {
-		    color: @contrast--accent;
+			color: @contrast--accent;
 		}
 
 		.style--dark & {
-		    color: @contrast--dark;
+			color: @contrast--dark;
 		}
 	}
 
@@ -1149,7 +1149,7 @@ button.btn,
 
 .signupform fieldset input {
 	height: auto;
-    width: auto;
+	width: auto;
 
 	@media @mobile {
 		width: 100%;
@@ -1304,57 +1304,57 @@ button.btn,
 
 input::-webkit-input-placeholder {
    .style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
 input:-moz-placeholder {
    .style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
 input::-moz-placeholder {
    .style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
 input:-ms-input-placeholder {
    .style--light & {
-	    color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-	    color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-	    color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
@@ -1433,20 +1433,20 @@ input:-ms-input-placeholder {
 		
 		.form__link {
 			font-family:@font-swatch5-font-family;
-            font-size: @font-swatch5-font-size;
+			font-size: @font-swatch5-font-size;
 			font-weight:@font-swatch5-font-weight;
 			letter-spacing: @font-swatch5-letter-spacing;
 
 			.style--light & {
-			    color: @contrast--light;
+				color: @contrast--light;
 			}
 
 			.style--accent & {
-			    color: @contrast--accent;
+				color: @contrast--accent;
 			}
 
 			.style--dark & {
-			    color: @contrast--dark;
+				color: @contrast--dark;
 			}
 		}
 	}
@@ -1481,21 +1481,21 @@ input:-ms-input-placeholder {
 			.transition (all, 0.5s, ease);
 
 			.style--light & {
-			    background-color: @color--light;
-			    border-color: @color--accent;
-			    color: @contrast--light;
+				background-color: @color--light;
+				border-color: @color--accent;
+				color: @contrast--light;
 			}
 
 			.style--accent & {
-			    background-color: @color--accent;
-			    border-color: @contrast--accent;
-			    color: @contrast--accent;
+				background-color: @color--accent;
+				border-color: @contrast--accent;
+				color: @contrast--accent;
 			}
 
 			.style--dark & {
-			    background-color: @color--dark;
-			    border-color: @color--accent;
-			    color: @contrast--dark;
+				background-color: @color--dark;
+				border-color: @color--accent;
+				color: @contrast--dark;
 			}
 
 			&:hover {
@@ -1503,18 +1503,18 @@ input:-ms-input-placeholder {
 				.transition (all, 0.5s, ease);
 
 				.style--light & {
-				    background-color: @color--accent;
-				    color: @contrast--accent;
+					background-color: @color--accent;
+					color: @contrast--accent;
 				}
 
 				.style--accent & {
-				    background-color: @color--light;
-				    color: @contrast--light;
+					background-color: @color--light;
+					color: @contrast--light;
 				}
 
 				.style--dark & {
-				    background-color: @color--accent;
-				    color: @contrast--accent;
+					background-color: @color--accent;
+					color: @contrast--accent;
 				}
 			}
 
@@ -1603,15 +1603,15 @@ input:-ms-input-placeholder {
 			border: 1px solid @contrast-color;
 
 			.style--light & {
-			    border-color: fade(@color--accent, 80%);
+				border-color: fade(@color--accent, 80%);
 			}
 
 			.style--accent & {
-			    border-color: fade(@contrast--accent, 80%);
+				border-color: fade(@contrast--accent, 80%);
 			}
 
 			.style--dark & {
-			    border-color: fade(@color--accent, 80%);
+				border-color: fade(@color--accent, 80%);
 			}
 		}
 	}
@@ -1629,15 +1629,15 @@ input:-ms-input-placeholder {
 			padding: 0;
 
 			.style--light & {
-			    color: fade(@contrast--light, 80%);
+				color: fade(@contrast--light, 80%);
 			}
 
 			.style--accent & {
-			    color: fade(@contrast--accent, 80%);
+				color: fade(@contrast--accent, 80%);
 			}
 
 			.style--dark & {
-			    color: fade(@contrast--dark, 80%);
+				color: fade(@contrast--dark, 80%);
 			}
 		}
 
@@ -1646,15 +1646,15 @@ input:-ms-input-placeholder {
 			font-size: bkscale(@font-swatch5-font-size,0.9);
 
 			.style--light & {
-			    color: fade(@contrast--light, 80%);
+				color: fade(@contrast--light, 80%);
 			}
 
 			.style--accent & {
-			    color: fade(@contrast--accent, 80%);
+				color: fade(@contrast--accent, 80%);
 			}
 
 			.style--dark & {
-			    color: fade(@contrast--dark, 80%);
+				color: fade(@contrast--dark, 80%);
 			}
 		}
 
@@ -1665,15 +1665,15 @@ input:-ms-input-placeholder {
 			text-transform: uppercase;
 
 			.style--light & {
-			    color: @contrast--light;
+				color: @contrast--light;
 			}
 
 			.style--accent & {
-			    color: @contrast--accent;
+				color: @contrast--accent;
 			}
 
 			.style--dark & {
-			    color: @contrast--dark;
+				color: @contrast--dark;
 			}
 		}
 
@@ -1682,15 +1682,15 @@ input:-ms-input-placeholder {
 			text-decoration: none;
 
 			.style--light & {
-			    color: @contrast--light;
+				color: @contrast--light;
 			}
 
 			.style--accent & {
-			    color: @contrast--accent;
+				color: @contrast--accent;
 			}
 
 			.style--dark & {
-			    color: @contrast--dark;
+				color: @contrast--dark;
 			}
 		}
 	}
@@ -1708,15 +1708,15 @@ hr.line {
 	margin: 0;
 
 	.style--light & {
-	    background-color: fade(@color--accent, 20%);
+		background-color: fade(@color--accent, 20%);
 	}
 
 	.style--accent & {
-	    background-color: fade(@contrast--accent, 20%);
+		background-color: fade(@contrast--accent, 20%);
 	}
 
 	.style--dark & {
-	    background-color: fade(@contrast--dark, 20%);
+		background-color: fade(@contrast--dark, 20%);
 	}
 }
 
