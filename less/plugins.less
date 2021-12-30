@@ -391,156 +391,179 @@
 
 // Products List
 
-.widget.ecomproductslist {
-    width: auto;
-    max-width: none;
-    margin-left: 0;
-    margin-bottom: 40px;
+.widget.ecomproductslist,
+.widget.ecomfeaturedproducts {
+	width: auto;
+	max-width: none;
+	margin-left: 0;
+	margin-bottom: 40px;
+}
 
-    .ecom-productslist-products {
-        display: flex;
-        flex-wrap: wrap;
-        max-width: auto;
-        margin: 0 -1em;
-    }
+.widget.ecomproductslist .ecom-productslist-products,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: auto;
+	margin: 0 -1em;
 
-    .productlist-filter {
-        margin-right: 0;
-        margin-left: 0;
-        margin-bottom: 40px;
-        width: 100%;
-        padding: 0 1em;
+	// Filter
 
-        .productlist-display-form {
-            text-align: right;
+	.productlist-filter {
+		margin-right: 0;
+		margin-left: 0;
+		margin-bottom: 40px;
+		width: 100%;
+		padding: 0 1em;
 
-            .form-group {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                margin-bottom: 1em;
-                width: 100%;
-            
-                @media @mobile {
-                    display: block;
-                }
-            }
+		.productlist-display-form {
+			text-align: right;
 
-            label {
-                text-align: left;
-                width: 20%;
-                padding-bottom: 0;
+			// Filter Group
 
-                @media @mobile {
-                    width: 100%;
-                    padding-bottom: .4em;
-                }
-            
-                .responsivecolumns & {
-                    width: 100%;
-                    padding-bottom: .4em;
-                }
-            }
+			.form-group {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				margin-bottom: 1em;
+				width: 100%;
+			
+				@media @mobile {
+					display: block;
+				}
+			}
 
-            input {
-                @media @mobile {
-                    margin-bottom: 1em;
-                }
-            }
+			label {
+				text-align: left;
+				width: 20%;
+				padding-bottom: 0;
 
-            .productlist-search {
-                position: relative;
-            }
+				@media @mobile {
+					width: 100%;
+					padding-bottom: .4em;
+				}
+			
+				.responsivecolumns & {
+					width: 100%;
+					padding-bottom: .4em;
+				}
+			}
 
-            label,
-            select,
-            input {
-                @media @mobile {
-                    width: 100%;
-                }
-            }
-        }
+			input {
+				@media @mobile {
+					margin-bottom: 1em;
+				}
+			}
 
-        .productlist-item-count {
-            padding-top: 10px;
-        }
-    }
+			.productlist-search {
+				position: relative;
+			}
 
-    .ecom-productslist-product {
-        display: block;
-        width: 100%/3;
-        margin-right: 0;
-        margin-left: 0;
-        margin-bottom: 4em;
-        padding: 0 1em;
-        overflow: visible;
+			label,
+			select,
+			input {
+				@media @mobile {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
 
-        @media @tablet {
-            width: 100%/2;
-            margin-right: 0;
-        }
+.widget.ecomproductslist .productlist-item-count {
+	padding-top: 10px;
+}
 
-        @media @mobile {
-            width: 100%;
-            margin-right: 0;
-        }
+// Product Item
 
-        .responsivecolumns & {
-            width: 100%;
-            margin-right: 0;
-        }
-    }
+.widget.ecomproductslist .ecom-productslist-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-product {
+	display: block;
+	width: 100%/3;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 4em;
+	padding: 0 1em;
+	overflow: visible;
 
-    .ecom-productslist-title {
-        margin-bottom: 20px;
-        word-break: break-word;
-    }
+	@media @tablet {
+		width: 100%/2;
+		margin-right: 0;
+	}
 
-    span.ecom-productlist-price {
-        border: 1px solid @contrast-color;
-        border-radius: 20px;
-        padding: 3px 10px 4px;
+	@media @mobile {
+		width: 100%;
+		margin-right: 0;
+	}
 
-        .style--light & {
-            border-color: darken(@color--light, 15%);
-        }
+	.responsivecolumns & {
+		width: 100%;
+		margin-right: 0;
+	}
+}
 
-        .style--accent & {
-            border-color: darken(@color--accent, 15%);
-        }
+// Image
 
-        .style--dark & {
-            border-color: darken(@color--dark, 15%);
-        }
-    }
+.widget.ecomproductslist .ecom-productslist-image-wrap,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap {
+	margin: 0 auto;
+	background-position: center;
+	height: 350px;
+	width: 70%;
 
-    .ecom-productslist-image-wrap {
-        margin: 0 auto;
-        background-position: center;
-        height: 350px;
-        width: 70%;
+	@media @tablet {
+		height: 250px;
+	}
+}
 
-        @media @tablet {
-            height: 250px;
-        }
-    }
+// Title
 
-    .ecom-productlist-info {
-        margin-top: 20px;
-        text-align: center;
-    }
+.widget.ecomproductslist .ecom-productslist-title,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-title {
+	margin-bottom: 20px;
+	word-break: break-word;
+}
 
-    .productlist-pagination {
-        margin-left: 0;
-        margin-right: 3%;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        text-align: center;
+// Price
 
-        .productlist-pagination-pages .productlist-pagination-page {
-            padding: 0 10px;
-        }
-    }
+.widget.ecomproductslist .ecom-productlist-price,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-price {
+	border: 1px solid @contrast-color;
+	border-radius: 20px;
+	padding: 3px 10px 4px;
+
+	.style--light & {
+		border-color: darken(@color--light, 15%);
+	}
+
+	.style--accent & {
+		border-color: darken(@color--accent, 15%);
+	}
+
+	.style--dark & {
+		border-color: darken(@color--dark, 15%);
+	}
+}
+
+// Info
+
+.widget.ecomproductslist .ecom-productlist-info,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-info {
+	margin-top: 20px;
+	text-align: center;
+}
+
+// Pagination
+
+.widget.ecomproductslist .productlist-pagination {
+	margin-left: 0;
+	margin-right: 3%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+
+	.productlist-pagination-pages .productlist-pagination-page {
+		padding: 0 10px;
+	}
 }
 
 // Product Detail
