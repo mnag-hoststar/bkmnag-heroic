@@ -144,18 +144,6 @@ ul, ol {
 	list-style-position: inherit;
 }
 
-// Blockquote
-
-blockquote {
-	border: 1px solid @contrast-color;
-	padding: 30px!important;
-	font-style: italic;
-	
-	&:before {
-		display: none;
-	}
-}
-
 // Preformatted and Code Text
 
 pre, code {
@@ -197,6 +185,29 @@ code {
 	}
 }
 
+// Blockquote
+
+blockquote {
+	border: 1px solid fade(@font-swatch5-color, 20%);
+	padding: 30px !important;
+	font-style: italic;
+
+	.style--light & {
+		border-color: fade(@contrast--light, 20%);
+	}
+
+	.style--accent & {
+		border-color: fade(@contrast--accent, 20%);
+	}
+
+	.style--dark & {
+		border-color: fade(@contrast--dark, 20%);
+	}
+	
+	&:before {
+		display: none;
+	}
+}
 // TABLE
 
 table {
