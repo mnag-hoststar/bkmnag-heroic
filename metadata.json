@@ -127,7 +127,7 @@
 			"line-height": "24px",
 			"color": "@color-swatch7",
 			"letter-spacing": "inherit",
-			"background-color": "transparent",
+			"background-color": "@color-swatch1",
 			"background-color-hover": "@color-swatch3"
 		},
 		"font8": {

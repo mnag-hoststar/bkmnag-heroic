@@ -817,47 +817,177 @@
 	margin-bottom: 40px;
 
 	.slideshow-widget {
+		.btn-play,
 		.btn-prev,
 		.btn-next {
-			width: 32px;
-			height: 32px;
-			text-indent: -99999px;
+			position: absolute;
+			opacity: 1;
+			top: 50%;
+			background-color: @font-swatch7-background-color;
+			border: 2px solid @spare-color;
+			width: 50px;
+			height: 50px;
+			margin-top: -25px;
+			font-size: 0;
+			line-height: 0;
+			color: @font-swatch7-color;
+			-webkit-transition: background-color 0.15s ease-in-out;
+			-moz-transition: background-color 0.15s ease-in-out;
+			-o-transition: background-color 0.15s ease-in-out;
+			transition: background-color 0.15s ease-in-out;
+
+			.style--light & {
+				background-color: @color--light;
+				border-color: @color--dark;
+				color: @contrast--light;
+			}
+		
+			.style--accent & {
+				background-color: @color--accent;
+				border-color: @contrast--accent;
+				color: @contrast--accent;
+			}
+		
+			.style--dark & {
+				background-color: @color--dark;
+				border-color: @color--accent;
+				color: @contrast--dark;
+			}
+
+			@media @tablet {
+				width: 50px;
+				height: 50px;
+			}
 
 			&:hover {
-				opacity: 0.7;
+				background-color: @font-swatch7-background-color-hover;
+
+				.style--light & {
+					background-color: @color--accent;
+				}
+		
+				.style--accent & {
+					background-color: @color--light;
+				}
+		
+				.style--dark & {
+					background-color: @color--accent;
+				}
+			}
+
+			&:after {
+				content: '';
+				display: block;
+				color: @font-swatch7-color;
+				background: transparent;
+				top: 50%;
+				left: 50%;
+				margin-top: -10px;
+				margin-left: -5px;
+
+				.style--light & {
+					color: @contrast--light;
+				}
+			
+				.style--accent & {
+					color: @contrast--accent;
+				}
+			
+				.style--dark & {
+					color: @contrast--dark;
+				}
+			}
+		}
+
+		.btn-play {
+    		left: 50%;
+			margin-top: -25px;
+
+			&:after,
+			&.pause:after {
+				height: 0;
+				width: 0;
+				border: 10px solid transparent;
+				border-left: 15px solid @font-swatch7-color;
+
+				.style--light & {
+					border-color: @contrast--light;
+				}
+			
+				.style--accent & {
+					border-color: @contrast--accent;
+				}
+			
+				.style--dark & {
+					border-color: @contrast--dark;
+				}
+			}
+
+			&.pause:after {
+				height: 18px;
+				width: 6px;
+				margin-top: -9px;
+				margin-left: -6px;
+				border: none;
+				border-left: 3px solid @font-swatch7-color;
+				border-right: 3px solid @font-swatch7-color;
+
+				.style--light & {
+					border-color: @contrast--light;
+				}
+			
+				.style--accent & {
+					border-color: @contrast--accent;
+				}
+			
+				.style--dark & {
+					border-color: @contrast--dark;
+				}
+			}
+		}
+
+		.btn-prev,
+		.btn-next {
+			&:after {
+				border: 3px solid @font-swatch7-color;
+				transform: rotate(45deg);
+				margin-top: -7px;
+				margin-left: auto;
+				left: auto;
+				right: auto;
+				width: 12px;
+				height: 12px;
+
+				.style--light & {
+					border-color: @contrast--light;
+				}
+			
+				.style--accent & {
+					border-color: @contrast--accent;
+				}
+			
+				.style--dark & {
+					border-color: @contrast--dark;
+				}
 			}
 		}
 
 		.btn-prev {
-			left: 10px;
-			background: image('/images/slideshow-arrow-left.svg') no-repeat center left;
-			background-size: contain;
-		}
-
-		.btn-next {
-			right: 10px;
-			background: image('/images/slideshow-arrow-right.svg') no-repeat center left;
-			background-size: contain;
-		}
-
-		.btn-play {
-			width: 64px;
-			height: 64px;
-			background: image('/images/slideshow-play.svg') no-repeat center;
-			background-size: cover;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			text-indent: -99999px;
-
 			&:after {
-				display: none;
+				border-top: transparent;
+				border-right: transparent;
+				margin-left: -5px;
+				left: 50%;
 			}
 		}
 
-		&:hover .pause {
-			background: image('/images/slideshow-pause.svg') no-repeat center;
-			background-size: cover;
+		.btn-next {
+			&:after {
+				border-bottom: transparent;
+				border-left: transparent;
+				margin-right: -5px;
+				right: 50%;
+			}
 		}
 	}
 
@@ -871,6 +1001,8 @@
 	}
 
 	.title {
+		display: block;
+		padding-bottom: 0;
 		color: @font-swatch4-color;
 		font-family: @font-swatch4-font-family;
 		text-transform: uppercase;
@@ -885,40 +1017,44 @@
 
 		.dot {
 			background-color: transparent;
-			border: 1px solid @contrast-color;
+			border: 2px solid @spare-color;
+			background-color: @font-swatch7-background-color;
 			border-radius: 50%;
-			width: 8px;
-			height: 8px;
+			width: 12px;
+			height: 12px;
 			margin: 0 4px;
 			cursor: pointer;
 
 			.style--light & {
-				border-color: @color--accent;
+				background-color: @color--light;
+				border-color: @color--dark;
 			}
-
+		
 			.style--accent & {
+				background-color: @color--accent;
 				border-color: @contrast--accent;
 			}
-
+		
 			.style--dark & {
+				background-color: @color--dark;
 				border-color: @color--accent;
 			}
-		}
 
-		.dot.selected {
-			background-color: @button-color;
-			border: none;
+			&.selected {
+				background-color: @font-swatch7-background-color-hover;
+				border: none;
 
-			.style--light & {
-				background-color: @color--accent;
-			}
-
-			.style--accent & {
-				background-color: @contrast--accent;
-			}
-
-			.style--dark & {
-				background-color: @color--accent;
+				.style--light & {
+					background-color: @color--accent;
+				}
+		
+				.style--accent & {
+					background-color: @color--light;
+				}
+		
+				.style--dark & {
+					background-color: @color--accent;
+				}
 			}
 		}
 	}
@@ -958,7 +1094,7 @@ a.contentgroup__link {
 
 	.style--light & {
 		background-color: @color--light;
-		border-color: @color--accent;
+		border-color: @color--dark;
 		color: @contrast--light;
 	}
 
@@ -985,17 +1121,14 @@ a.contentgroup__link {
 
 		.style--light & {
 			background-color: @color--accent;
-			color: @contrast--accent;
 		}
 
 		.style--accent & {
 			background-color: @color--light;
-			color: @contrast--light;
 		}
 
 		.style--dark & {
 			background-color: @color--accent;
-			color: @contrast--accent;
 		}
 	}
 }
@@ -1017,15 +1150,15 @@ a.contentgroup__link {
 	color: @font-swatch7-color;
 
 	.style--light & {
-		color: @contrast--accent;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
-		color: @contrast--dark;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
-		color: @contrast--accent;
+		color: @contrast--dark;
 	} 
 }
 
