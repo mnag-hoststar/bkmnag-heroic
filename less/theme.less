@@ -722,6 +722,21 @@ label {
 	padding-bottom: .4em;
 }
 
+// Dropdown
+
+.select-wrap {
+	position: relative;
+	max-width: 50%;
+
+	@media @mobile {
+		max-width: 100%;
+	}
+
+	.responsivecolumns & {
+		max-width: 100%;
+	}
+}
+
 select {
 	cursor: pointer;
 	position: relative;
