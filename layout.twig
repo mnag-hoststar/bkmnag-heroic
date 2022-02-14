@@ -1,40 +1,38 @@
 <!doctype html>
 <html class="no-js" lang="{{ page.seoLang }}">
-<head>
-	<meta charset="utf-8" />
-	<title>{{ page.title }}</title>
-	<meta name="keywords" content="{{ page.keywords }}" />
-	<meta name="description" content="{{ page.description }}" />
-	<meta http-equiv="content-language" content="{{ page.seoLang }}" />
+	<head>
+		<meta charset="utf-8" />
+		<title>{{ page.title }}</title>
+		<meta name="keywords" content="{{ page.keywords }}" />
+		<meta name="description" content="{{ page.description }}" />
+		<meta http-equiv="content-language" content="{{ page.seoLang }}" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 
-	{% if site.favicon %}
-		<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
-		<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
-	{% endif %}
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+		{% if site.favicon %}
+			<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
+			<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
+		{% endif %}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-	{% include basekit.headScript %}
-</head>
-<body class="{{ page.backgroundClass }}" {{ isV10sSite ? 'id="migrated"' : '' }}>
+		{% include basekit.headScript %}
+	</head>
+	<body class="{{ page.backgroundClass }}" {{ isV10sSite ? 'id="migrated"' : '' }}>
+		{% block content %}
+		{% endblock %}
+		{% include basekit.bodyScript %}
 
-	{% block content %}
-	{% endblock %}
-	{% include basekit.bodyScript %}
+		<script type="text/javascript">
+			! function () {
+				function supportsSVG() {
+					return !!document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect
+				}
+				if (supportsSVG()) document.documentElement.className += ' svg'
+			}();
+		</script>
 
-	<script type="text/javascript">
-		! function () {
-			function supportsSVG() {
-		        return !!document.createElementNS && !! document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect
-		    }
-		    if (supportsSVG()) document.documentElement.className += ' svg'
-		}();
-	</script>
-
-    <!-- jQuery -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    
-    <script src="{{ asset('js/scripts.js')}}"></script>
-
-</body>
+		<!-- jQuery -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="{{ asset('js/scripts.js')}}"></script>
+	</body>
 </html>

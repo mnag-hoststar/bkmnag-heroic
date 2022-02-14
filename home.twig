@@ -1,15 +1,11 @@
 {% extends "layout.twig" %}
-
 {% block content %}
-
 
 <nav class="bk-nav">
 	<div class="clearfix">
 		{{widget('extendednavigation', 'navigationheader', {"align":"center"})|raw}}
 	</div>
 </nav>
-
-
 
 <header class="bk-header container">
 	<div class="clearfix">
@@ -18,16 +14,13 @@
 	</div>
 </header>
 
-
 <section class="bk-section container">
 	{{widget('feature', 'featurehome', {"header": "profile", "strapline":"profile", "buttonText":"Go to Gallery","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
 </section>
 
-
 <div class="main container clearfix">
 	{{zone('main')|raw}}
 </div>
-
 
 <footer class="bk-footer">
 	<div class="container clearfix">
@@ -39,6 +32,5 @@
 		</div>
 	</div>
 </footer>
-
 
 {% endblock %}

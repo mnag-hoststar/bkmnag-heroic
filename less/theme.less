@@ -334,7 +334,7 @@ th {
 }
 
 td {
-	border-bottom: 1px dotted @font-swatch5-color;
+	border-bottom: 1px solid fade(@font-swatch5-color, 20%);
 	padding: 1em 0.5em;
 	font-family: @font-swatch5-font-family;
 	font-weight: @font-swatch5-font-weight;
@@ -343,15 +343,15 @@ td {
 	letter-spacing: @font-swatch5-letter-spacing;
 
 	.style--light & {
-		border-bottom-color: fade(@contrast--light, 60%);
+		border-bottom-color: fade(@contrast--light, 20%);
 	}
 
 	.style--accent & {
-		border-bottom-color: fade(@contrast--accent, 60%);
+		border-bottom-color: fade(@contrast--accent, 20%);
 	}
 
 	.style--dark & {
-		border-bottom-color: fade(@contrast--dark, 60%);
+		border-bottom-color: fade(@contrast--dark, 20%);
 	}
 	
 	@media @mobile {
@@ -519,20 +519,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 	.widget.profile {
 		margin: 0;
-
-		.bk-profile-socialicons {
-			margin: 0;
-
-			span a {
-				background-color: transparent;
-				border-color: transparent;
-
-				&:hover {
-					background-color: transparent;
-					border-color: @spare-color;
-				}
-			}
-		}
 
 		form fieldset {
 			.form-group {
