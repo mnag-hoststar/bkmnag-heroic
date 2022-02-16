@@ -63,7 +63,7 @@
 				text-decoration: none;
 
 				.style--light & {
-					color: @contrast--light;
+					color: @font-swatch1-color;
 				}
 
 				.style--accent & {
@@ -78,7 +78,7 @@
 					color: @button-color;
 
 					.style--light & {
-						color: @color--accent;
+						color: @button-color;
 					}
 
 					.style--accent & {
@@ -105,7 +105,7 @@
 			padding: 14px 0;
 
 			.style--light & {
-				color: fade(@contrast--light, 80%);
+				color: @font-swatch5-color;
 			}
 
 			.style--accent & {
@@ -139,18 +139,15 @@
 	line-height: 20px;
 
 	.style--light & {
-		border-color: darken(@color--light, 8%);
-		color: @color--accent;
+		border-color: @contrast-color;
 	}
 
 	.style--accent & {
 		border-color: darken(@color--accent, 8%);
-		color: @contrast--accent;
 	}
 
 	.style--dark & {
 		border-color: darken(@color--dark, 8%);
-		color: @color--accent;
 	}
 
 	&:hover {
@@ -159,18 +156,18 @@
 		border-color: darken(@color-swatch2, 15%);
 
 		.style--light & {
-			border-color: darken(@color--light, 15%);
-			color: darken(@color--accent, 15%);
+			color: darken(@color-swatch3, 15%);
+			border-color: darken(@color-swatch2, 15%);
 		}
 
 		.style--accent & {
-			border-color: darken(@color--accent, 15%);
 			color: darken(@contrast--accent, 15%);
+			border-color: darken(@color--accent, 15%);
 		}
 
 		.style--dark & {
-			border-color: darken(@color--dark, 15%);
 			color: darken(@color--accent, 15%);
+			border-color: darken(@color--dark, 15%);
 		}
 	}
 }
@@ -403,7 +400,7 @@
 	padding: 3px 10px 4px;
 
 	.style--light & {
-		border-color: darken(@color--light, 15%);
+		border-color: @contrast-color;
 	}
 
 	.style--accent & {
@@ -533,18 +530,15 @@
 			text-decoration: none;
 
 			.style--light & {
-				border-color: darken(@color--light, 10%);
-				color: @color--accent;
+				border-color: @contrast-color;
 			}
 
 			.style--accent & {
 				border-color: darken(@color--accent, 10%);
-				color: @contrast--accent;
 			}
 
 			.style--dark & {
 				border-color: darken(@color--dark, 10%);
-				color: @color--accent;
 			}
 
 			&:hover {
@@ -552,8 +546,8 @@
 				color: darken(@color-swatch3, 15%);
 
 				.style--light & {
-					border-color: darken(@color--light, 15%);
-					color: darken(@color--accent, 15%);
+					border-color: darken(@color-swatch2, 15%);
+					color: darken(@color-swatch3, 15%);
 				}
 
 				.style--accent & {
