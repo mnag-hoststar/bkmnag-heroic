@@ -353,6 +353,10 @@
 	padding: 0 1em;
 	overflow: visible;
 
+	a:hover {
+		text-decoration: none;
+	}
+
 	@media @tablet {
 		width: 100%/2;
 		margin-right: 0;
@@ -381,6 +385,13 @@
 	@media @tablet {
 		height: 250px;
 	}
+}
+
+.widget.ecomproductslist .ecom-productslist-image,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image {
+	display: none;
+    height: 100%;
+    margin: 0 auto;
 }
 
 // Title
@@ -563,10 +574,11 @@
 		}
 	}
 
-	.product-actions {
-		button {
+	.product-product {
+		.btn {
 			margin-bottom: 1em;
 			text-align: center;
+			min-width: 250px;
         
 			@media @mobile {
 				width: 100%;

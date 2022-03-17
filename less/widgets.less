@@ -93,12 +93,12 @@
 
 	.language-selector.language-selector--dropdown & {
 		&:before {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-line-height+4;
 		}
 		&:after {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-padding*2;
 		}
@@ -207,7 +207,7 @@
 		&:after {
 			.language-selector.language-selector--dropdown & {
 				position: absolute;
-				content: "\25be";
+				content: '\25be';
 				top: 50%;
 				right: 0;
 				margin-top: -(@language-line-height/4);
@@ -418,6 +418,7 @@
 						padding: 16px 30px;
 						margin: 0;
 						text-transform: uppercase;
+						word-break: break-word;
 		
 						// Folder Arrow
 	
@@ -1076,7 +1077,7 @@ button.button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.socialicons span a,
-footer.bk-footer .widget.profile .bk-profile-socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
@@ -1183,11 +1184,12 @@ form.blog-search-form .form-group button,
 .widget.dropbox button span,
 .widget.filedownload button.btn {
 	&:before {
-		float: left;
-		padding-right: 0.5em;
+        position: relative;
+        top: 0.1em;
+		padding-right: 0.25em;
 		background-image: none;
 		font-family:'FontAwesome';
-		font-size: 1.5em;
+		font-size: 1.25em;
 	}
 }
 
@@ -1509,7 +1511,7 @@ input:-ms-input-placeholder {
 // SOCIAL ICONS
 
 .widget.socialicons,
-footer.bk-footer .widget.profile .bk-profile-socialicons,
+.widget.profile .bk-profile-socialicons,
 .bk-nav .widget.profile .bk-profile-socialicons {
 	margin: 0 0 40px;
 
