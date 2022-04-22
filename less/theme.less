@@ -3,7 +3,6 @@
 // Colour Variables
 
 @bg-color: @color-swatch1;
-@contrast-color: @color-swatch2;
 @button-color: @color-swatch3;
 @heading-color: @color-swatch4;
 @paragraph-color: @color-swatch5;
@@ -58,6 +57,10 @@ h6 {
 	font-style: normal;
 }
 
+small, time, cite, details p, dt {
+	font-size: 1em;
+}
+
 // Normal Text
 
 .widget.content .wysihtml-editor-content,
@@ -87,7 +90,6 @@ h6 {
 p, .paragraph,
 ul, ol, li,
 dd, pre, code,
-.contentgroup__body,
 label, .label {
 	color: @font-swatch5-color;
     word-break: break-word;
@@ -102,6 +104,27 @@ label, .label {
 
 	.style--dark & {
 		color: fade(@contrast--dark, 80%);
+	}
+}
+
+p, dd, dt, dd {
+	font-family: @font-swatch5-font-family;
+	font-size: @font-swatch5-font-size;
+	font-weight: @font-swatch5-font-weight;
+	line-height: @font-swatch5-line-height;
+	letter-spacing: @font-swatch5-letter-spacing;
+	color: @font-swatch5-color;
+	
+	.style--light & {
+		color: @font-swatch5-color;
+	}
+
+	.style--accent & {
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		color: @contrast--dark;
 	}
 }
 
@@ -184,7 +207,7 @@ code {
 
 blockquote {
 	border: 1px solid fade(@font-swatch5-color, 20%);
-	padding: 30px !important;
+	padding: 1em 1.5em;
 	font-style: italic;
 
 	.style--light & {
@@ -261,8 +284,7 @@ blockquote {
 
 table {
 	overflow: auto;
-	width: 100%;
-	max-width: 100%;
+	min-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -354,12 +376,16 @@ td {
 		display: block;
 		padding: 0 0.5em;
 		border-bottom: none;
+		width: 100% !important;
+		max-width: 100%;
 	}
 	
 	.responsivecolumns & {
 		display: block;
 		padding: 0 0.5em;
 		border-bottom: none;
+		width: 100% !important;
+		max-width: 100%;
 	}
 	
 	&:first-child {
@@ -476,21 +502,23 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 // Default Page Style
 
 .bk-pt-default .bk-header {
-	border-bottom: 1px solid @contrast-color;
+	border-bottom: 1px solid @color-swatch2;
 }
 
 // HEADER & #BK-NAV
 
 .bk-nav {
-	background-color: @spare-color;
+	z-index: 100;
+	background-color: @color-swatch7;
 	position: fixed;
-	width: 100%;
-	min-height: 60px;
 	top: 0;
-	z-index: 2;
+	left: 0;
+	right: 0;
+	width: auto;
+	min-height: 60px;
 
-	@media @tablet {
-		position: absolute;
+	.widget-overlay {
+		min-height: 60px;
 	}
 }
 
@@ -505,43 +533,12 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	}
 }
 
-// FOOTER
-
-.bk-footer {
-	color: @paragraph-color;
-	border-top: 1px solid fade(@paragraph-color, 20%);
-	padding: 3em 0;
-	opacity: 0.8;
-
-	.widget.profile {
-		margin: 0;
-
-		form fieldset {
-			.form-group {
-				label {
-					display: block;
-					width: 100%;
-				}
-			
-				input {
-					width: 100%;
-				}
-	
-				button {
-					word-break: break-word;
-					height: auto;
-					width: auto;
-					margin: 10px 0;
-				}
-			}
-		}
-	}
-}
-
-.footerright, .footerleft {
+.footerright,
+.footerleft {
 	display: inline-block;
 	vertical-align: middle;
 	width: 49.5%;
+
 	@media @mobile {
 		width: 100%;
 		text-align: center !important;
@@ -594,19 +591,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	}
 }
 
-.column + .column {
-	@media @mobile {
-		margin-top: 12px;
-	}
-}
-
 .widget.contentgroup {
-	.contentgroup__image + .contentgroup__heading,
-	.contentgroup__heading + .contentgroup__body,
-	.contentgroup__body + .contentgroup__link {
-		margin-top: 12px;
-	}
-
 	+ .widget {
 		margin-top: 40px;
 	}
@@ -641,23 +626,27 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	@media @mobile {
 		display: block;
 	}
+
+	.responsivecolumns & {
+		display: block;
+	}
 }
 
 input,
-.widget.profile form fieldset input,
+form fieldset input,
 textarea,
 select {
+	flex-grow: 1;
 	background: @bg-color;
 	text-indent: 10px;
 	padding: 8px;
-	border: 1px solid @contrast-color;
+	border: 1px solid @color-swatch3;
 	.transition (all, 0.5s, ease);
 	appearance: none;
-	min-height: 52px;
-	flex-grow: 1;
+	min-height: 40px;
 
 	.style--light & {
-		border-color: @contrast-color;
+		border-color: @color-swatch3;
 	}
 
 	.style--accent & {
@@ -671,10 +660,10 @@ select {
 	&:focus,
 	&:hover {
 		.transition (all, 0.5s, ease);
-		border: 1px solid darken(@contrast-color, 20%);
+		border: 1px solid darken(@color-swatch3, 20%);
 
 		.style--light & {
-			border-color: darken(@contrast-color, 20%);
+			border-color: darken(@color-swatch3, 20%);
 		}
 
 		.style--accent & {
@@ -685,6 +674,18 @@ select {
 			border-color: lighten(@contrast--dark, 20%);
 		}
 	}
+
+	@media @mobile {
+		width: 100%;
+	}
+
+	.widget.profile &,
+	.responsivecolumns & {
+		margin-bottom: 1em;
+		width: 100%;
+		background: @bg-color;
+		border: 1px solid @color-swatch3;
+	}
 }
 
 textarea {
@@ -692,8 +693,9 @@ textarea {
 }
 
 label {
-	display: inline-block;
+	display: block;
 	padding-bottom: .4em;
+	width: 100%;
 }
 
 // Dropdown
@@ -732,7 +734,7 @@ select {
 
 .contactform .option-list,
 .advancedcontactform .option-list {
-	margin-bottom: 1em;
+	margin-bottom: 2em;
 }
 
 // iFrame

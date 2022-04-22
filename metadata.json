@@ -23,7 +23,7 @@
 	{
 		"Swatch 1": {
 			"color1":"#ffffff",
-			"color2":"#e6dace",
+			"color2":"#dbccbf",
 			"color3":"#a67b52",
 			"color4":"#191a1c",
 			"color5":"#56565a",
@@ -107,7 +107,7 @@
 			"font-weight": "400",
 			"line-height": "22px",
 			"color": "@color-swatch5",
-			"letter-spacing": "inherit"
+			"letter-spacing": "0"
 		},
 		"font6": {
 			"font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",

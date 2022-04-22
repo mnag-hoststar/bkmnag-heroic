@@ -127,10 +127,18 @@
 		@media @mobile {
 			width: 100%;
 		}
+		
+		.responsivecolumns & {
+			width: 100%;
+		}
 	}
 	
 	.language-selector.language-selector--dropdown.language-selector--flag & {
 		@media @mobile {
+			width: auto;
+		}
+
+		.responsivecolumns & {
 			width: auto;
 		}
 	}
@@ -366,30 +374,34 @@
 				width: 100%;
 				display: none;
 				margin: 0;
-				padding: 40px 40px 50px;
+				padding: 60px 0 0;
+			}
+
+			&.open {
+				@media @tablet {
+					display: block;
+				}
 			}
 
             // Menu Point
 
 			li {
 				@media @tablet {
-					border-bottom: 1px solid fade(@color-swatch6, 10%);
+					border: none;
 					width: 100%;
 					padding: 0;
 				}
 
-				&:first-child {
-					@media @tablet {
-						margin-top: 30px;
-					}
-				}
-
 				a {
-					padding: 16px 30px;
+					padding: 16px 20px;
 					margin: 0;
 					text-transform: uppercase;
 					letter-spacing: .1em;
 					.transition (all, 0.5s, ease);
+
+					@media @tablet {
+						padding: 16px 3em;
+					}
 				}
 
 				a:hover,
@@ -398,12 +410,17 @@
 					.transition (all, 0.5s, ease);
 				}
 
+				&:hover ul {
+					margin: 0;
+				}
+
                 // Folder
 	
 				&.folder {
 					margin-right: 0;
 
-					&:hover {
+					&:hover,
+					&:focus {
 						background-color: darken(@color-swatch7, 10%);
 					}
 	
@@ -412,13 +429,17 @@
 					}
 					
 					> .text {
-						letter-spacing: .1em;
-						.transition (all, 0.5s, ease);
 						display: block;
-						padding: 16px 30px;
+						padding: 16px 3em 16px 20px;
+						.transition (all, 0.5s, ease);
 						margin: 0;
 						text-transform: uppercase;
 						word-break: break-word;
+						letter-spacing: .1em;
+
+						@media @tablet {
+							padding: 16px 3em;
+						}
 		
 						// Folder Arrow
 	
@@ -427,7 +448,7 @@
 							display: block;
 							position: absolute;
 							top: 50%;
-							right: 0.5em;
+							right: 1.25em;
 							border: 2px solid fade(@font-swatch6-color, 60%);
 							border-top: transparent;
 							border-left: transparent;
@@ -446,17 +467,8 @@
 
 					> ul,
 					&:hover > ul {
-						display: none;
-						visibility: hidden;
-						opacity: 0;
 						position: absolute;
-						top: 100%;
-						left: -12px;
-						transform: translateZ(0);
-						transform: translateY(10%);
-						transition: all 0.5s ease 0s, visibility 0s linear 0.5s;
-						overflow-y: auto;
-						max-height: calc(~"100vh - 200%");
+						display: none;
 
 						@media @tablet {
 							z-index: 500;
@@ -473,9 +485,16 @@
 						}
 						
 						li {
+							display: block;
+							padding: 1em 20px;
+							min-width: 300px;
+							max-width: 500px;
+							text-align: left;
+
 							@media @tablet {
-								margin: 0;
-								padding: 0;
+								min-width: auto;
+								max-width: none;
+								width: auto;
 							}
 							
 							a {
@@ -486,7 +505,6 @@
 									overflow: unset;
 									text-overflow: unset;
 									word-break: break-word;
-									max-width: 300px;
 								}
 							}
 						}
@@ -497,9 +515,6 @@
 						display: block;
 						max-width: none;
 						background-color: darken(@color-swatch7, 10%);
-						opacity: 1;
-						transform: translateX(0%);
-						transition-delay: 0s;
 
 						@media @tablet {
 							display: block;
@@ -536,11 +551,12 @@
 			}
 
 			.spare {
-				margin: 0 40px;
+				margin: 40px;
 				letter-spacing: .1em;
 
 				h2 {
 					text-transform: uppercase;
+					padding: 0.5em 0;
 
 					@media @tablet {
 						font-size: bkscale(@font-swatch8-font-size,0.8);
@@ -558,6 +574,7 @@
 				h3 {
 					color: fade(@font-swatch9-color, 75%);
 					text-transform: uppercase;
+					padding: 0 0 1em;
 
 					@media @tablet {
 						font-size: bkscale(@font-swatch9-font-size,0.9);
@@ -735,8 +752,11 @@
 
 	.gallery-widget {
 		position: relative;
-		width: 100%;
 		padding: 0;
+		margin-top: 10px;
+		margin-left: -10px;
+		margin-right: -10px;
+		margin-bottom: 10px;
 
 		li {
 			width: 25%;
@@ -769,10 +789,10 @@
 				bottom: 10px;
 
 				.title {
-					margin-top: 30%;
 					color: @font-swatch4-color;
 					font-family: @font-swatch4-font-family;
 					text-transform: uppercase;
+					font-size: 1.2em;
 				}
 
 				.description {
@@ -783,6 +803,10 @@
 	}
 
 	.image-data {
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
 		background: fade(@color-swatch2, 90%);
 		display: block;
 		-webkit-transform: scale(0.1);
@@ -812,7 +836,6 @@
 		-ms-transform: scale(1);
 		transform: scale(1);
 		opacity: 1;
-		text-align: center;
 	}
 }
 
@@ -822,6 +845,8 @@
 	margin-bottom: 40px;
 
 	.slideshow-widget {
+		background-color: darken(@color-swatch2, 5%);
+
 		.btn-play,
 		.btn-prev,
 		.btn-next {
@@ -904,6 +929,7 @@
 		.btn-play {
     		left: 50%;
 			margin-top: -25px;
+			margin-left: -25px;
 
 			&:after,
 			&.pause:after {
@@ -994,24 +1020,29 @@
 	}
 
 	.content-wrapper {
-		background-color: @contrast-color;
+		background-color: @color-swatch2;
 	}
 
 	.title,
 	.description {
-		padding: 14px;
+		display: block;
+		margin: 20px;
+		padding: 0;
+		line-height: @font-swatch5-line-height;
 	}
 
 	.title {
-		display: block;
-		padding-bottom: 0;
-		color: @font-swatch4-color;
 		font-family: @font-swatch4-font-family;
 		text-transform: uppercase;
+		color: @font-swatch4-color;
 	}
 
 	.description {
 		color: @font-swatch5-color;
+	}
+
+	.title + .description {
+		margin-top: -15px;
 	}
 
 	.slideshow-widget-controls {
@@ -1069,6 +1100,8 @@ button.btn,
 button.button,
 .contactform button,
 .contactform button.btn,
+.signupform fieldset button,
+.signupform fieldset button.btn,
 .advancedcontactform button,
 .advancedcontactform button.btn,
 .widget.tweet a,
@@ -1076,27 +1109,29 @@ button.button,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
-.widget.socialicons span a,
-.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
 form.blog-search-form .form-group button,
-.blog-post-more-link a {
+.blog-post-more-link a,
+.widget.profile form button,
+.bk-footer .widget.profile form fieldset .form-group button {
+	display: inline-block;
+	margin: 0;
+	min-height: 40px;
+	padding: 7px 30px;
+	border: 2px solid @spare-color;
+	background-color: @font-swatch7-background-color;
+	letter-spacing: .1em;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
 	font-weight: @font-swatch7-font-weight;
-	line-height: 1.5em;
-	background-color: @font-swatch7-background-color;
-	color: @font-swatch7-color;
-	padding: 9px 30px;
-	border: 2px solid @spare-color;
 	text-decoration: none;
 	text-transform: uppercase;
-	letter-spacing: .1em;
 	.transition (all, 0.5s, ease);
 	word-break: break-word;
-	min-height: 52px;
+	color: @font-swatch7-color;
+	text-align: center;
 
 	.style--light & {
 		background-color: @font-swatch7-background-color;
@@ -1124,6 +1159,7 @@ form.blog-search-form .form-group button,
 		background-color: @font-swatch7-background-color-hover;
 		cursor: pointer;
 		.transition (all, 0.5s, ease);
+		text-decoration: none;
 
 		.style--light & {
 			background-color: @font-swatch7-background-color-hover;
@@ -1142,14 +1178,6 @@ form.blog-search-form .form-group button,
 .ecom-product-go-to-checkout-btn,
 .ecom-product .btn {
 	padding: 10px 22px 10px 22px;
-}
-
-.widget.button,
-.widget.paypalbuynow,
-.widget.tweet,
-.widget.dropbox,
-.widget.clicktocall {
-	margin: 0 0 40px;
 }
 
 .widget button.btn span {
@@ -1199,15 +1227,25 @@ form.blog-search-form .form-group button,
 .widget.filedownload button.btn:before {content: '\f019';}
 
 .widget.paypalbuynow .widget.button.paypal {
-	padding-left: 3.2em;
-    background-size: 1.2em;
-    background-position: 1.25em center;
+	background: none;
+}
+
+.widget.filedownload div {
+	@media @mobile {
+		float: none;
+	}
+
+	span.file-name {
+		display: block;
+		margin: 0.5em 0;
+	}
 }
 
 // FORMS
 
 .contactform,
-.advancedcontactform {
+.advancedcontactform,
+.bk-footer .form-group.profile__form-group--terms {
 	margin-bottom: 40px;
 
 	label {
@@ -1240,17 +1278,31 @@ form.blog-search-form .form-group button,
 
 // SIGNUP FORM
 
-.signupform fieldset input {
-	height: auto;
-	width: auto;
-
-	@media @mobile {
-		width: 100%;
+.blog-search-form,
+.signupform {
+	.form-group {
+		display: flex;
+		flex-wrap: wrap;
 		margin-bottom: 1em;
+		
+		input {
+			flex-grow: 1;
+			margin-right: 1em;
+		
+			@media @mobile {
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: 1em;
+			}
+		
+			.responsivecolumns & {
+				width: 100%;
+				margin-right: 0;
+				margin-bottom: 1em;
+			}
+		}
 	}
 }
-
-
 
 // ADVANCED AND CONTACT FORM
 
@@ -1263,23 +1315,35 @@ form.blog-search-form .form-group button,
 	}
 }
 
+.advancedcontactform .label--radio,
+.advancedcontactform .label--checkbox {
+	display: block;
+	margin-bottom: 1em;
+}
+
 .option-item.option-item--radio,
 .option-item.option-item--checkbox,
 .widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
 .widget.contactform .form-group.contactform__form-group--terms,
-.widget.signupform .form-group.signupform__form-group--terms {
-	width: 100%;
+.widget.signupform .form-group.signupform__form-group--terms,
+.bk-footer .form-group.profile__form-group--terms {
+	display: block;
 	position: relative;
+	width: 100%;
+	min-height: 32px;
+	margin-bottom: 0.5em;
 
 	label {
 		cursor: pointer;
 		margin-left: 40px;
-		margin-bottom: 1em;
+		margin-bottom: 0;
 		padding: 0;
-		display: inline-block !important;
+		display: block;
 		line-height: 25px;
 		position: relative;
 		word-break: break-word;
+		width: calc(100% - 40px);
+		text-align: left;
 
 		&:before {
 			content: '';
@@ -1287,13 +1351,17 @@ form.blog-search-form .form-group button,
 			width: 25px;
 			height: 25px;
 			background-color: @bg-color;
-			border: 1px solid @contrast-color;
+			border: 1px solid @color-swatch3;
 			left: -40px;
 			top: 0;
 			.transition(all, 0.3s, ease);
+			min-width: 25px;
+			min-height: 25px;
+			border-radius: 0;
+			margin: 0;
 
 			.style--light & {
-				border-color: @contrast-color;
+				border-color: @color-swatch3;
 			}
 
 			.style--accent & {
@@ -1306,10 +1374,10 @@ form.blog-search-form .form-group button,
 		}
 
 		&:hover:before {
-			border: 1px solid darken(@contrast-color, 15%);
+			border: 1px solid darken(@color-swatch3, 15%);
 
 			.style--light & {
-				border-color: darken(@contrast-color, 15%);
+				border-color: darken(@color-swatch3, 15%);
 			}
 
 			.style--accent & {
@@ -1352,6 +1420,13 @@ form.blog-search-form .form-group button,
 		appearance: none;
 		visibility: hidden;
 		position: absolute;
+		margin: 0;
+		padding: 0;
+		border: none;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
 
 		&:checked + label:after {
 			opacity: 1;
@@ -1519,28 +1594,13 @@ input:-ms-input-placeholder {
 		display: inline-block;
 
 		a {
-			background-size: 32px;
-			background-color: transparent;
-			margin: 0 5px;
-			width: 36px;
-			height: 36px;
-			.border-radius(50%);
-			.transition (all, 0.5s, ease);
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			font-size: 0;
 
 			&:hover {
 				background-color: @button-color;
-
-				.style--light & {
-					background-color: @button-color;
-				}
-
-				.style--accent & {
-					background-color: @color--light;
-				}
-
-				.style--dark & {
-					background-color: @color--accent;
-				}
 			}
 
 			@media @mobile {
@@ -1565,18 +1625,6 @@ input:-ms-input-placeholder {
 	right: 30px;
 	top: 50%;
 	transform: translate(0, -50%);
-
-	.bk-profile-socialicons {
-		span {
-			a {
-				border: none;
-
-				&:hover {
-					background-color: fade(@color-swatch3, 20%);
-				}
-			}
-		}
-	}
 }
 
 // TWITTER FEED
@@ -1588,10 +1636,10 @@ input:-ms-input-placeholder {
 		li {
 			padding: 30px;
 			margin-bottom: 1em;
-			border: 1px solid @contrast-color;
+			border: 1px solid @color-swatch3;
 
 			.style--light & {
-				border-color: @contrast-color;
+				border-color: @color-swatch3;
 			}
 
 			.style--accent & {
@@ -1606,57 +1654,76 @@ input:-ms-input-placeholder {
 
 	.twitter-profile-pic {
 		max-width: 80px;
-
-		@media @mobile {
-			display: none;
-		}
 	}
 
 	.twitter-content {
+		margin-left: 68px;
+
+		> a:first-child {
+			display: block;
+			margin-top: -0.25em;
+			margin-bottom: 0.5em;
+
+			+ p {
+				opacity: 1;
+				display: block;
+				margin-bottom: 1em;
+			}
+		}
+
 		p, a {
 			padding: 0;
-			color: @contrast-color;
-
-			.style--light & {
-				color: @contrast-color;
-			}
-
-			.style--accent & {
-				color: fade(@contrast--accent, 80%);
-			}
-
-			.style--dark & {
-				color: fade(@contrast--dark, 80%);
-			}
-		}
-
-		time, span, span a {
-			font-family: @font-swatch5-font-family;
-			font-size: bkscale(@font-swatch5-font-size,0.9);
-		}
-
-		span.bk-full-name {
-			font-family: @font-swatch4-font-family;
-			color: @font-swatch4-color;
 			font-size: @font-swatch5-font-size;
-			text-transform: uppercase;
-
+			letter-spacing: @font-swatch5-letter-spacing;
+			color: @font-swatch5-color;
+	
 			.style--light & {
-				color: @font-swatch4-color;
+				color: @font-swatch5-color;
 			}
-
+	
 			.style--accent & {
 				color: @contrast--accent;
 			}
-
+	
 			.style--dark & {
 				color: @contrast--dark;
 			}
 		}
 
+		p {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+
+		time, span, span a {
+			opacity: 0.6;
+			font-family: @font-swatch5-font-family;
+			font-size: bkscale(@font-swatch5-font-size,0.9);
+			color: @font-swatch5-color;
+	
+			.style--light & {
+				color: @font-swatch5-color;
+			}
+	
+			.style--accent & {
+				color: @contrast--accent;
+			}
+	
+			.style--dark & {
+				color: @contrast--dark;
+			}
+		}
+
+		span.bk-full-name {
+			font-family: @font-swatch4-font-family;
+			text-transform: uppercase;
+		}
+
 		span a {
 			color: @color-swatch3;
 			text-decoration: none;
+			line-height: 1em;
 
 			.style--light & {
 				color: @color-swatch3;
@@ -1670,6 +1737,42 @@ input:-ms-input-placeholder {
 				color: @contrast--dark;
 			}
 		}
+
+		p:last-of-type {
+			opacity: 0.6;
+			display: block;
+
+		}
+	}
+}
+
+// YELP REVIEW
+
+.widget.yelpreview {
+	ul.yelpreview {
+		li {
+			margin: 0 0 3em;
+
+			dt.rating {
+				padding-top: 0;
+			}
+
+			dd.created,
+			dd.reviewer {
+				opacity: 0.6;
+			}
+	
+			dd.reviewer {
+				font-family: @font-swatch4-font-family;
+				font-size: @font-swatch4-font-size;
+				letter-spacing: @font-swatch4-letter-spacing;
+				line-height: @font-swatch4-line-height;
+			}
+
+			dd.review-link {
+				margin: 1em 0;
+			}
+		}
 	}
 }
 
@@ -1681,11 +1784,12 @@ input:-ms-input-placeholder {
 }
 
 hr.line {
-	background-color: @contrast-color;
 	margin: 0;
+	background-color: @color-swatch3;
+	height: 1px;
 
 	.style--light & {
-		background-color: @contrast-color;
+		background-color: @color-swatch3;
 	}
 
 	.style--accent & {
@@ -1704,7 +1808,7 @@ hr.line {
 // MAP
 
 .widget.map {
-	border: 1px solid @contrast-color;
+	border: 1px solid @color-swatch3;
 	margin-bottom: 40px;
 }
 
