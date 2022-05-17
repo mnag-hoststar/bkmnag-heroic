@@ -468,6 +468,8 @@
 					> ul,
 					&:hover > ul {
 						position: absolute;
+						left: auto;
+						right: 0;
 						display: none;
 
 						@media @tablet {
@@ -495,6 +497,7 @@
 								min-width: auto;
 								max-width: none;
 								width: auto;
+								text-align: inherit;
 							}
 							
 							a {
@@ -1106,6 +1109,7 @@ button.button,
 .advancedcontactform button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1119,7 +1123,7 @@ form.blog-search-form .form-group button,
 	display: inline-block;
 	margin: 0;
 	min-height: 40px;
-	height: auto !important;
+	height: auto;
 	padding: 7px 30px;
 	border: 2px solid @spare-color;
 	background-color: @font-swatch7-background-color;
@@ -1599,9 +1603,34 @@ input:-ms-input-placeholder {
 			height: 40px;
 			border-radius: 50%;
 			font-size: 0;
+			background-color: @button-color;
+
+			.style--light & {
+				background-color: @button-color;
+			}
+
+			.style--accent & {
+				border-color: @color--dark;
+			}
+
+			.style--dark & {
+				border-color: @color--accent;
+			}
 
 			&:hover {
-				background-color: @button-color;
+				background-color: darken(@button-color, 5%);
+
+				.style--light & {
+					background-color: darken(@button-color, 5%);
+				}
+	
+				.style--accent & {
+					border-color: darken(@color--dark, 5%);
+				}
+	
+				.style--dark & {
+					border-color: darken(@color--accent, 5%);
+				}
 			}
 
 			@media @mobile {

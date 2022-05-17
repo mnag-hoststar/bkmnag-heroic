@@ -4,9 +4,7 @@
 
 $(document).ready(function() {
 	
-	// ------------------------------
 	// Changes to the header when a language selector is present.
-	// ------------------------------
 	
 	function languageSelector() {
     	    var languageSelectorHeight = $('.language-selector').outerHeight();
@@ -24,9 +22,7 @@ $(document).ready(function() {
 	
 	languageSelector();
 
-	// ------------------------------
     // Changes by the editor are saved in the style elmement with the class js-compiled-styles.
-	// ------------------------------
 	
     $(document).bind("DOMSubtreeModified",function(){
 		languageSelector();
@@ -34,4 +30,11 @@ $(document).ready(function() {
 			languageSelector();
 		});
     });
+
+	// Hides other submenus when a main menu point with a submenu is clicked.
+    
+	$(".extendednavigation > ul > li").click(function() {
+		$(this).siblings(".extendednavigation > ul > li.folder").removeClass("folder-open");
+	});
+
 });

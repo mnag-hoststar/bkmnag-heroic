@@ -6,11 +6,30 @@
 // Template styling resets
 
 #migrated {
+
+	// Basekit Elements
+
+	.top-level-overlay button.top-level-overlay__delete-button,
+	.row-overlay__delete-button,
+	.top-level-overlay .top-level-overlay__arrangement-button-group,
+	.row-overlay__arrangement-button-group, .row-overlay__edit-button,
+	.row-overlay__edit-button {
+		min-height: 32px !important;
+	}
+
+	.is-dropdown-open .row-overlay__edit-button, .is-setting-open .row-overlay__edit-button {
+		min-height: 40px !important;
+	}
+	
 	&.edit .bk-nav {
-		@media @tablet-large {
+		@media only screen and (min-width: 930px) {
 			width: ~"calc(100% - 200px)";
+			margin-left: auto;
+			margin-right: auto;
 		}
 	}
+
+    // Main
 
 	// Remove spacing for the default page
 	.bk-pt-default .main.container {
@@ -23,6 +42,16 @@
 		padding-bottom: 0;
 		width: 100%;
 	}
+
+	// Align header the the content in edit mode
+
+    &.edit {
+        @media only screen and (min-width: 930px) {
+            .bk-header {
+               width: ~"calc(100% - 200px)";
+            }
+        }
+    }
 
 	// Re-add the reset styles
 
@@ -63,4 +92,13 @@
 		max-width: 650px;
 		width: 100%;
 	}
+
+    // Pricing Table
+    .row--layout-pricing-1a .column ul li {
+        padding-left: 2.5em;
+    
+        &:before {
+            content: none;
+        }
+    }
 }

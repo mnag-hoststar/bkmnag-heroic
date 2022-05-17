@@ -222,7 +222,8 @@ blockquote {
 		border-color: fade(@contrast--dark, 20%);
 	}
 	
-	&:before {
+	&:before,
+	&:after {
 		display: none;
 	}
 }
@@ -644,6 +645,7 @@ select {
 	.transition (all, 0.5s, ease);
 	appearance: none;
 	min-height: 40px;
+    height: auto !important;
 
 	.style--light & {
 		border-color: @color-swatch3;
@@ -689,7 +691,7 @@ select {
 }
 
 textarea {
-	height: 104px;
+	min-height: 100px;
 }
 
 label {
