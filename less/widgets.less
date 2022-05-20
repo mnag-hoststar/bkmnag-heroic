@@ -470,6 +470,8 @@
 						position: absolute;
 						left: auto;
 						right: 0;
+						min-width: 200px;
+						max-width: 400px;
 						display: none;
 
 						@media @tablet {
@@ -480,6 +482,8 @@
 							width: 100%;
 							padding: 0;
 							background-color: darken(@color-swatch7, 20%);
+							min-width: auto;
+							max-width: none;
 						}
 
 						&:after {
@@ -1444,9 +1448,9 @@ form.blog-search-form .form-group button,
 .widget.contactform .form-group.contactform__form-group--terms,
 .widget.signupform .form-group.signupform__form-group--terms {
 	label:after {
-		margin-left: floor(@font-swatch5-line-height*0.2);
+		margin-left: floor(@font-swatch5-line-height*0.2+1);
 		width: floor(@font-swatch5-line-height*0.8);
-		border: 1px solid transparent;
+		border: none;
 		box-shadow: -6px -6px 0 0 inset @font-swatch7-color;
 		transform: scale(50%) rotate(45deg);
 
