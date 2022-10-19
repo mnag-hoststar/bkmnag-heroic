@@ -784,8 +784,18 @@
 				padding-bottom: 100%;
 			}
 
-			.responsivecolumns & {
-				width: 100% !important;
+			.responsivecolumns [class*="columns-three"] & {
+				width: 50%;
+				padding-bottom: 50%;
+		
+				@media @tablet {
+					width: 100%;
+					padding-bottom: 100%;
+				}
+			}
+	
+			.responsivecolumns [class*="columns-four"] & {
+				width: 100%;
 				padding-bottom: 100%;
 			}
 
